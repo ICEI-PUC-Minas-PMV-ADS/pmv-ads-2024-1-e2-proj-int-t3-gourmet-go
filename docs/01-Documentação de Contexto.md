@@ -21,12 +21,14 @@ O objetivo geral deste trabalho foi capacitar os empreendedores proprietários d
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Justificativa:
+Este tema foi escolhido devido à relevância e atualidade dos desafios enfrentados pelos restaurantes, tanto em relação à gestão interna quanto à expansão das vendas online. Com a crescente competição no setor de alimentos e a mudança nos hábitos de consumo dos clientes, é fundamental que os restaurantes compreendam e superem esses desafios para garantir sua sobrevivência e sucesso no mercado.
+O que:
+O projeto proposto tem como função oferecer soluções e estratégias para otimizar a gestão interna dos restaurantes, melhorando a fluidez dos pedidos, o controle de estoque, a organização operacional e a eficiência na entrega de pedidos. Além disso, visa fornecer orientações sobre como maximizar o lucro nas vendas online, mesmo diante das taxas elevadas cobradas pelas plataformas digitais de entrega.
+Quem:
+O público-alvo deste projeto são proprietários, gerentes e equipe de gestão de restaurantes, bem como empreendedores do setor de alimentos interessados em melhorar a eficiência operacional e a rentabilidade de seus negócios.
+Base:
+Este trabalho é baseado em uma variedade de fontes de informações, incluindo estudos sobre gestão de restaurantes, análises de tendências de mercado no setor de alimentos, dados sobre o comportamento do consumidor e pesquisas sobre as práticas mais eficazes para maximizar a rentabilidade das vendas online. Além disso, foi conversado com vários profissionais da área as dores que encontram diante da gestão e a tecnologia ligada aos seus restaurantes.
 
 ## Público-Alvo
 
