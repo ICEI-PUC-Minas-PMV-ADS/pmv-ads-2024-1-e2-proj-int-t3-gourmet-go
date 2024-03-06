@@ -46,33 +46,40 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
+|ID | Descrição | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir ao usuário (restaurante) cadastrar produtos no cardápio. | ALTA | 
-|RF-002| A aplicação deve permitir ao usuário (restaurante) modificar seu cardápio.   | MÉDIA |
-|RF-003| A aplicação deve permitir ao usuário (cliente) cadastrar uma conta de acesso.   | MÉDIA |
-|RF-004| A aplicação deve permitir ao usuário (cliente) editar suas informações de cadastro.  | MÉDIA |
-|RF-005| A aplicação deve permitir ao usuário cadastrar, editar e excluir endereços alternativos para entrega.   | MÉDIA |
-|RF-006| A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema.   | MÉDIA |
-|RF-007| A aplicação deve exibir ao usuário (cliente), o cardápio do restaurante.   | MÉDIA |
-|RF-008| A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado.   | MÉDIA |
-|RF-009| A aplicação deve permitir ao usuário (cliente) adicionar itens à sacola, bem como alterar quantidades ou excluir itens da sacola.   | MÉDIA |
-|RF-010| A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.   | MÉDIA |
-|RF-011| A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.   | MÉDIA |
-|RF-012| A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.   | MÉDIA |
-|RF-013| A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.  | MÉDIA |
-|RF-014| A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).   | MÉDIA |
-|RF-015| A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos.   | MÉDIA |
-|RF-016| A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.  | MÉDIA |
+| RF-01 | A aplicação deve permitir ao usuário (restaurante) cadastrar produtos no cardápio. | ALTA | 
+| RF-02 | A aplicação deve permitir ao usuário (restaurante) modificar seu cardápio. | MÉDIA |
+| RF-03 | A aplicação deve permitir ao usuário (cliente) cadastrar uma conta de acesso. | ALTA |
+| RF-04 | A aplicação deve permitir ao usuário (cliente) editar suas informações de cadastro. | BAIXA |
+| RF-05 | A aplicação deve permitir ao usuário cadastrar, editar e excluir endereços alternativos para entrega. | MÉDIA |
+| RF-06 | A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema. | BAIXA |
+| RF-07 | A aplicação deve exibir ao usuário (cliente), o cardápio do restaurante. | ALTA |
+| RF-08 | A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado. | ALTA |
+| RF-09 | A aplicação deve permitir ao usuário (cliente) adicionar itens à sacola, bem como alterar quantidades ou excluir itens da sacola. | ALTA |
+| RF-10 | A aplicação deve ser capaz de intermediar compras entre cliente e restaurante. | ALTA |
+| RF-11 | A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery. | ALTA |
+| RF-12 | A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo. | ALTA |
+| RF-13 | A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix. | MÉDIA |
+| RF-14 | A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega). | ALTA |
+| RF-15 | A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos. | MÉDIA |
+| RF-16 | A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente. | BAIXA |
 
+** Prioridade: Alta / Média / Baixa. 
 
+### Requisitos Não Funcionais
 
-### Requisitos não Funcionais *** à definir
+|ID | Descrição | Prioridade |
+|------|-----------------------------------------|----|
+| RNF-01 | A aplicação deve ser publicada em um ambiente acessível público na Internet. | ALTA |
+| RNF-02 | A aplicação deve estar disponível 24 horas por dia, 7 dias por semana | ALTA |
+| RNF-03 | Deve ser utilizado banco de dados SQL Server para gravação dos dados. | MÉDIA |
+| RNF-04 | O tempo de resposta para gravação de um pedido não deve exceder a 3 segundos. | BAIXA |
+| RNF-05 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Safari, Firefox, Opera e Microsoft Edge. | ALTA |
+| RNF-06 | A aplicação deve ser responsiva, permitindo a visualização em dispositivos diversos de forma adequada. | MÉDIA |
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+** Prioridade: Alta / Média / Baixa. 
+
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
@@ -82,13 +89,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
 |03| Limitação quanto ao uso de frameworks                 |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
