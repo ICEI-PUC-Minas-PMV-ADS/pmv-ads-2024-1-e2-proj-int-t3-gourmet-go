@@ -15,9 +15,6 @@ Como os restaurantes podem superar esses desafios e implementar práticas de ges
 
 O objetivo geral deste trabalho foi capacitar os empreendedores proprietários de restaurantes a administrarem eficientemente suas empresas. Buscamos oferecer ferramentas que permitam o gerenciamento dos pedidos em tempo real, eliminando a dependência das taxas cobradas pelos aplicativos de entrega. Além disso, almejamos implementar melhorias operacionais para que garçons e cozinheiros possam visualizar os pedidos pendentes e concluídos através de atualizações de status integradas ao aplicativo. Dessa forma, tanto os clientes que fazem pedidos no restaurante quanto aqueles que optam pelo serviço de entrega em casa podem acompanhar o andamento de seus pedidos e saber quando estarão prontos.
 
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
