@@ -3,11 +3,13 @@
 Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação
+Os restaurantes enfrentam uma série de desafios em sua gestão interna e na expansão de suas vendas online, que impactam diretamente sua eficiência operacional e sua rentabilidade financeira. Internamente, muitos restaurantes lutam para garantir a fluidez dos pedidos, o controle adequado do estoque, a organização operacional e a rápida saída dos pratos. Essas questões resultam em atrasos na entrega, erros nos pedidos e insatisfação dos clientes, afetando a reputação e a fidelidade do público.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Além disso, a crescente tendência de vendas pela internet oferece uma oportunidade de expansão para muitos restaurantes, permitindo-lhes alcançar um público mais amplo. No entanto, a alta incidência de taxas cobradas por plataformas de entrega online reduz significativamente o lucro obtido nas vendas digitais, tornando esse modelo de negócio menos atrativo e menos rentável para os estabelecimentos.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Diante desses desafios, os restaurantes enfrentam a necessidade de encontrar soluções eficazes para otimizar sua gestão interna, garantindo uma operação mais fluida e eficiente, ao mesmo tempo em que buscam maximizar a rentabilidade das vendas online, mesmo diante das taxas elevadas cobradas pelas plataformas digitais.
+
+Como os restaurantes podem superar esses desafios e implementar práticas de gestão interna mais eficazes, ao mesmo tempo em que exploram estratégias para maximizar o lucro nas vendas online, garantindo sua competitividade e sustentabilidade no mercado atual?
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
