@@ -1,6 +1,20 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A indústria de restaurantes está em constante transformação, impulsionada por mudanças nos hábitos de consumo e pela ascensão do comércio online. As plataformas de entrega online oferecem uma oportunidade de expansão para os restaurantes, mas as altas taxas cobradas podem reduzir significativamente a lucratividade.
+
+Problema:
+Os restaurantes enfrentam desafios em sua gestão interna e na expansão de suas vendas online. Internamente, a fluidez dos pedidos, o controle de estoque, a organização operacional e a rápida entrega dos pratos podem ser problemáticos. Isso pode resultar em atrasos, erros e insatisfação dos clientes, prejudicando a reputação e a fidelidade.
+
+Objetivo:
+Este projeto visa capacitar os proprietários de restaurantes a superar esses desafios e implementar práticas de gestão interna mais eficazes. Buscamos oferecer ferramentas para gerenciar pedidos em tempo real, eliminar a dependência de aplicativos de entrega e maximizar a rentabilidade das vendas online.
+
+Benefícios:
+O projeto oferece soluções para otimizar a gestão interna, melhorar a fluidez dos pedidos, o controle de estoque, a organização operacional e a eficiência na entrega. Além disso, fornece orientações sobre como maximizar o lucro nas vendas online, mesmo com as taxas cobradas pelas plataformas digitais.
+
+Abordagem:
+O projeto abordará os seguintes tópicos:
+Gestão Interna: Ferramentas para gerenciamento de pedidos em tempo real, melhorias na comunicação entre garçons e cozinheiros, otimização do controle de estoque e da organização operacional.
+Vendas Online: Estratégias para maximizar o lucro nas vendas online, minimização do impacto das taxas cobradas pelas plataformas digitais e implementação de um sistema próprio de delivery.
 
 ## Problema
 Os restaurantes enfrentam uma série de desafios em sua gestão interna e na expansão de suas vendas online, que impactam diretamente sua eficiência operacional e sua rentabilidade financeira. Internamente, muitos restaurantes lutam para garantir a fluidez dos pedidos, o controle adequado do estoque, a organização operacional e a rápida saída dos pratos. Essas questões resultam em atrasos na entrega, erros nos pedidos e insatisfação dos clientes, afetando a reputação e a fidelidade do público.
