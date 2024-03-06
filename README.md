@@ -10,7 +10,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Fabiana Britto
+* [Fabiana Britto](https://github.com/FabianaBritto)
 * [Guilherme Patrick](https://github.com/guilhermepatrick)
 * [Leandro Borth](https://github.com/leandroborth)
 * Lucas Xavier
