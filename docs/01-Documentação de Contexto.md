@@ -16,9 +16,8 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo geral deste trabalho foi capacitar os empreendedores proprietários de restaurantes a administrarem eficientemente suas empresas. Buscamos oferecer ferramentas que permitam o gerenciamento dos pedidos em tempo real, eliminando a dependência das taxas cobradas pelos aplicativos de entrega. Além disso, almejamos implementar melhorias operacionais para que garçons e cozinheiros possam visualizar os pedidos pendentes e concluídos através de atualizações de status integradas ao aplicativo. Dessa forma, tanto os clientes que fazem pedidos no restaurante quanto aqueles que optam pelo serviço de entrega em casa podem acompanhar o andamento de seus pedidos e saber quando estarão prontos.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
@@ -34,8 +33,7 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Nosso site foi desenvolvido pensando especificamente nas necessidades dos empreendedores, que desejam se libertar das taxas abusivas e manter o controle total sobre suas operações, além de melhorar a comunicação interna no restaurante mostrando os pedidos concluídos pronto para entrega na residência ou restaurante e os em que estão em andamento.
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
