@@ -11,11 +11,6 @@ Diante desses desafios, os restaurantes enfrentam a necessidade de encontrar sol
 
 Como os restaurantes podem superar esses desafios e implementar práticas de gestão interna mais eficazes, ao mesmo tempo em que exploram estratégias para maximizar o lucro nas vendas online, garantindo sua competitividade e sustentabilidade no mercado atual?
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
 O objetivo geral deste trabalho foi capacitar os empreendedores proprietários de restaurantes a administrarem eficientemente suas empresas. Buscamos oferecer ferramentas que permitam o gerenciamento dos pedidos em tempo real, eliminando a dependência das taxas cobradas pelos aplicativos de entrega. Além disso, almejamos implementar melhorias operacionais para que garçons e cozinheiros possam visualizar os pedidos pendentes e concluídos através de atualizações de status integradas ao aplicativo. Dessa forma, tanto os clientes que fazem pedidos no restaurante quanto aqueles que optam pelo serviço de entrega em casa podem acompanhar o andamento de seus pedidos e saber quando estarão prontos.
