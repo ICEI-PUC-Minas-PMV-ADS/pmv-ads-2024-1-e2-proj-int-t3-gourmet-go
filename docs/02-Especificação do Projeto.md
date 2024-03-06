@@ -48,31 +48,31 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA | 
-|RF-002| A aplicação deve emitir um relatório de tarefas realizadas no mês   | MÉDIA |
+|RF-001| A aplicação deve permitir ao usuário (restaurante) cadastrar produtos no cardápio. | ALTA | 
+|RF-002| A aplicação deve permitir ao usuário (restaurante) modificar seu cardápio.   | MÉDIA |
+|RF-003| A aplicação deve permitir ao usuário (cliente) cadastrar uma conta de acesso.   | MÉDIA |
+|RF-004| A aplicação deve permitir ao usuário (cliente) editar suas informações de cadastro.  | MÉDIA |
+|RF-005| A aplicação deve permitir ao usuário cadastrar, editar e excluir endereços alternativos para entrega.   | MÉDIA |
+|RF-006| A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema.   | MÉDIA |
+|RF-007| A aplicação deve exibir ao usuário (cliente), o cardápio do restaurante.   | MÉDIA |
+|RF-008| A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado.   | MÉDIA |
+|RF-009| A aplicação deve permitir ao usuário (cliente) adicionar itens à sacola, bem como alterar quantidades ou excluir itens da sacola.   | MÉDIA |
+|RF-010| A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.   | MÉDIA |
+|RF-011| A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.   | MÉDIA |
+|RF-012| A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.   | MÉDIA |
+|RF-013| A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.  | MÉDIA |
+|RF-014| A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).   | MÉDIA |
+|RF-015| A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos.   | MÉDIA |
+|RF-016| A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.  | MÉDIA |
 
-### Requisitos não Funcionais
+
+
+### Requisitos não Funcionais *** à definir
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| A aplicação deve ser responsiva | MÉDIA | 
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
