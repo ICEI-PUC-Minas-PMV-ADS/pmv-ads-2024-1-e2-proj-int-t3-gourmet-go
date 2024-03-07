@@ -6,7 +6,7 @@
 
 `1º semestre / 2024`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O Gourmet Go visa oferecer ferramentas que permitam o gerenciamento dos pedidos em tempo real, eliminando a dependência de taxas cobradas pelos aplicativos de entrega. Além disso, oferece ferramentas para melhorias operacionais para o estabelecimento, otimizando a gestão interna, a fluidez dos pedidos, o controle de estoque, a organização operacional e a eficiência na entrega.
 
 ## Integrantes
 
@@ -14,8 +14,8 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * [Guilherme Patrick](https://github.com/guilhermepatrick)
 * [Leandro Borth](https://github.com/leandroborth)
 * [Lucas Xavier](https://github.com/xavierlbx)
-* Luiz Hovadich
-* Marina Mariano
+* [Luiz Hovadich](https://github.com/luiz-hovadich)
+* [Marina Mariano](https://github.com/marinadionysio1)
 
 ## Orientador
 
