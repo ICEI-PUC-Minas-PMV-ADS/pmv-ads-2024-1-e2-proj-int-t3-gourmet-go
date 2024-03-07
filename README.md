@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# Gourmet Go
 
 `Análise e Desenvolvimento de Sistemas - PUC Minas`
 
