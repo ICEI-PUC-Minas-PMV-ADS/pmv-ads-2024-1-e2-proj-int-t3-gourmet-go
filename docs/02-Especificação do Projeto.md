@@ -48,22 +48,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID | Descrição | Prioridade |
 |------|-----------------------------------------|----|
-| RF-01 | A aplicação deve permitir ao usuário (restaurante) cadastrar produtos no cardápio. | ALTA | 
-| RF-02 | A aplicação deve permitir ao usuário (restaurante) modificar seu cardápio. | MÉDIA |
-| RF-03 | A aplicação deve permitir ao usuário (cliente) cadastrar uma conta de acesso. | ALTA |
-| RF-04 | A aplicação deve permitir ao usuário (cliente) editar suas informações de cadastro. | BAIXA |
-| RF-05 | A aplicação deve permitir ao usuário cadastrar, editar e excluir endereços alternativos para entrega. | MÉDIA |
-| RF-06 | A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema. | BAIXA |
-| RF-07 | A aplicação deve exibir ao usuário (cliente), o cardápio do restaurante. | ALTA |
-| RF-08 | A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado. | ALTA |
-| RF-09 | A aplicação deve permitir ao usuário (cliente) adicionar itens à sacola, bem como alterar quantidades ou excluir itens da sacola. | ALTA |
-| RF-10 | A aplicação deve ser capaz de intermediar compras entre cliente e restaurante. | ALTA |
-| RF-11 | A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery. | ALTA |
-| RF-12 | A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo. | ALTA |
-| RF-13 | A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix. | MÉDIA |
+| RF-01 | A aplicação deve permitir aos usuários (cliente e restaurante) cadastrar, visualizar, editar e excluir uma conta de acesso ao sistema. | ALTA |
+| RF-02 | A aplicação deve permitir aos usuários (cliente e restaurante) realizar login/logout no sistema. | ALTA |
+| RF-03 | A aplicação deve permitir aos usuários (cliente e restaurante) recuperar sua senha de acesso ao sistema. | BAIXA |
+| RF-04 | A aplicação deve permitir ao usuário (restaurante) cadastrar, visualizar, editar e excluir produtos do cardápio. | ALTA | 
+| RF-05 | A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega. | MÉDIA |
+| RF-06 | A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante. | ALTA |
+| RF-07 | A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado. | ALTA |
+| RF-08 | A aplicação deve permitir ao usuário (cliente) adicionar, visualizar, editar e excluir itens à sacola. | ALTA |
+| RF-09 | A aplicação deve ser capaz de intermediar compras entre cliente e restaurante. | ALTA |
+| RF-10 | A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery. | ALTA |
+| RF-11 | A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo. | ALTA |
+| RF-12 | A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix. | MÉDIA |
+| RF-13 | A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos. | ALTA |
 | RF-14 | A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega). | ALTA |
-| RF-15 | A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos. | MÉDIA |
-| RF-16 | A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente. | BAIXA |
+| RF-15 | A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente. | BAIXA |
 
 ** Prioridade: Alta / Média / Baixa. 
 
