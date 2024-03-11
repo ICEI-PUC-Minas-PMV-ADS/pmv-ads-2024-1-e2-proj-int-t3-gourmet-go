@@ -43,7 +43,8 @@ Este trabalho é baseado em uma variedade de fontes de informações, incluindo 
 
 ## Público-Alvo
 
-Nosso site foi desenvolvido pensando especificamente nas necessidades dos empreendedores, que desejam se libertar das taxas abusivas e manter o controle total sobre suas operações, além de melhorar a comunicação interna no restaurante mostrando os pedidos concluídos pronto para entrega na residência ou restaurante e os em que estão em andamento.
+Nosso site foi cuidadosamente desenvolvido com o propósito de atender às demandas específicas dos empreendedores, especialmente aqueles que buscam se libertar das taxas excessivas e manter um controle total sobre suas operações. Além disso, estamos focados em aprimorar a comunicação interna nos restaurantes, oferecendo uma plataforma que permite aos gestores visualizarem os pedidos concluídos e em andamento, prontos para serem entregues em residências ou estabelecimentos. Com isso, os clientes indiretamente desfrutarão de uma experiência mais fluida, uma vez que os restaurantes poderão otimizar sua organização e eficiência operacional.
+Nossa abordagem visa não apenas fornecer uma alternativa viável às taxas abusivas, mas também promover uma gestão mais transparente e eficaz dos pedidos, beneficiando tanto os empreendedores quanto seus clientes. Estamos comprometidos em oferecer uma solução que não apenas atenda às necessidades atuais do mercado, mas também antecipe e responda às demandas em constante evolução do setor de restaurantes.
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
