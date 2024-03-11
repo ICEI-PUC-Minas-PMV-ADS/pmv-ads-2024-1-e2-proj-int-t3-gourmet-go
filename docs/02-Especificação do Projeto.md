@@ -72,10 +72,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 | RNF-01 | A aplicação deve ser publicada em um ambiente acessível público na Internet. | ALTA |
 | RNF-02 | A aplicação deve estar disponível 24 horas por dia, 7 dias por semana | ALTA |
-| RNF-03 | Deve ser utilizado banco de dados SQL Server para gravação dos dados. | MÉDIA |
-| RNF-04 | O tempo de resposta para gravação de um pedido não deve exceder a 3 segundos. | BAIXA |
-| RNF-05 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Safari, Firefox, Opera e Microsoft Edge. | ALTA |
-| RNF-06 | A aplicação deve ser responsiva, permitindo a visualização em dispositivos diversos de forma adequada. | MÉDIA |
+| RNF-03 | A aplicação deve ser desenvolvida utilizando a plataforma .NET com a linguagem C# | ALTA |
+| RNF-04 | A aplicação deve utilizar o framework Entity Framework e o banco de dados SQL Server para gravação dos dados. | ALTA |
+| RNF-05 | O tempo de resposta para gravação de um pedido não deve exceder a 3 segundos. | MÉDIA |
+| RNF-06 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Safari, Firefox, Opera e Microsoft Edge. | ALTA |
+| RNF-07 | A aplicação deve ser responsiva, permitindo a visualização em dispositivos diversos de forma adequada. | MÉDIA |
 
 ** Prioridade: Alta / Média / Baixa. 
 
