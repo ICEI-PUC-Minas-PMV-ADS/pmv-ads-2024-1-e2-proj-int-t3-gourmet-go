@@ -84,10 +84,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
+|ID| Restrições |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Limitação quanto ao uso de frameworks                 |
+| 01 | Todas as etapas do projeto devem ser entregues no prazo estipulado |
+| 02 | O projeto deve ser desenvolvido no padrão de arquitetura MVC |
+| 03 | A documentação e o código fonte da aplicação devem ser publicados no GitHub |
+| 04 | A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
 ## Diagrama de Casos de Uso
 
