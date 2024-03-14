@@ -71,8 +71,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID | Descrição | Prioridade |
 |------|-----------------------------------------|----|
 | RNF-01 | A aplicação deve ser publicada em um ambiente acessível público na Internet. | ALTA |
-| RNF-02 | A aplicação deve estar disponível 24 horas por dia, 7 dias por semana | ALTA |
-| RNF-03 | A aplicação deve ser desenvolvida utilizando a plataforma .NET com a linguagem C# | ALTA |
+| RNF-02 | A aplicação deve estar disponível 24 horas por dia, 7 dias por semana. | ALTA |
+| RNF-03 | A aplicação deve ser desenvolvida utilizando a plataforma .NET com a linguagem C#. | ALTA |
 | RNF-04 | A aplicação deve utilizar o framework Entity Framework e o banco de dados SQL Server para gravação dos dados. | ALTA |
 | RNF-05 | O tempo de resposta para gravação de um pedido não deve exceder a 3 segundos. | MÉDIA |
 | RNF-06 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Safari, Firefox, Opera e Microsoft Edge. | ALTA |
@@ -86,10 +86,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrições |
 |--|-------------------------------------------------------|
-| 01 | Todas as etapas do projeto devem ser entregues no prazo estipulado |
-| 02 | O projeto deve ser desenvolvido no padrão de arquitetura MVC |
-| 03 | A documentação e o código fonte da aplicação devem ser publicados no GitHub |
-| 04 | A equipe não pode subcontratar o desenvolvimento do trabalho. |
+| 01 | Todas as etapas do projeto devem ser entregues no prazo estipulado. |
+| 02 | O projeto deve ser desenvolvido no padrão de arquitetura MVC. |
+| 03 | A documentação e o código fonte da aplicação devem ser publicados no GitHub. |
+| 04 | A equipe não pode subcontratar o desenvolvimento do projeto. |
 
 ## Diagrama de Casos de Uso
 
