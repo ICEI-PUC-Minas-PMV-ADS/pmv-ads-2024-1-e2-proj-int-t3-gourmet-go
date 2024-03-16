@@ -8,7 +8,15 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+Sofia é uma empreendedora de 39 anos, apaixonada por gastronomia, que possui um restaurante familiar em um bairro tradicional de São Paulo. Ela busca meios de trazer popularidade e um gerenciamento mais dinâmico para seu restaurante. Atingindo assim um público maior para dar continuidade ao legado da família. Seus hobbies favoritos são cozinhar e viajar, ela também ama compartilhar suas trajetórias em suas redes sociais.
+
+Carlos Alberto é um cozinheiro de 28 anos em ascensão, é casado e tem um filho de 3 anos. Tem por objetivo de vida levar alegria e conforto através de seus pratos, sempre busca conehcimento e estuda todos os seus pratos de forma metódica, para garantir excelencia em seu trabalho.
+Ama leitura  e conhecimentos gerais sobre culinária asiática. Em suas horas livres ele gosta de viajar em família, e praticar pescaria com seu filho.
+
+Henrique é um garçom de 19 anos, recém contratado e está sempre atualizado na tecnologia, pois acredita que assim pode garantir um trabalho mais eficiente. Ele estuda música e artes cênicas , pois é a sua paixão se expressar através da arte.
+
+Angêla é uma advogada de 44 anos de renome em seu estado, casada e sem filhos. Sua vida é muita agitada e corrida , quase não sobre tempo para fazer uma alimentação saudável, sendo assim ela tem um carinho especial por delivery e restaurantes com trabalho rapido e eficiente. Seus hobby é leitura, mas ama também viajar com seu marido e colecionar itens de todos os lugares por onde já passou.
+
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
@@ -26,10 +34,20 @@ Lembre-se que você deve ser enumerar e descrever precisamente e personalizada t
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|EU COMO... `PERSONA`|        QUERO/PRECISO ... `FUNCIONALIDADE`                                          |                                    PARA ... `MOTIVO/VALOR`                               |
+|--------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+|Proprietário        | Criar, alterar e editar cadstro de fucioários                                      |Manter os registros atualizados                                                           |
+|Proprietário        | Criar, editar e vizualizar cardápio do restaurante                                 |Manter os pratos disponíveis atualizados                                                  |
+|Proprietário        | Editar reservas e vizualizar mesas                                                 |Manter controle de reserva e lotação                                                      |
+|Cozinheiro          | Vizualizar pedidos em tempo real                                                   |Para uma coordenação de equipe eficaz entre a cozinha e atendimento ao cliente            |
+|Cozinheiro          | Vizualizar e alterar estoque                                                       |Para garantir disponibilidade de ingredientes                                             |
+|Garçom              | Receber notificações de novos pedidos e atualizações sobre status dos pedidos      |Para atender rapidamente os pedidos                                                       |
+|Cliente             | Realizar pedido por delivery ou no restaurante                                     |Para ter mais comodidade e facilidade na escolha                                          |
+|Cliente             | Vizualizar e alterar itens do pedido                                               |Escolher facilmente o que pedir e planejar o meu orçamento                                | 
+|Cliente             | Reservar de mesas                                                                  |Para garantir que tenha um lugar no restaurante, especialmente em dias movimento          |
+
+
+
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
