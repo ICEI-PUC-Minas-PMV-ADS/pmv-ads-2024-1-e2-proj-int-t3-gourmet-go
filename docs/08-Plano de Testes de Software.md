@@ -1,9 +1,9 @@
 # Plano de Testes de Software
 
-    • Os requisitos para realização dos testes de software são
-Verificar o correto funcionamento das principais funcionalidades do aplicativo.
-    • Garantir a segurança e usabilidade do sistema.
-    • Assegurar a compatibilidade com diferentes dispositivos e navegadores.
+    Os requisitos para realização dos testes de software são:
+    Verificar o correto funcionamento das principais funcionalidades do aplicativo.
+    Garantir a segurança e usabilidade do sistema.
+    Assegurar a compatibilidade com diferentes dispositivos e navegadores.
 
 Este plano de teste tem como objetivo garantir a qualidade e funcionalidade do aplicativo de restaurante delivery, (Gourmet GO) abordando os requisitos funcionais e não funcionais estabelecidos.
 
