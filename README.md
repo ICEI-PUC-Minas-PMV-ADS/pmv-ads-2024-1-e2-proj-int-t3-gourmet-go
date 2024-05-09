@@ -49,8 +49,7 @@ O Gourmet Go visa oferecer ferramentas que permitam o gerenciamento dos pedidos 
 
 # Código
 
-> [!NOTE]
-> <li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="src"> Código Fonte</a></li>
 
 # Apresentação
 
