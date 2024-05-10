@@ -1,18 +1,21 @@
 # Especificações do Projeto
 
-> [!NOTE]
-> - <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-> - Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-> - Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
 ## Personas
 
+![m1 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/116202867/c0b9d9a2-356d-425f-8bf5-f213591c3f23)
+
 Sofia é uma empreendedora de 39 anos, apaixonada por gastronomia, que possui um restaurante familiar em um bairro tradicional de São Paulo. Ela busca meios de trazer popularidade e um gerenciamento mais dinâmico para seu restaurante. Atingindo assim um público maior para dar continuidade ao legado da família. Seus hobbies favoritos são cozinhar e viajar, ela também ama compartilhar suas trajetórias em suas redes sociais.
+
+![h1 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/116202867/6591b21a-f304-4907-b3cb-880455b03b01)
 
 Carlos Alberto é um cozinheiro de 28 anos em ascensão, é casado e tem um filho de 3 anos. Tem por objetivo de vida levar alegria e conforto através de seus pratos, sempre busca conehcimento e estuda todos os seus pratos de forma metódica, para garantir excelencia em seu trabalho.
 Ama leitura  e conhecimentos gerais sobre culinária asiática. Em suas horas livres ele gosta de viajar em família, e praticar pescaria com seu filho.
 
+![h2 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/116202867/0d6e5e59-8369-48cd-85b5-c213fed0a48d)
+
 Henrique é um garçom de 19 anos, recém contratado e está sempre atualizado na tecnologia, pois acredita que assim pode garantir um trabalho mais eficiente. Ele estuda música e artes cênicas , pois é a sua paixão se expressar através da arte.
+
+![m2 (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/116202867/dba0705c-9bc6-4bac-8d82-00e7a4af5173)
 
 Angêla é uma advogada de 44 anos de renome em seu estado, casada e sem filhos. Sua vida é muita agitada e corrida , quase não sobre tempo para fazer uma alimentação saudável, sendo assim ela tem um carinho especial por delivery e restaurantes com trabalho rapido e eficiente. Seus hobby é leitura, mas ama também viajar com seu marido e colecionar itens de todos os lugares por onde já passou.
 
