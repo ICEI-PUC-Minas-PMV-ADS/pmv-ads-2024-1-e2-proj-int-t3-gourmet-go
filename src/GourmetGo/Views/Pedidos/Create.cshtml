@@ -5,9 +5,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Fazer pedido</h1>
 
-<h4>Pedido</h4>
+<h4>Preencher dados:</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,8 +18,8 @@
                 <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Produto.Nome" class="control-label"></label>
-                <select asp-for="Produto.Nome" class ="form-control" asp-items="ViewBag.ProdutoId"></select>
+                <label asp-for="ProdutoId" class="control-label"></label>
+                <select asp-for="ProdutoId" class ="form-control" asp-items="ViewBag.ProdutoId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Observações" class="control-label"></label>

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GourmetGo.Models
 {
+    [Table("Pedidos")]
     public class Pedido
     {
         [Key]
@@ -16,7 +17,7 @@ namespace GourmetGo.Models
 
 
 
-        [Display(Name = "Produto:")]
+        [Display(Name = "Produto")]
         [Required(ErrorMessage = "Obrigatório informar o Produto que deseja!")]
         public int ProdutoId { get; set; }
         [ForeignKey("ProdutoId")]
@@ -26,7 +27,7 @@ namespace GourmetGo.Models
         public string Observações { get; set; }
 
 
-        [Display(Name = "Pedido")]
+        [Display(Name = "Recebimento")]
         [Required(ErrorMessage = "Obrigatório informar o como deseja receber seu pedido!")]
         public TipoDeEntrega Tipo { get; set; }
 

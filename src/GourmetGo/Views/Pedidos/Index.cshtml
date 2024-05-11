@@ -4,16 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Lista de Pedidos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Fazer novo pedido</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Usuario)
+                @Html.DisplayNameFor(model => model.Usuario.Nome)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Produto)

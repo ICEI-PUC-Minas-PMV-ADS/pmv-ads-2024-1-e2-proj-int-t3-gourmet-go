@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
 <h4>Pedido</h4>
 <hr />
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="UsuarioId" class="control-label"></label>
+                <label asp-for="UsuarioId" class="control-label">Usuário</label>
                 <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
                 <span asp-validation-for="UsuarioId" class="text-danger"></span>
             </div>
