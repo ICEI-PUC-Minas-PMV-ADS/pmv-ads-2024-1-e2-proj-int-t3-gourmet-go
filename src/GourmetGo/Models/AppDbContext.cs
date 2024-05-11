@@ -10,5 +10,7 @@ namespace GourmetGo.Models
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Pedido> Pedidos { get; set; }
+
     }
 }
