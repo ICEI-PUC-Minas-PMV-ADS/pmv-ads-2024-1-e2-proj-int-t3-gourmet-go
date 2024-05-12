@@ -6,13 +6,40 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 | **Caso de Teste** 	| **CT-01 – Cadastrar perfil** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
+|	**Requisito Associado**| RF-01 - A aplicação deve permitir aos usuários (cliente e restaurante) cadastrar, visualizar, editar e excluir uma conta de acesso ao sistema.|
+|	                       | RF-02 - A aplicação deve permitir aos usuários (cliente e restaurante) realizar login/logout no sistema.                                      | 
+|                        | RF-03 - A aplicação deve permitir aos usuários (cliente e restaurante) recuperar sua senha de acesso ao sistema.|
+|                        | RF-04 - A aplicação deve permitir ao usuário (restaurante) cadastrar, visualizar, editar e excluir produtos do cardápio.|
+|                        | RF-05 - A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.|
 |Registro de evidência | www.teste.com.br/drive/ct-01 |
 
-| **Caso de Teste** 	| **CT-02 – Realizar login** 	|
+
+| **Caso de Teste** 	|**CT-02– Visualização das informações do restaurante** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
+|                       |RF-01 - A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.|
+|**Requisito Associado**|RF-02 - A aplicação deve informar ao usuário (cliente) se o restaurante se encontra aberto ou fechado.| 
+|                       | 
 |Registro de evidência | www.teste.com.br/drive/ct-02 |
+
+
+
+| **Caso de Teste** 	|**CT-03– Escolha de seus itens e finalização** 	|
+|:---:	|:---:	|
+|**Requisitos Associados**|RF-01 - A aplicação deve permitir ao usuário (cliente) adicionar, visualizar, editar e excluir itens à sacola.|
+|                         |RF-02 - A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.|
+|                         |RF-03 - A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.|
+|                         |RF-04 - A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.|
+|                         |RF-05 - A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.|
+|Registro de evidência | www.teste.com.br/drive/ct-02 |
+
+
+| **Caso de Teste** 	|**CT-04– Visualização do status do pedido** 	|
+|:---:	|:---:	|
+|**Requisitos Associados**|RF-01 - A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).
+|                         |RF-02 - A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.
+|Registro de evidência | www.teste.com.br/drive/ct-02 |
+
+
 
 ## Avaliação
 
