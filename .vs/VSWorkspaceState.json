@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\GourmetGo",
+    "\\src\\GourmetGo\\Views",
+    "\\src\\GourmetGo\\Views\\Endereco"
   ],
-  "SelectedNode": "\\src\\GourmetGo.sln",
+  "SelectedNode": "\\src\\GourmetGo\\Views\\Endereco\\Delete.cshtml",
   "PreviewInSolutionExplorer": false
 }
