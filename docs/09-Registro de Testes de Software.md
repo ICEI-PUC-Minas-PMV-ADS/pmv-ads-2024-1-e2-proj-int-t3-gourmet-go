@@ -13,15 +13,17 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                        | RF-05 - A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.|
 |Registro de evidência | [www.teste.com.br/drive/ct-01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
 
+![usuario](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/login.png)
+
 
 | **Caso de Teste** 	|**CT-02– Visualização das informações do restaurante** 	|
 |:---:	|:---:	|
 |                       |RF-01 - A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.|
 |**Requisito Associado**|RF-02 - A aplicação deve informar ao usuário (cliente) se o restaurante se encontra aberto ou fechado.| 
 |                       | 
-|Registro de evidência | [www.teste.com.br/drive/ct-02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Produtos) |
+|Registro de evidência | (https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
 
-
+![Restaurante](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/Restaurante.png)
 
 | **Caso de Teste** 	|**CT-03– Escolha de seus itens e finalização** 	|
 |:---:	|:---:	|
@@ -32,6 +34,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                         |RF-05 - A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.|
 |Registro de evidência | [www.teste.com.br/drive/ct-02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
 
+![pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/pedido.png)
 
 | **Caso de Teste** 	|**CT-04– Visualização do status do pedido** 	|
 |:---:	|:---:	|
@@ -39,6 +42,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                         |RF-02 - A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.
 |Registro de evidência | [www.teste.com.br/drive/ct-02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
 
+![status](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/status.png)
 
 
 ## Avaliação
