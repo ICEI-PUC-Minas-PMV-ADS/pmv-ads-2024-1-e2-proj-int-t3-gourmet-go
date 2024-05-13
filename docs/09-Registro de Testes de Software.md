@@ -21,7 +21,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                       |RF-01 - A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.|
 |**Requisito Associado**|RF-02 - A aplicação deve informar ao usuário (cliente) se o restaurante se encontra aberto ou fechado.| 
 |                       | 
-|Registro de evidência |[Usuario] (https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
+|Registro de evidência |[Usuario](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
 
 ![Restaurante](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/Restaurante.png)
 
