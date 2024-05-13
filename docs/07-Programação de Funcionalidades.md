@@ -4,17 +4,17 @@
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
 |RF-001|	A aplicação deve permitir aos usuários (cliente e restaurante) cadastrar, visualizar, editar e excluir uma conta de acesso ao sistema.	| [Usuarios/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
-|RF-002|	A aplicação deve permitir aos usuários (cliente e restaurante) realizar login/logout no sistema.	| - |
-|RF-003|	A aplicação deve permitir aos usuários (cliente e restaurante) recuperar sua senha de acesso ao sistema.	| - |
+|RF-002|	A aplicação deve permitir aos usuários (cliente e restaurante) realizar login/logout no sistema.	| [Usuarios/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
+|RF-003|	A aplicação deve permitir aos usuários (cliente e restaurante) recuperar sua senha de acesso ao sistema.	| [Usuarios/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
 |RF-004|	A aplicação deve permitir ao usuário (restaurante) cadastrar, visualizar, editar e excluir produtos do cardápio.	| [Produtos/Index.shtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Produtos) |
-|RF-005|	A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.	| - |
-|RF-006|	A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.	| - |
-|RF-007|	A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado.	| - |
+|RF-005|	A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.	| [Usuarios/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
+|RF-006|	A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.	| [Produtos/Index.shtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Produtos) |
+|RF-007|	A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado.	| home |
 |RF-008|	A aplicação deve permitir ao usuário (cliente) adicionar, visualizar, editar e excluir itens à sacola.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
-|RF-009|	A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.	| - |
-|RF-010|	A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.	| - |
-|RF-011|	A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.	| - |
-|RF-012|	A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.	| - |
-|RF-013|	A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos.	| - |
-|RF-014|	A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).	| - |
-|RF-015|	A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.	| - |
+|RF-009|	A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.	| home |
+|RF-010|	A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|RF-011|	A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|RF-012|	A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|RF-013|	A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|RF-014|	A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|RF-015|	A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
