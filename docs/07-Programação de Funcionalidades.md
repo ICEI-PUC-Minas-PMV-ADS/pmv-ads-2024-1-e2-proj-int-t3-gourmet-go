@@ -10,7 +10,7 @@
 |RF-005|	A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.	| - |
 |RF-006|	A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.	| - |
 |RF-007|	A aplicação deve informar ao usuário (cliente) se o restaurante encontra-se aberto ou fechado.	| - |
-|RF-008|	A aplicação deve permitir ao usuário (cliente) adicionar, visualizar, editar e excluir itens à sacola.	| - |
+|RF-008|	A aplicação deve permitir ao usuário (cliente) adicionar, visualizar, editar e excluir itens à sacola.	| [Pedidos/Index.cshtml](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
 |RF-009|	A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.	| - |
 |RF-010|	A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.	| - |
 |RF-011|	A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.	| - |
