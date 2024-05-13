@@ -26,6 +26,8 @@ namespace GourmetGo.Models
         public string Senha { get; set; }
 
         public Tipo Tipo { get; set; }
+
+        public ICollection<Pedido> Pedidos { get; set; }
     }
 
     public enum Tipo

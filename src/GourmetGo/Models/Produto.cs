@@ -22,6 +22,8 @@ namespace GourmetGo.Models
 
         [Required(ErrorMessage = "Obrigatório informar a categoria!")]
         public Categoria Categoria { get; set; }
+
+        public ICollection<Pedido> Pedidos { get; set; }
     }
 
     public enum Categoria
