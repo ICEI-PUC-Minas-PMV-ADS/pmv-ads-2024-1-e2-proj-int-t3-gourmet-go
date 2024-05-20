@@ -32,5 +32,5 @@ Este projeto foi elaborado utilizando a ferramenta MySQL Workbench.
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A aplicação e o banco de dados serão hospedados na plataforma Microsoft Azure. O site estará disponível através do endereço: https://gourmetgo.azurewebsites.net
 
