@@ -42,10 +42,11 @@ body {
   flex-direction: column;
 }
 .login-link{
+  margin: 10px;
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   
 }
 .container-fluid {
