@@ -33,6 +33,19 @@ app.MapControllerRoute(
     defaults: new { controller = "Cliente", action = "Index" });
 
 app.MapControllerRoute(
+    name: "cardapio",
+    pattern: "cliente/cardapio",
+    defaults: new { controller = "Cliente", action = "Cardapio" });
+app.MapControllerRoute(
+    name: "pedidos",
+    pattern: "cliente/pedidos",
+    defaults: new { controller = "Cliente", action = "Pedidos" });
+app.MapControllerRoute(
+    name: "configuracoes",
+    pattern: "cliente/configuracoes",
+    defaults: new { controller = "Cliente", action = "Configuracoes" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

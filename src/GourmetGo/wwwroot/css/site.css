@@ -83,3 +83,28 @@ label {
   font-size: 16px;
   border: 1px solid #ccc;
 }
+
+.icons{
+  width: 60px;
+  margin-right: 10px;
+}
+.menu-option{
+  font-size: 36px;
+  color: #258e86;  
+}
+.menu-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;  
+}
+.menu-btn:hover {
+  background-color: lightgray;
+  cursor: pointer; 
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
