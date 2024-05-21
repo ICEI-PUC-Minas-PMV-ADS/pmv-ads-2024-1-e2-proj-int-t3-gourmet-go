@@ -17,6 +17,95 @@ html {
   min-height: 100%;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./galey.ttf') format('truetype');
+}
 body {
-  margin-bottom: 60px;
+  background: rgb(0,169,115);
+  background: linear-gradient(180deg, rgba(0,169,115,1) 0%, rgba(0,28,19,1) 80%, rgba(2,17,14,1) 100%);
+  margin: 0 auto;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.login{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  
+}
+.logo{
+  width: 300px;
+  margin-bottom: 40px;
+}
+.login-buttons{
+  display: flex;
+  flex-direction: column;
+}
+.login-link{
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  
+}
+.container-fluid {
+  padding: 0;
+}
+
+.row {
+  height: 100%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.icons{
+  width: 60px;
+  margin-right: 10px;
+}
+.menu-option{
+  font-size: 36px;
+  color: #258e86;  
+}
+.menu-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;  
+}
+.menu-btn:hover {
+  background-color: lightgray;
+  cursor: pointer; 
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
