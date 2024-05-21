@@ -8,7 +8,8 @@ namespace GourmetGo.Models
     public class Produto
     {
         [Key]
-        public int Id { get; set; }
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+public int Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o nome!")]
         public string Nome { get; set; }

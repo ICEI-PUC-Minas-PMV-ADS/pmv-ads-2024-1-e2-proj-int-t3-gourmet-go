@@ -62,23 +62,56 @@ namespace GourmetGo.Controllers
             return View(dados);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, Produto produto)
-        {
-            if (id != produto.Id)
-                return NotFound();
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Preco,Categoria,Imagem")] Produto produto, [FromForm] IFormFile novaImagem)
+{
+  
+    if (id != produto.Id)
+    {
+        return NotFound();
+    }
 
-            if (ModelState.IsValid)
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            // Verifica se uma nova imagem foi fornecida
+            if (novaImagem != null && novaImagem.Length > 0)
             {
-                _context.Produtos.Update(produto);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                using (var memoryStream = new MemoryStream())
+                {
+                    await novaImagem.CopyToAsync(memoryStream);
+                    produto.Imagem = memoryStream.ToArray();
+                }
             }
 
-            return View(produto);
+            // Atualiza o estado da entidade
+            _context.Update(produto);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!ProdutoExists(produto.Id))
+            {
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
+    }
+    return View(produto);
+}
 
-        public async Task<IActionResult> Details(int? id)
+    private bool ProdutoExists(int id)
+    {
+      throw new NotImplementedException();
+    }
+
+    public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
                 return NotFound();
