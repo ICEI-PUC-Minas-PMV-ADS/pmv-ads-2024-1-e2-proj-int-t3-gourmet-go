@@ -1,0 +1,51 @@
+  .container {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    .card {
+        background-color: #073642;
+        border: none;
+        color: #ffffff;
+    }
+
+    .card-title, .card-text {
+        color: #ffffff;
+    }
+    
+    .menu-icons img {
+        background-color: #ffffff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .menu-content {
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .btn img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .row.no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .col-md-4,
+    .col-md-8 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .card-img {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }

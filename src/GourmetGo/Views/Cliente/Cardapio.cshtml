@@ -1,7 +1,56 @@
+@model List<GourmetGo.Models.Produto>
+
 @{
     ViewData["Title"] = "Cliente/Cardapio";
 }
 
-<div>
-  <h1>Cardapio Aqui</h1>
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <img src="~/images/minor-logo.png" alt="GG Logo" class="img-fluid" width="100">
+    </div>
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Bebidas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Pratos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/cliente/pedidos">Pedidos</a>
+        </li>
+    </ul>
+    <div class="menu-content">
+        <div class="row">
+            @foreach (var produto in Model)
+            {
+                <div class="col-md-6 col-lg-12 d-flex align-items-stretch">
+                    <div class="card mb-4 shadow-sm" style="width: 100%;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                @if (produto.Imagem != null)
+                                {
+                                    <img src="data:image;base64,@Convert.ToBase64String(produto.Imagem)" class="card-img" alt="Imagem do Produto" style="height: 100%; object-fit: cover;">
+                                }
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">@produto.Nome</h5>
+                                    <p class="card-text">@produto.Descricao</p>
+                                    <p class="card-text">@produto.Preco.ToString("C")</p>
+                                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                                        <button class="menu-icons btn"><img src="~/images/minus-icon.png" alt="diminuirQnt"></button>
+                                        <span>1</span>
+                                        <button class="menu-icons btn"><img src="~/images/plus-icon.png" alt="aumentarQnt"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-primary">Voltar</a>
+    </div>
 </div>
