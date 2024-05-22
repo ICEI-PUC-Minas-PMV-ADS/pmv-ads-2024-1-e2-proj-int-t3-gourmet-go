@@ -5,21 +5,21 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Fazer pedido</h1>
+<h1 class="text-light">Fazer pedido</h1>
 
-<h4>Preencher dados:</h4>
+<h4 class="text-light">Preencher dados:</h4>
 <hr />
-<div class="row">
+<div class="row text-light">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UsuarioId" class="control-label"></label>
-                <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ProdutoId" class="control-label"></label>
-                <select asp-for="ProdutoId" class ="form-control" asp-items="ViewBag.ProdutoId"></select>
+                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Observações" class="control-label"></label>
@@ -28,7 +28,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Tipo" class="control-label">Como deseja receber seu pedido? </label>
-                <select asp-for="Tipo" class="form-control" asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"></select>
+                <select asp-for="Tipo" class="form-control"
+                    asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"></select>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,12 +39,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Pagamento" class="control-label">Selecione a forma de pagamento:</label>
-                <select asp-for="Pagamento" class="form-control" asp-items="Html.GetEnumSelectList<FormaDePagamento>()"></select>
+                <select asp-for="Pagamento" class="form-control"
+                    asp-items="Html.GetEnumSelectList<FormaDePagamento>()"></select>
                 <span asp-validation-for="Pagamento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
+                <select asp-for="Status" class="form-control"
+                    asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group mt-3">
@@ -55,5 +58,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

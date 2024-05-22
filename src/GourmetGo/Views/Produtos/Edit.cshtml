@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Editar produto</h1>
+<h1 class="text-light">Editar produto</h1>
 
-<div class="row">
+<div class="row text-light">
     <div class="col-md-4">
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -36,16 +36,18 @@
                 <label class="control-label">Imagem atual</label>
                 @if (Model.Imagem != null)
                 {
-                    <img src="data:image;base64,@Convert.ToBase64String(Model.Imagem)" alt="Imagem do Produto" class="img-fluid" style="max-width: 100px; max-height: 100px;" />
+                    <img src="data:image;base64,@Convert.ToBase64String(Model.Imagem)" alt="Imagem do Produto"
+                        class="img-fluid" style="max-width: 100px; max-height: 100px;" />
                 }
                 <br />
                 <div class="form-group">
-    <label class="control-label">Nova imagem</label>
-    <input type="file" id="nova-imagem" name="Imagem" class="form-control-file" onchange="previewImagem()" />
-    <span asp-validation-for="Imagem" class="text-danger"></span>
-    <br>
-    <img id="preview-imagem" class="img-fluid" style="max-width: 100px; max-height: 100px;" />
-</div>
+                    <label class="control-label">Nova imagem</label>
+                    <input type="file" id="nova-imagem" name="Imagem" class="form-control-file"
+                        onchange="previewImagem()" />
+                    <span asp-validation-for="Imagem" class="text-danger"></span>
+                    <br>
+                    <img id="preview-imagem" class="img-fluid" style="max-width: 100px; max-height: 100px;" />
+                </div>
 
             </div>
             <br />
@@ -58,23 +60,25 @@
 </div>
 
 @section Scripts {
-  <script>
-    function previewImagem() {
-        var preview = document.querySelector('#preview-imagem');
-        var file = document.querySelector('#nova-imagem').files[0];
-        var reader = new FileReader();
+    <script>
+        function previewImagem() {
+            var preview = document.querySelector('#preview-imagem');
+            var file = document.querySelector('#nova-imagem').files[0];
+            var reader = new FileReader();
 
-        reader.onloadend = function () {
-            preview.src = reader.result;
-        }
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
 
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-            preview.src = "";
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
         }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-</script>
-
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
