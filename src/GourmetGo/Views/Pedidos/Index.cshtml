@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Lista de Pedidos</h1>
+<h1 class="text-light">Lista de Pedidos</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-success">Fazer novo pedido</a>
 </p>
-<table class="table">
+<table class="table text-light">
     <thead>
         <tr>
             <th>
@@ -40,38 +40,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto.Nome)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Produto.Preco)
                 </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observações)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereço)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pagamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observações)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereço)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pagamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Ver detalhes</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Excluir</a>
                 </td>
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>
