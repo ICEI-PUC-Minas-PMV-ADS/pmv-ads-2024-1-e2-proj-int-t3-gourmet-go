@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Lista de produtos</h1>
+<h1 class="text-light">Lista de produtos</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-success">Adicionar produto</a>
 </p>
-<table class="table">
+<table class="table text-light">
     <thead>
         <tr>
             <th>
@@ -28,7 +28,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-light-emphasis">
 @foreach (var item in Model) {
         <tr>
             <td>

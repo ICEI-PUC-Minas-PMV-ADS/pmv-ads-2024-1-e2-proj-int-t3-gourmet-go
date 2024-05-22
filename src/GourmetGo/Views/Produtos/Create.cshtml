@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Adicionar produto</h1>
+<h1 class="text-light">Adicionar produto</h1>
 
 <div class="row">
     <div class="col-md-4">
@@ -27,7 +27,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
-                <select asp-for="Categoria" class="form-control" asp-items="Html.GetEnumSelectList<Categoria>()"></select>
+                <select asp-for="Categoria" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Categoria>()"></select>
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <!-- Adicione o campo de upload de imagem -->
@@ -46,5 +47,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
