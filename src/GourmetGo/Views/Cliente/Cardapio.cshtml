@@ -1,7 +1,78 @@
-@{
-    ViewData["Title"] = "Cliente/Cardapio";
-}
-
-<div>
-  <h1>Cardapio Aqui</h1>
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <img src="~/images/minor-logo.png" alt="GG Logo" class="img-fluid" width="150">
+    </div>
+    <ul class="nav-cardapio nav nav-tabs justify-content-center">
+        <li class="nav-item">
+            <button class="nav-link" id="bebidasBtn" data-categoria="Bebida">Bebidas</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link active" id="pratosBtn" data-categoria="Comida">Pratos</button>
+        </li>
+    </ul>
+    <div class="menu-content">
+        <div class="row">
+            @foreach (var produto in Model)
+            {
+                <div class="col-12 d-flex align-items-stretch">
+    <div class="card mb-4 shadow-sm @(produto.Categoria == Categoria.Comida ? "comida" : "bebida hide-product")">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                @if (produto.Imagem != null)
+                {
+                    <img src="data:image;base64,@Convert.ToBase64String(produto.Imagem)" class="card-img" alt="Imagem do Produto" style="height: 100%; object-fit: cover;">
+                }
+            </div>
+            <div class="col-md-8">
+                <div class="card-body d-flex flex-column">
+                    <h4 class="card-title">@produto.Nome</h4>
+                    <p class="card-text">@produto.Descricao</p>
+                    <p class="card-text">@produto.Preco.ToString("C")</p>
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <button class="menu-icons btn"><img src="~/images/minus-icon.png" alt="diminuirQnt"></button>
+                        <span>1</span>
+                        <button class="menu-icons btn"><img src="~/images/plus-icon.png" alt="aumentarQnt"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+            }
+            <button class="btn btn-carrinho"><img class="img-fluid" src="~/images/carrinho.png" alt="carrinho"></button>
+        </div>
+    </div>
+    <div class="text-center mt-4">      
+        <a href="/" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById('pratosBtn').addEventListener('click', function() {        
+        document.getElementById('pratosBtn').classList.add('active');
+        document.getElementById('bebidasBtn').classList.remove('active');
+        mostrarItens('.comida', '.bebida');
+    });
+
+    document.getElementById('bebidasBtn').addEventListener('click', function() {       
+        document.getElementById('bebidasBtn').classList.add('active');
+        document.getElementById('pratosBtn').classList.remove('active');
+        mostrarItens('.bebida', '.comida');
+    });
+
+    function mostrarItens(mostrar, esconder) {
+        var mostrarItems = document.querySelectorAll(mostrar);
+        var esconderItems = document.querySelectorAll(esconder);
+
+        mostrarItems.forEach(function(item) {
+            item.classList.remove('hide-product');
+            item.classList.add('show-product');
+        });
+
+        esconderItems.forEach(function(item) {
+            item.classList.remove('show-product');
+            item.classList.add('hide-product');
+        });
+    }
+</script>
