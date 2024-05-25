@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GourmetGo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240525143051_M04-AddTableEstoque")]
+    [Migration("20240525185048_M04-AddTableEstoque")]
     partial class M04AddTableEstoque
     {
         /// <inheritdoc />
@@ -44,8 +44,8 @@ namespace GourmetGo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Preço")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(3,2)");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");

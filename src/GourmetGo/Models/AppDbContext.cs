@@ -19,7 +19,7 @@ namespace GourmetGo.Models
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Estoque>()
-                .Property(e => e.Preço)
+                .Property(e => e.Preco)
                 .HasColumnType("decimal(3,2)");
         }
     }

@@ -31,8 +31,6 @@ namespace GourmetGo.Controllers
         {
             if (ModelState.IsValid)
             {
-                string precoFormatado = estoque.Preço.ToString("0.00", CultureInfo.InvariantCulture);
-                estoque.Preço = Convert.ToDecimal(precoFormatado, CultureInfo.InvariantCulture);
                 _context.Estoque.Add(estoque);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

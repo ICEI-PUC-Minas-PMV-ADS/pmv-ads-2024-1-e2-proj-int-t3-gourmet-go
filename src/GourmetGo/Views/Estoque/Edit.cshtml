@@ -24,9 +24,9 @@
                 <span asp-validation-for="Quantidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Preço" class="control-label"></label>
-                <input asp-for="Preço" class="form-control" />
-                <span asp-validation-for="Preço" class="text-danger"></span>
+                <label asp-for="Preco" class="control-label"></label>
+                <input asp-for="Preco" class="form-control" type="text" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataEntrada" class="control-label"></label>
@@ -35,7 +35,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
-                <input asp-for="Categoria" class="form-control" />
+                <select asp-for="Categoria" class="form-control"
+                  asp-items="Html.GetEnumSelectList<Categoria>()"></select>
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">

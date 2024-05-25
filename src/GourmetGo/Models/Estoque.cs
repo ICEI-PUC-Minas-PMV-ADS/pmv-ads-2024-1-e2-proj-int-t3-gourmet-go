@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GourmetGo.Models
 {
@@ -14,7 +15,9 @@ namespace GourmetGo.Models
         public int Quantidade { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o preço por unidade")]
-        public decimal Preço { get; set; }
+        [Range(0, 99999.99)]
+        [Column(TypeName = "decimal(7,2)")]
+        public decimal Preco { get; set; }
 
         [Display(Name = "Data de entrada")]
         [Required(ErrorMessage = "Obrigatório informar a data de entrada")]
@@ -22,7 +25,7 @@ namespace GourmetGo.Models
         public DateTime DataEntrada { get; set; }
 
         [Required(ErrorMessage = "Obrigatório escolher a categoria")]
-        public string Categoria { get; set; }
+        public Categoria Categoria { get; set; }
 
     }
 

@@ -19,7 +19,7 @@ namespace GourmetGo.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Preco = table.Column<float>(type: "real", nullable: false),
+                    Preco = table.Column<decimal>(type: "decimal(7,2)", nullable: false),
                     DataEntrada = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Categoria = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
