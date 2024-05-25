@@ -12,5 +12,15 @@ namespace GourmetGo.Models
 
         public DbSet<Pedido> Pedidos { get; set; }
 
+        public DbSet<Estoque> Estoque { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Estoque>()
+                .Property(e => e.Preço)
+                .HasColumnType("decimal(3,2)");
+        }
     }
 }

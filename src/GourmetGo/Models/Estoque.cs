@@ -7,7 +7,7 @@ namespace GourmetGo.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o nome")]
+        [Required(ErrorMessage = "Obrigatório informar o nome do alimento")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a quantidade")]
@@ -18,6 +18,7 @@ namespace GourmetGo.Models
 
         [Display(Name = "Data de entrada")]
         [Required(ErrorMessage = "Obrigatório informar a data de entrada")]
+        [DataType(DataType.Date)]
         public DateTime DataEntrada { get; set; }
 
         [Required(ErrorMessage = "Obrigatório escolher a categoria")]
