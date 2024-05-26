@@ -45,7 +45,7 @@ namespace GourmetGo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(3,2)");
+                        .HasColumnType("decimal(7,2)");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
