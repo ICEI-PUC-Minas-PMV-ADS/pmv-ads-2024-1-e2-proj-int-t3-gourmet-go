@@ -10,86 +10,47 @@
             <div class="col-md-6 col-lg-4">
                 <img class="logo" src="~/images/logo.png" alt="logo">
                 <div class="login">
-                  <form class="form-login">
-                      <div class="form-group">
-                          <label for="email">E-mail</label>
-                          <input type="email" id="email" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="senha">Senha</label>
-                          <input type="password" id="senha" class="form-control">
-                      </div>
-                      <nav class="login-buttons">
-                        <button type="submit" class="btn btn-primary">Fazer Login</button>
-                        <nav class="login-link">
-                          <a href="#" class="btn btn-link">Esqueci Minha Senha</a>
-                          <a asp-controller="Usuarios" asp-action="Cadastro" class="btn btn-link">Fazer Cadastro</a>
-                        </nav>
-                      </nav>
-                  </form>
+                    <form asp-action="Cadastro">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Cpf" class="control-label"></label>
+                            <input asp-for="Cpf" class="form-control" />
+                            <span asp-validation-for="Cpf" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Telefone" class="control-label"></label>
+                            <input asp-for="Telefone" class="form-control" />
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Senha" class="control-label"></label>
+                            <input asp-for="Senha" class="form-control" />
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tipo" class="control-label"></label>
+                            <select asp-for="Tipo" class="form-control" asp-items="Html.GetEnumSelectList<Tipo>()"></select>
+                            <span asp-validation-for="Tipo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@* 
-<h1 class="text-light">Cadastro</h1>
-
-<h4 class="text-light">Criar Usuário</h4>
-<hr />
-<div class="row text-light">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
-                <input asp-for="Cpf" class="form-control" />
-                <span asp-validation-for="Cpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tipo" class="control-label"></label>
-                <select asp-for="Tipo" class="form-control" asp-items="Html.GetEnumSelectList<Tipo>()"></select>
-                <span asp-validation-for="Tipo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div> *@
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
