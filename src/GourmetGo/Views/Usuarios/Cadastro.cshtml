@@ -4,13 +4,13 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<h1>Cadastro</h1>
+<h1 class="text-light">Cadastro</h1>
 
-<h4>Usuario</h4>
+<h4 class="text-light">Criar Usuário</h4>
 <hr />
-<div class="row">
+<div class="row text-light">
     <div class="col-md-4">
-        <form asp-action="Cadastro">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Tipo" class="control-label"></label>
-                <select asp-for="Tipo" class="form-control"></select>
+                <select asp-for="Tipo" class="form-control" asp-items="Html.GetEnumSelectList<Tipo>()"></select>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
             <div class="form-group">
