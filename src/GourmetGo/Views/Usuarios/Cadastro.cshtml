@@ -4,6 +4,35 @@
     ViewData["Title"] = "Cadastro";
 }
 
+<div class="text-center">
+  <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-md-6 col-lg-4">
+                <img class="logo" src="~/images/logo.png" alt="logo">
+                <div class="login">
+                  <form class="form-login">
+                      <div class="form-group">
+                          <label for="email">E-mail</label>
+                          <input type="email" id="email" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="senha">Senha</label>
+                          <input type="password" id="senha" class="form-control">
+                      </div>
+                      <nav class="login-buttons">
+                        <button type="submit" class="btn btn-primary">Fazer Login</button>
+                        <nav class="login-link">
+                          <a href="#" class="btn btn-link">Esqueci Minha Senha</a>
+                          <a asp-controller="Usuarios" asp-action="Cadastro" class="btn btn-link">Fazer Cadastro</a>
+                        </nav>
+                      </nav>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* 
 <h1 class="text-light">Cadastro</h1>
 
 <h4 class="text-light">Criar Usuário</h4>
@@ -47,11 +76,20 @@
             </div>
         </form>
     </div>
-</div>
+</div> *@
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
