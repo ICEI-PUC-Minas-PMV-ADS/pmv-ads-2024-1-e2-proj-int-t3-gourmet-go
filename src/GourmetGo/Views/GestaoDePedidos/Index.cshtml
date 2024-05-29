@@ -5,6 +5,7 @@
 }
 
 <h1 class="text-light">Gestão de Pedidos</h1>
+<h3 class="text-info">Alterar Status</h3>
 
 
 <table class="table table text-light">
@@ -59,8 +60,8 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                 <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                 <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
 
             </td>
         </tr>
