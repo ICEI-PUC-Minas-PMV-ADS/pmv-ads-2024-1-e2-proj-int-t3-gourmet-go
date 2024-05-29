@@ -23,6 +23,8 @@ namespace GourmetGo.Controllers
         {
             var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);
             return View(await appDbContext.ToListAsync());
+
+            
         }
 
         // GET: GestaoDePedidos/Details/5
@@ -41,6 +43,9 @@ namespace GourmetGo.Controllers
             {
                 return NotFound();
             }
+
+
+            ViewBag.Pedido = pedido;
 
             return View(pedido);
         }
@@ -105,5 +110,7 @@ namespace GourmetGo.Controllers
         {
             return _context.Pedidos.Any(e => e.Id == id);
         }
+
+       
     }
 }
