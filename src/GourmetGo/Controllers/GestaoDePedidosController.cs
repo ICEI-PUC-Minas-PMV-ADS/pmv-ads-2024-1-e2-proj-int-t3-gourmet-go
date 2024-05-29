@@ -45,7 +45,7 @@ namespace GourmetGo.Controllers
             }
 
 
-            ViewBag.Pedido = pedido;
+            
 
             return View(pedido);
         }
@@ -64,8 +64,9 @@ namespace GourmetGo.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Descricao", pedido.ProdutoId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Cpf", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            
             return View(pedido);
         }
 
@@ -101,8 +102,9 @@ namespace GourmetGo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Descricao", pedido.ProdutoId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Cpf", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewBag.pedido = pedido;
             return View(pedido);
         }
 
