@@ -4,23 +4,21 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Editar</h1>
-
-<h4>Pedido</h4>
+<h1>Editar pedido</h1>
 <hr />
 <div class="row">
     <dl>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 ms-2">
             @Html.DisplayNameFor(model => model.Usuario)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.Cpf)
+            @Html.DisplayFor(model => model.Usuario.Nome)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Produto)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Produto.Descricao)
+            @Html.DisplayFor(model => model.Produto.Nome)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Observações)
