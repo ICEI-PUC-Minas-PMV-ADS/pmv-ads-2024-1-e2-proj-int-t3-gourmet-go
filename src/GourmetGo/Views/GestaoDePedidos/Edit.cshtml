@@ -4,45 +4,51 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
 <h4>Pedido</h4>
 <hr />
 <div class="row">
+    <dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Cpf)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Observações)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Observações)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Endereço)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Endereço)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pagamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pagamento)
+        </dd>
+    </dl>
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="UsuarioId" class="control-label"></label>
-                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
-                <span asp-validation-for="UsuarioId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProdutoId" class="control-label"></label>
-                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
-                <span asp-validation-for="ProdutoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observações" class="control-label"></label>
-                <input asp-for="Observações" class="form-control" />
-                <span asp-validation-for="Observações" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tipo" class="control-label"></label>
-                <select asp-for="Tipo" class="form-control"></select>
-                <span asp-validation-for="Tipo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Endereço" class="control-label"></label>
-                <input asp-for="Endereço" class="form-control" />
-                <span asp-validation-for="Endereço" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pagamento" class="control-label"></label>
-                <select asp-for="Pagamento" class="form-control"></select>
-                <span asp-validation-for="Pagamento" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control"></select>
