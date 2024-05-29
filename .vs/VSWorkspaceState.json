@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\GourmetGo",
+    "\\src\\GourmetGo\\Models"
   ],
+  "SelectedNode": "\\src\\GourmetGo\\Models\\Usuario.cs",
   "PreviewInSolutionExplorer": false
 }
