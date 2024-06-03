@@ -159,5 +159,22 @@ namespace GourmetGo.Controllers
         {
             return _context.Usuarios.Any(e => e.Id == id);
         }
+
+        //esqueci senha
+
+        [HttpGet]
+        public IActionResult EsqueciSenha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SendPasswordResetLink(string username, string email)
+        {
+            TempData["Message"] = "Link de redefinição de senha enviado para seu E-mail.";
+            return RedirectToAction("Index", "Home");
+        }
+
+        //fim esqueci senha
     }
 }
