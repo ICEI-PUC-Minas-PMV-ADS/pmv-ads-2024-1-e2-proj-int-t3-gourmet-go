@@ -13,25 +13,64 @@ public class ClienteController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Cardapio(int id)
     {
-        return View();
-    }
+        var cliente = await _context.Usuarios.FindAsync(id);
+        if (cliente == null)
+        {
+            return NotFound();
+        }
 
-    public async Task<IActionResult> Cardapio()
-    {
-        // Obter todos os produtos do banco de dados
+        ViewBag.ClienteNome = cliente.Nome;
         List<Produto> produtos = await _context.Produtos.ToListAsync();
         return View(produtos);
     }
 
-    public IActionResult Pedidos()
+    public async Task<IActionResult> Pedidos(int id)
     {
-        return View();
+        var cliente = await _context.Usuarios.FindAsync(id);
+        if (cliente == null)
+        {
+            return NotFound();
+        }
+
+        ViewBag.ClienteNome = cliente.Nome;
+        
+        // Obtendo os pedidos do cliente
+        var pedidosDoCliente = await _context.Pedidos
+    .Include(p => p.Produto) // Incluindo os produtos relacionados
+    .Where(p => p.UsuarioId == id)
+    .ToListAsync();
+
+        return View(pedidosDoCliente);
     }
 
-    public IActionResult Configuracoes()
+    public async Task<IActionResult> Configuracoes(int id)
     {
-        return View();
+        var cliente = await _context.Usuarios.FindAsync(id);
+        if (cliente == null)
+        {
+            return NotFound();
+        }
+
+        ViewBag.ClienteNome = cliente.Nome;
+        return View(cliente);
+    }
+
+    public async Task<IActionResult> Index(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var cliente = await _context.Usuarios
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (cliente == null)
+        {
+            return NotFound();
+        }
+
+        return View(cliente);
     }
 }

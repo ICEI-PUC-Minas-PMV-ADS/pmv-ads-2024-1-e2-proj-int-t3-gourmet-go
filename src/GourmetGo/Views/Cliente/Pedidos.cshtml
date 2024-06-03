@@ -1,7 +1,36 @@
+@model List<GourmetGo.Models.Pedido>
+
 @{
     ViewData["Title"] = "Cliente/Pedidos";
 }
 
 <div>
-  <h1>Pedidos Aqui</h1>
+  <h1>Pedidos de @ViewBag.ClienteNome</h1>
+  <table>
+    <thead>
+        <tr>
+            <th>Número do Pedido</th>
+            <th>Produto</th>
+            <th>Observações</th>
+            <th>Tipo de Entrega</th>
+            <th>Endereço</th>
+            <th>Forma de Pagamento</th>
+            <th>Status do Pedido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <td>@pedido.Id</td>
+                <td>@pedido.Produto.Nome</td>
+                <td>@pedido.Observações</td>
+                <td>@pedido.Tipo</td>
+                <td>@pedido.Endereço</td>
+                <td>@pedido.Pagamento</td>
+                <td>@pedido.Status</td>
+            </tr>
+        }
+    </tbody>
+  </table>
 </div>

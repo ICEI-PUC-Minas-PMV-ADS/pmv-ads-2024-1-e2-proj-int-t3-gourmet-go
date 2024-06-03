@@ -1,36 +1,39 @@
+@model GourmetGo.Models.Usuario
+
 @{
     ViewData["Title"] = "Cliente";
 }
 
 <div class="text-center">
   <div class="container-fluid h-100">
-        <div class="row align-items-center justify-content-center h-100">
-            <div class="col-md-6 col-lg-4">
-                <img class="logo" src="~/images/logo.png" alt="logo">
-                <div class="login">
-                  <nav class="menu">
-                    <div class="menu-btn">
-                      <a href="cliente/cardapio">
-                        <img class="icons" src="~/images/cardapio.png" alt="cardapio">
-                        <span class="menu-option">Cardápio</span>
-                      </a>
-                    </div>
-                    <div class="menu-btn">
-                      <a href="cliente/pedidos">
-                        <img class="icons" src="~/images/pedidos.png" alt="cardapio">
-                        <span class="menu-option">Pedidos</span>
-                      </a>
-                    </div>
-                    <div class="menu-btn">
-                      <a href="cliente/configuracoes">
-                        <img class="icons" src="~/images/config.png" alt="cardapio">
-                        <span class="menu-option">Configurações</span>
-                      </a>                     
-                    </div>
-                    <a href="/">Fazer Logout</a>
-                  </nav>
+    <div class="row align-items-center justify-content-center h-100">
+        <div class="col-md-6 col-lg-4">
+            <img class="logo" src="~/images/logo.png" alt="logo">
+            <div class="login">
+              <nav class="menu">
+                  <h2>Bem Vindo, @Model.Nome</h2>
+                <div class="menu-btn">
+                  <a asp-controller="Cliente" asp-action="Cardapio" asp-route-id="@Model.Id">
+                    <img class="icons" src="~/images/cardapio.png" alt="cardapio">
+                    <span class="menu-option">Cardápio</span>
+                  </a>
                 </div>
+                <div class="menu-btn">
+                  <a asp-controller="Cliente" asp-action="Pedidos" asp-route-id="@Model.Id">
+                    <img class="icons" src="~/images/pedidos.png" alt="pedidos">
+                    <span class="menu-option">Pedidos</span>
+                  </a>
+                </div>
+                <div class="menu-btn">
+                  <a asp-controller="Cliente" asp-action="Configuracoes" asp-route-id="@Model.Id">
+                    <img class="icons" src="~/images/config.png" alt="configurações">
+                    <span class="menu-option">Configurações</span>
+                  </a>                     
+                </div>
+                <a href="/">Fazer Logout</a>
+              </nav>
             </div>
         </div>
     </div>
+  </div>
 </div>
