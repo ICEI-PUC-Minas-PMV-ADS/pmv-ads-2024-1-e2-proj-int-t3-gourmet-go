@@ -5,8 +5,71 @@
 }
 
 <div>
-    <h1 class="text-light">Pedidos de @ViewBag.ClienteNome</h1>
-    <table class="table text-light">
+    <div class="text-center">
+  <div class="container-fluid h-100">
+    <div class="row align-items-center justify-content-center h-100">
+        <div class="col-md-6 col-lg-7">
+            <img class="logo" src="~/images/logo.png" alt="logo">
+            <div class="container bg-light rounded-2">
+              <h3>Histórico de Pedidos</h3>
+                <div class="container">
+                     @foreach (var pedido in Model)
+                     {
+                        <div class="">
+                            <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p>
+                            <div class="pedido-card ">
+                            
+                                <div class="d-flex flex-row align-itens-center">
+                                    <p class="quantidade-texto text-start me-2">1x</p> @* //Quantidade *@
+                                    <p class="text-start">@pedido.Produto.Nome</p>
+                                </div>
+                                <p class="total mb-0">Total: R$52,00</p>
+                                
+                            </div>
+                        </div>
+                     }
+                </div>
+
+
+
+              
+        
+        </div>
+    </div>
+  </div>
+</div>
+
+<style>
+        .pedido-card {
+            background-color: #2F665A;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .total {
+            text-align: end;
+            font-size: 20px;
+        color: black;
+            
+        }
+        .voltar-button {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+        }
+
+        .data-horas-tamanho {
+            font-size: 13px;
+        }
+
+
+
+
+
+    </style>
+
+    @* <table class="table text-light">
         <thead>
             <tr>
                 <th>Número do Pedido</th>
@@ -32,5 +95,5 @@
                 </tr>
             }
         </tbody>
-    </table>
-</div>
+    </table> *@
+
