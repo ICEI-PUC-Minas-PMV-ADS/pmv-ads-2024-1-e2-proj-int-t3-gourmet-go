@@ -10,8 +10,8 @@
     <div class="row align-items-center justify-content-center h-100">
         <div class="col-md-6 col-lg-7">
             <img class="logo" src="~/images/logo.png" alt="logo">
-            <div class="container bg-light rounded-2">
-              <h3>Histórico de Pedidos</h3>
+            <div class=" container-rounded container bg-light">
+              <h3 class="fs-2">Histórico de Pedidos</h3>
                 <div class="container">
                      @foreach (var pedido in Model)
                      {
@@ -19,7 +19,7 @@
                             <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p>
                             <div class="pedido-card ">
                             
-                                <div class="d-flex flex-row align-itens-center">
+                                <div class="d-flex flex-row fs-5  align-itens-center">
                                     <p class="quantidade-texto text-start me-2">1x</p> @* //Quantidade *@
                                     <p class="text-start">@pedido.Produto.Nome</p>
                                 </div>
@@ -29,12 +29,9 @@
                         </div>
                      }
                 </div>
-
-
-
-              
-        
+                <button class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button>
         </div>
+        
     </div>
   </div>
 </div>
@@ -50,7 +47,6 @@
         .total {
             text-align: end;
             font-size: 20px;
-        color: black;
             
         }
         .voltar-button {
@@ -63,37 +59,18 @@
             font-size: 13px;
         }
 
+        .voltar-button {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+        }
+
+        .container-rounded {
+            border-radius: 20px;
+        }
+
 
 
 
 
     </style>
-
-    @* <table class="table text-light">
-        <thead>
-            <tr>
-                <th>Número do Pedido</th>
-                <th>Produto</th>
-                <th>Observações</th>
-                <th>Tipo de Entrega</th>
-                <th>Endereço</th>
-                <th>Forma de Pagamento</th>
-                <th>Status do Pedido</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var pedido in Model)
-            {
-                <tr>
-                    <td>@pedido.Id</td>
-                    <td>@pedido.Produto.Nome</td>
-                    <td>@pedido.Observações</td>
-                    <td>@pedido.Tipo</td>
-                    <td>@pedido.Endereço</td>
-                    <td>@pedido.Pagamento</td>
-                    <td>@pedido.Status</td>
-                </tr>
-            }
-        </tbody>
-    </table> *@
-
