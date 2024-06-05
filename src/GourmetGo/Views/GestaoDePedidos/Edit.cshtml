@@ -1,7 +1,7 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <h1 class="text-light">Alterar status</h1>
@@ -13,39 +13,32 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group  d-flex">
+            <div class="form-group d-flex">
                 <label asp-for="UsuarioId" class="control-label me-4"></label>
                 <select asp-for="UsuarioId" class="d-none form-control readonly" asp-items="ViewBag.UsuarioId"></select>
                 <div>@Html.DisplayFor(model => model.Usuario.Nome)</div>
                 <span asp-validation-for="UsuarioId" class="text-danger"></span>
             </div>
-            <div class="form-group  d-flex ">
-                <label asp-for="ProdutoId" class="control-label me-4"></label>
-                <select asp-for="ProdutoId" class="d-none form-control" asp-items="ViewBag.ProdutoId"></select>
-                <div>@Html.DisplayFor(model => model.Produto.Nome)</div>
-                <span asp-validation-for="ProdutoId" class="text-danger"></span>
+            <div class="form-group d-flex">
+                <label asp-for="PedidoProdutos" class="control-label me-4">Produtos:</label>
+                <div>
+                    @foreach (var produtoPedido in Model.PedidoProdutos)
+                    {
+                        <div>@produtoPedido.Produto.Nome</div>
+                    }
+                </div>
             </div>
-            <div class="form-group  d-flex">
+            <div class="form-group d-flex">
                 <label asp-for="Observações" class="control-label me-4"></label>
                 <input asp-for="Observações" class="form-control d-none" />
                 <div>@Html.DisplayFor(model => model.Observações)</div>
                 <span asp-validation-for="Observações" class="text-danger"></span>
             </div>
             <div class="form-group d-flex">
-                <label asp-for="Tipo" class="control-label  me-4"></label>
+                <label asp-for="Tipo" class="control-label me-4"></label>
                 <label asp-for="Tipo" asp-items="Html.GetEnumSelectList<TipoDeEntrega>()" class="form-control d-none"></label>
                 <div>@Html.DisplayFor(model => model.Tipo)</div>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
-            </div>
-            <div class="d-none form-group">
-                <label asp-for="Endereço" class="control-label"></label>
-                <input asp-for="Endereço" class="form-control" />
-                <span asp-validation-for="Endereço" class="text-danger"></span>
-            </div>
-            <div class=" d-none form-group">
-                <label asp-for="Pagamento" class="control-label"></label>
-                <select asp-for="Pagamento" asp-items="Html.GetEnumSelectList<FormaDePagamento>()" class=" form-control"></select>
-                <span asp-validation-for="Pagamento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
@@ -59,8 +52,6 @@
         </form>
     </div>
 </div>
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

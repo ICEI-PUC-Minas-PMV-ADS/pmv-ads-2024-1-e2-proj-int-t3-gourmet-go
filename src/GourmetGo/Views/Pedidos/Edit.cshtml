@@ -1,7 +1,7 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <h1 class="text-light">Editar</h1>
@@ -17,11 +17,6 @@
                 <label asp-for="UsuarioId" class="control-label">Usuário</label>
                 <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
                 <span asp-validation-for="UsuarioId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProdutoId" class="control-label"></label>
-                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
-                <span asp-validation-for="ProdutoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Observações" class="control-label"></label>
@@ -51,6 +46,39 @@
                     asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label>Produtos</label>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.PedidoProdutos.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <select asp-for="@Model.PedidoProdutos.ToList()[i].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                                    <span asp-validation-for="@Model.PedidoProdutos.ToList()[i].ProdutoId" class="text-danger"></span>
+                                </td>
+                                <td>
+                                    <input asp-for="@Model.PedidoProdutos.ToList()[i].Quantidade" class="form-control" />
+                                    <span asp-validation-for="@Model.PedidoProdutos.ToList()[i].Quantidade" class="text-danger"></span>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="#" class="btn btn-primary" onclick="addProduct()">Adicionar Produto</a>
+            </div>
+
             <div class="form-group mt-3">
                 <input type="submit" value="Salvar" class="btn btn-success" />
                 <a asp-action="Index" class="btn btn-secondary">Voltar</a>
@@ -59,9 +87,31 @@
     </div>
 </div>
 
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script type="text/javascript">
+        function addProduct() {
+            var row = `<tr>
+                <td>
+                    <select name="PedidoProdutos[${index}].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                </td>
+                <td>
+                    <input name="PedidoProdutos[${index}].Quantidade" class="form-control" />
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
+                </td>
+            </tr>`;
+            $('table tbody').append(row);
+            index++;
+        }
+
+        function removeProduct(element) {
+            $(element).closest('tr').remove();
+        }
+
+        var index = @Model.PedidoProdutos.Count;
+    </script>
 }

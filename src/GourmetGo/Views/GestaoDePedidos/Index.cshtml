@@ -7,7 +7,6 @@
 <h1 class="text-light">Gestão de Pedidos</h1>
 <h3 class="text-info">Alterar Status</h3>
 
-
 <table class="table table text-light">
     <thead class="fs-6 text-center">
         <tr class="fw-bolder">
@@ -15,7 +14,7 @@
                 @Html.DisplayNameFor(model => model.Usuario)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Produto)
+                Produtos
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Observações)
@@ -36,35 +35,38 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observações)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereço)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pagamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
-                 <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome)
+                </td>
+                <td>
+                    @foreach (var produtoPedido in item.PedidoProdutos)
+                    {
+                        <div>@produtoPedido.Produto.Nome</div>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observações)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereço)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pagamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

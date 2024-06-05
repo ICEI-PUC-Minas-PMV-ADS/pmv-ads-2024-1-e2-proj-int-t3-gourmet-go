@@ -1,7 +1,7 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
 <h1 class="text-light">Detalhes</h1>
@@ -10,51 +10,66 @@
     <h4>Pedido de @Html.DisplayFor(model => model.Usuario.Nome)</h4>
     <hr />
     <dl class="row">
-        <dt  class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Usuario.Nome)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Produto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Produto.Nome)
-        </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Observações)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Observações)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tipo)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Endereço)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Endereço)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Pagamento)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Pagamento)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Status)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
     </dl>
+    
+    <h4>Produtos</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PedidoProdutos)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Produto.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Quantidade)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
 <div>
     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a class="btn btn-secondary" asp-action="Index">Voltar ao ínicio</a>
+    <a class="btn btn-secondary" asp-action="Index">Voltar ao início</a>
 </div>

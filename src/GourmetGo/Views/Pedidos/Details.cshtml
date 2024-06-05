@@ -1,7 +1,7 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
 <h1 class="text-light">Detalhes</h1>
@@ -17,10 +17,15 @@
             @Html.DisplayFor(model => model.Usuario.Nome)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Produto)
+            Produtos
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Produto.Nome)
+            <ul>
+                @foreach (var item in Model.PedidoProdutos)
+                {
+                    <li>@item.Produto.Nome - Quantidade: @item.Quantidade</li>
+                }
+            </ul>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Observações)
@@ -55,6 +60,5 @@
     </dl>
 </div>
 <div class="form-group">
-    <input type="submit" value="Salvar" class="btn btn-success" />
     <a asp-action="Index" class="btn btn-secondary">Voltar</a>
 </div>

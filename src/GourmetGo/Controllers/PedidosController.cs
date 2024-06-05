@@ -21,7 +21,7 @@ namespace GourmetGo.Controllers
         // GET: Pedidos
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);
+            var appDbContext = _context.Pedidos.Include(p => p.Usuario).Include(p => p.PedidoProdutos).ThenInclude(pp => pp.Produto);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -34,8 +34,8 @@ namespace GourmetGo.Controllers
             }
 
             var pedido = await _context.Pedidos
-                .Include(p => p.Produto)
                 .Include(p => p.Usuario)
+                .Include(p => p.PedidoProdutos).ThenInclude(pp => pp.Produto)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pedido == null)
             {
@@ -48,26 +48,38 @@ namespace GourmetGo.Controllers
         // GET: Pedidos/Create
         public IActionResult Create()
         {
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome");
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             return View();
         }
 
         // POST: Pedidos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UsuarioId,ProdutoId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
+        public async Task<IActionResult> Create([Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido, int[] ProdutoIds, int[] Quantidades)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(pedido);
                 await _context.SaveChangesAsync();
+
+                for (int i = 0; i < ProdutoIds.Length; i++)
+                {
+                    var pedidoProduto = new PedidoProduto
+                    {
+                        PedidoId = pedido.Id,
+                        ProdutoId = ProdutoIds[i],
+                        Quantidade = Quantidades[i]
+                    };
+                    _context.PedidoProdutos.Add(pedidoProduto);
+                }
+
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
+
             ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             return View(pedido);
         }
 
@@ -79,22 +91,23 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
-            var pedido = await _context.Pedidos.FindAsync(id);
+            var pedido = await _context.Pedidos
+                .Include(p => p.PedidoProdutos)
+                .FirstOrDefaultAsync(p => p.Id == id);
             if (pedido == null)
             {
                 return NotFound();
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
+
             ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             return View(pedido);
         }
 
         // POST: Pedidos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,ProdutoId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido, int[] ProdutoIds, int[] Quantidades)
         {
             if (id != pedido.Id)
             {
@@ -106,6 +119,22 @@ namespace GourmetGo.Controllers
                 try
                 {
                     _context.Update(pedido);
+                    await _context.SaveChangesAsync();
+
+                    var existingPedidoProdutos = _context.PedidoProdutos.Where(pp => pp.PedidoId == id);
+                    _context.PedidoProdutos.RemoveRange(existingPedidoProdutos);
+
+                    for (int i = 0; i < ProdutoIds.Length; i++)
+                    {
+                        var pedidoProduto = new PedidoProduto
+                        {
+                            PedidoId = pedido.Id,
+                            ProdutoId = ProdutoIds[i],
+                            Quantidade = Quantidades[i]
+                        };
+                        _context.PedidoProdutos.Add(pedidoProduto);
+                    }
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -121,8 +150,9 @@ namespace GourmetGo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
+
             ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             return View(pedido);
         }
 
@@ -135,8 +165,8 @@ namespace GourmetGo.Controllers
             }
 
             var pedido = await _context.Pedidos
-                .Include(p => p.Produto)
                 .Include(p => p.Usuario)
+                .Include(p => p.PedidoProdutos).ThenInclude(pp => pp.Produto)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pedido == null)
             {
@@ -154,10 +184,12 @@ namespace GourmetGo.Controllers
             var pedido = await _context.Pedidos.FindAsync(id);
             if (pedido != null)
             {
-                _context.Pedidos.Remove(pedido);
-            }
+                var pedidoProdutos = _context.PedidoProdutos.Where(pp => pp.PedidoId == id);
+                _context.PedidoProdutos.RemoveRange(pedidoProdutos);
 
-            await _context.SaveChangesAsync();
+                _context.Pedidos.Remove(pedido);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToAction(nameof(Index));
         }
 

@@ -3,6 +3,7 @@ using GourmetGo.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ClienteController : Controller
 {
@@ -35,12 +36,13 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
-        
+
         // Obtendo os pedidos do cliente
         var pedidosDoCliente = await _context.Pedidos
-    .Include(p => p.Produto) // Incluindo os produtos relacionados
-    .Where(p => p.UsuarioId == id)
-    .ToListAsync();
+            .Include(p => p.PedidoProdutos)
+            .ThenInclude(pp => pp.Produto)
+            .Where(p => p.UsuarioId == id)
+            .ToListAsync();
 
         return View(pedidosDoCliente);
     }
