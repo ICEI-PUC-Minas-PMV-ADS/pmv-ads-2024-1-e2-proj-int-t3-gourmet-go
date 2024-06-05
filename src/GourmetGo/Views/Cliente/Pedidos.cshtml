@@ -6,71 +6,69 @@
 
 <div>
     <div class="text-center">
-  <div class="container-fluid h-100">
-    <div class="row align-items-center justify-content-center h-100">
-        <div class="col-md-6 col-lg-7">
-            <img class="logo" src="~/images/logo.png" alt="logo">
-            <div class=" container-rounded container bg-light">
-              <h3 class="fs-2">Histórico de Pedidos</h3>
-                <div class="container">
+        <div class="container-fluid h-100">
+            <div class="row align-items-center justify-content-center h-100">
+                <div class="col-md-6 col-lg-7">
+                    <img class="logo" src="~/images/logo.png" alt="logo">
+                    <div class=" container-rounded container bg-light">
+                        <h3 class="fs-2">Histórico de Pedidos</h3>
+                        <div class="container">
                             @foreach (var pedido in Model)
                             {
-                            <div class="">
-                                <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p> @* Horário *@
-                                <div class="pedido-card ">
+                                <div class="">
+                                    <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p> @* Horário *@
+                                    <div class="pedido-card ">
 
-                                    <div class="d-flex flex-row fs-5  align-itens-center">
-                                        <p class="quantidade-texto text-start me-2">1x</p> @* Quantidade *@
-                                        <p class="text-start">@pedido.Produto.Nome</p>
+                                        <div class="d-flex flex-row fs-5  align-itens-center">
+                                            <p class="quantidade-texto text-start me-2">1x</p> @* Quantidade *@
+                                            <p class="text-start">@pedido.Produto.Nome</p>
+                                        </div>
+                                        <p class="total mb-0">Total: R$52,00</p>
+
                                     </div>
-                                    <p class="total mb-0">Total: R$52,00</p> 
-
                                 </div>
-                            </div>
                             }
+                        </div>
+                        <button class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button> @* Botao de voltar não
+                        funcionando *@
+                    </div>
+
                 </div>
-                <button class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button> @* Botao de voltar não funcionando *@
+            </div>
         </div>
 
-    </div>
-  </div>
-</div>
+        <style>
+            .pedido-card {
+                background-color: #2F665A;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
 
-<style>
-        .pedido-card {
-            background-color: #2F665A;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        .total {
-            text-align: end;
-            font-size: 20px;
+            .total {
+                text-align: end;
+                font-size: 20px;
 
-        }
-        .voltar-button {
-            display: block;
-            margin: 20px auto;
-            width: 100px;
-        }
+            }
 
-        .data-horas-tamanho {
-            font-size: 13px;
-        }
+            .voltar-button {
+                display: block;
+                margin: 20px auto;
+                width: 100px;
+            }
 
-        .voltar-button {
-            display: block;
-            margin: 20px auto;
-            width: 100px;
-        }
+            .data-horas-tamanho {
+                font-size: 13px;
+            }
 
-        .container-rounded {
-            border-radius: 20px;
-        }
+            .voltar-button {
+                display: block;
+                margin: 20px auto;
+                width: 100px;
+            }
 
-
-
-
-
-    </style>
+            .container-rounded {
+                border-radius: 20px;
+            }
+        </style>
