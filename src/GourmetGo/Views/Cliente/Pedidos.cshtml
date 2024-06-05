@@ -11,28 +11,41 @@
                 <div class="col-md-6 col-lg-7">
                     <img class="logo" src="~/images/logo.png" alt="logo">
                     <div class=" container-rounded container bg-light">
-                        <h3 class="fs-2">Histórico de Pedidos</h3>
-                        <div class="container">
-                            @foreach (var pedido in Model)
-                            {
-                                <div class="">
-                                    <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p> @* Horário *@
-                                    <div class="pedido-card ">
-
-                                        <div class="d-flex flex-row fs-5  align-itens-center">
-                                            <p class="quantidade-texto text-start me-2">1x</p> @* Quantidade *@
-                                            <p class="text-start">@pedido.Produto.Nome</p>
-                                        </div>
-                                        <p class="total mb-0">Total: R$52,00</p>
-
-                                    </div>
+                                <div class="text-center mb-4">
+                                    <button class="btn btn-primary" onclick="showContent('historico')">Histórico de Pedidos</button>
+                                    <button class="btn btn-secondary" onclick="showContent('andamento')">Pedidos em Andamento</button>
                                 </div>
-                            }
-                        </div>
-                        <button class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button> @* Botao de voltar não
-                        funcionando *@
-                    </div>
 
+                                <div id="historico" class="content active-content">
+                                    <h3 class="fs-2">Histórico de Pedidos</h3>
+                                    <div class="container">
+                                        @foreach (var pedido in Model)
+                                        {
+                                            <div class="">
+                                                <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p> 
+                                                <div class="pedido-card ">
+
+                                                    <div class="d-flex flex-row fs-5  align-itens-center">
+                                                        <p class="quantidade-texto text-start me-2">1x</p> 
+                                                        <p class="text-start">@pedido.Produto.Nome</p>
+                                                    </div>
+                                                    <p class="total mb-0">R$@pedido.Produto.Preco</p>
+
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                <button class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button>
+                                   
+                                </div>
+
+                                <div id="andamento" class="content">
+                                    <h3>Pedidos em Andamento</h3>
+                                    
+                                </div>
+
+                       
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,4 +84,29 @@
             .container-rounded {
                 border-radius: 20px;
             }
-        </style>
+
+            .content {
+            display: none;
+            }
+            .active-content {
+            display: block;
+            }
+
+    </style>
+
+         <script>
+                                function showContent(id) {
+                                    // Esconder todas as seções de conteúdo
+                                    document.querySelectorAll('.content').forEach(section => {
+                                        section.classList.remove('active-content');
+                                    });
+
+                                    // Mostrar a seção de conteúdo selecionada
+                                    document.getElementById(id).classList.add('active-content');
+                                }
+         </script>
+                                
+        
+
+
+@*   *@
