@@ -11,11 +11,15 @@
                 <div class="col-md-6 col-lg-7">
                     <img class="logo" src="~/images/logo.png" alt="logo">
                     <div class=" container-rounded container bg-light">
-                                <div class="text-center mb-4">
-                                    <button class="btn btn-primary" onclick="showContent('historico')">Histórico de Pedidos</button>
-                                    <button class="btn btn-secondary" onclick="showContent('andamento')">Pedidos em Andamento</button>
-                                </div>
-
+                        @* Tela de Navegação *@
+                        <ul class="nav-cardapio nav nav-tabs justify-content-center">
+                            <li class="nav-item">
+                            <button class="nav-link " onclick="showContent('historico')">Histórico</button>
+                            </li>
+                            <li class="nav-item">
+                            <button class="nav-link" onclick="showContent('andamento')">Em Andamento</button>
+                            </li>
+                        </ul>
                                 <div id="historico" class="content active-content">
                                     <h3 class="fs-2">Histórico de Pedidos</h3>
                                     <div class="container">
