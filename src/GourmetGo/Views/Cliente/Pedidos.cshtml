@@ -55,13 +55,16 @@
                             <div class="container">
                                 @foreach (var pedido in Model)
                                 {
-                                    @if (pedido.Status == "emAndamento" || pedido.Status == "preparando")
+                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status == StatusDoPedido.EmPreparo)
                                         {
-                                            <!-- Código para pedidos em andamento ou preparando -->
-                                        }
-                                        else
-                                        {
-                                            <!-- Código para outros estados de pedido -->
+
+
+                                            <div class="container d-flex flex-column mb-3">
+                                                <h3 class="text-start">@pedido.Produto.Nome</h3>
+                                                <div class="bg-success text-light text-start p-3 ">@pedido.Status</div>
+                                            </div>
+                                                   
+
                                         }
                                 }
                             </div>
@@ -160,7 +163,7 @@
     }
 
     // Inicializar o estado inicial
-    showContent('historico');
+    showContent('andamento');
 
 
 </script>
