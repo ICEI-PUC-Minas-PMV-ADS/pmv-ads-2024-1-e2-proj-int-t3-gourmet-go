@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace GourmetGo.Controllers
 {
+    //[Authorize]
     public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;

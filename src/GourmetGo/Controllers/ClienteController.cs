@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class ClienteController : Controller
 {
+    //[Authorize]
+    
     private readonly AppDbContext _context;
 
     public ClienteController(AppDbContext context)

@@ -9,6 +9,7 @@ using GourmetGo.Models;
 
 namespace GourmetGo.Controllers
 {
+    //[Authorize]
     public class GestaoDePedidosController : Controller
     {
         private readonly AppDbContext _context;

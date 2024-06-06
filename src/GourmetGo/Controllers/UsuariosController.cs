@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GourmetGo.Models;
+using Microsoft.CodeAnalysis;
+using System.Security.Claims;
+using Microsoft.Identity.Client;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GourmetGo.Controllers
 {
@@ -17,6 +22,58 @@ namespace GourmetGo.Controllers
         {
             _context = context;
         }
+
+
+        /*[AllowAnonymous] // Podemos adicionar as roles aqui pra limitar acesso
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(Usuario usuario)
+        {
+            var dados = await _context.Usuarios.FindAsync(usuario.Id);
+
+            if(dados == null)
+            {
+                ViewBag.Message = "Usuário e/ou senha invalidos!";
+                return View();
+            }
+
+            bool senhaOk = BCrypt.Net.BCrypt.Verify(usuario.Senha, dados.Senha);
+
+            if (senhaOk)
+            {
+                var claims = new < Claim >
+                    {
+                    new Claim(ClaimTypes.Name, dados.Nome),
+                        new Claim(ClaimTypes.NameIdentifier, dados.Id.ToString()),
+                        new Claim(ClaimTypes.Role, dados.Perfil.ToString)
+                    };
+
+                var usuarioIdentifier = new ClaimsIdentity(claims, "login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(usuarioIdentifier);
+
+                var props = new AuthenticationProperties
+                {
+                    AllowRefrESH = true,
+                    ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(8),
+                    IsPersostent = true,
+                };
+
+                await HttpContext.SignInAsync(principal, props);
+
+                return Redirect("/");
+            }
+            else
+            {
+                ViewBag.Message = "Usuário e/ou senha invalidos!";
+            }
+
+            return View();
+        }*/
 
         // GET: Usuarios
         public async Task<IActionResult> Index()
@@ -176,5 +233,6 @@ namespace GourmetGo.Controllers
         }
 
         //fim esqueci senha
+        //teste
     }
 }

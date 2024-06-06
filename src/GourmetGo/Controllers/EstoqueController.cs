@@ -1,4 +1,5 @@
 ﻿using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -7,6 +8,7 @@ namespace GourmetGo.Controllers
 {
     public class EstoqueController : Controller
     {
+        //[Authorize]
 
         private readonly AppDbContext _context;
         public EstoqueController(AppDbContext context)
