@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GourmetGo.Controllers
 {
-    //[Authorize]
     public class GestaoDePedidosController : Controller
     {
         private readonly AppDbContext _context;
@@ -20,6 +20,7 @@ namespace GourmetGo.Controllers
         }
 
         // GET: GestaoDePedidos
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);

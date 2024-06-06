@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GourmetGo.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly AppDbContext _context;
@@ -88,6 +89,7 @@ namespace GourmetGo.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
@@ -95,6 +97,7 @@ namespace GourmetGo.Controllers
         }
 
         // Método GET para listar todos os usuários
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Usuarios.ToListAsync());

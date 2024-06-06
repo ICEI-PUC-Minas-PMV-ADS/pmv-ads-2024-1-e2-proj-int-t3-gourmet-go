@@ -8,7 +8,6 @@ namespace GourmetGo.Controllers
 {
     public class EstoqueController : Controller
     {
-        //[Authorize]
 
         private readonly AppDbContext _context;
         public EstoqueController(AppDbContext context)
@@ -16,6 +15,7 @@ namespace GourmetGo.Controllers
             _context = context;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var dados = await _context.Estoque.ToListAsync();
