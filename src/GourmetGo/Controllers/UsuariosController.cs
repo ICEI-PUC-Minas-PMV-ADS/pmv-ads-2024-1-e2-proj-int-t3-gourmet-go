@@ -53,11 +53,11 @@ namespace GourmetGo.Controllers
             {
                 // Cria as claims para o usuário autenticado
                 var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, dados.Nome),
-            new Claim(ClaimTypes.NameIdentifier, dados.Id.ToString()),
-            new Claim(ClaimTypes.Role, dados.Tipo.ToString())
-        };
+                {
+                    new Claim(ClaimTypes.Name, dados.Nome),
+                    new Claim(ClaimTypes.NameIdentifier, dados.Email.ToString()),
+                    new Claim(ClaimTypes.Role, dados.Tipo.ToString())
+                };
 
                 // Cria uma identidade com as claims
                 var usuarioIdentifier = new ClaimsIdentity(claims, "login");
