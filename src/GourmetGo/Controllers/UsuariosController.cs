@@ -88,6 +88,12 @@ namespace GourmetGo.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Usuarios");
+        }
+
         // Método GET para listar todos os usuários
         public async Task<IActionResult> Index()
         {
