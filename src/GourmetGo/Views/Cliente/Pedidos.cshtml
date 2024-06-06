@@ -52,6 +52,19 @@
                         @* Tela de Pedidos em Andamento *@
                         <div id="andamento" class="content">
                             <h3>Pedidos em Andamento</h3>
+                            <div class="container">
+                                @foreach (var pedido in Model)
+                                {
+                                    @if (pedido.Status == "emAndamento" || pedido.Status == "preparando")
+                                        {
+                                            <!-- Código para pedidos em andamento ou preparando -->
+                                        }
+                                        else
+                                        {
+                                            <!-- Código para outros estados de pedido -->
+                                        }
+                                }
+                            </div>
                             <a href="http://localhost:5136/Cliente/1" class=" mb-0 fs-3 btn btn-light voltar-button" >Voltar</a>  
                         </div>
 
