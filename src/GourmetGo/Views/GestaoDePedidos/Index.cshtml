@@ -4,8 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-light">Gestão de Pedidos</h1>
-<h3 class="text-info">Alterar Status</h3>
+<div class="container">
+
+    @* Superior *@
+    <div class="d-flex flex-row align-items-center justify-content-around ">
+        <img class="logo1 text-center" src="~/images/minor-logo.png" alt="logo">
+        <button class=" text-center btn btn-voltar btn-voltar px-5">Voltar</button>
+    </div>
+
+    <h1 class="d-flex flex-row align-items-center justify-content-around text-light">Gestão de Pedidos</h1>
+
+    @* Conteúdo - Containers *@
+    <div class="d-flex flex-row ">
+        @* Primeiro container *@
+        <div class="container-sm w-50 bg-priwmary">
+            <h3>Cliente</h3>
+            <p>Status</p>
+            <div>
+                <p>produto</p>
+                <p>Observações</p>
+            </div>
+            <div class="buttons">
+                <button>Detalhes</button>
+                <button>Alterar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+<style>
+    .logo1 {
+        height: auto;
+        width: 100px;
+    }
+
+    .btn-voltar {
+        background-color: #0C847B;
+        color: #fff;
+        font-size: 25px;
+    }
+</style>
 
 
 @* @foreach (var item in Model)
