@@ -14,23 +14,27 @@
 
     <h1 class="d-flex flex-row align-items-center justify-content-around text-light">Gestão de Pedidos</h1>
 
-    @* Conteúdo - Containers *@
-    <div class="d-flex flex-row ">
-        @* Primeiro container *@
-        <div class="container-sm w-50 bg-priwmary">
-            <h3>Cliente</h3>
-            <p>Status</p>
-            <div>
-                <p>produto</p>
-                <p>Observações</p>
+    @foreach (var item in Model)
+    {
+        @* Conteúdo - Containers - Caixa *@
+        <div class="d-flex">
+            @* Primeiro container *@
+            <div class="container-sm container-item mb-4">
+                <h3 class="text-center text-light mb-0 mt-2">Cliente</h3>
+                <p class="text-center text-light mt-0 text-decoration-underline">Status</p>
+                <div class="d-flex justify-content-around text-light">
+                    <p>@item.Produto.Nome</p>
+                    <p>@item.Observações</p>
+                </div>
+                <div class="buttons">
+                    <button>Detalhes</button>
+                    <button>Alterar</button>
+                </div>
             </div>
-            <div class="buttons">
-                <button>Detalhes</button>
-                <button>Alterar</button>
-            </div>
-        </div>
 
-    </div>
+        </div>
+    }
+
 
 
 
@@ -52,9 +56,15 @@
         color: #fff;
         font-size: 25px;
     }
+
+    .container-item {
+        background-color: #0C847B;
+        border-radius: 10px;
+        border: 5px solid rgba(0, 0, 0, 0.2);
+        min-width: 150px;
+        max-width: 400px;
+    }
 </style>
 
 
-@* @foreach (var item in Model)
-{
-} *@
+@* *@
