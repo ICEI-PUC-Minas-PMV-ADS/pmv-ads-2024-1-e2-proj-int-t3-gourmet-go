@@ -65,12 +65,15 @@
                                     @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status ==
                                    StatusDoPedido.EmPreparo)
                                     {
-                                        <div class="container d-flex flex-column mb-3">
+                                        <div class="container d-flex  flex-column mb-3">
                                             <h3 class="text-start">@pedido.Produto.Nome</h3>
-                                            <div class="bg-success text-light text-start p-3"> @if (pedido.Status == StatusDoPedido.EmAndamento)
-                                             {
-                                                <i class="fi fi-rs-clock-two me-3"></i> @pedido.Status
-                                             }
+                                            <div class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2"> 
+                                            @if (pedido.Status == StatusDoPedido.EmAndamento)
+                                                {
+                                                    <i class="fs-4 fi fi-rs-clock-two me-3"></i> @pedido.Status
+                                                } else if ( pedido.Status == StatusDoPedido.EmPreparo ) {
+                                                   <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
+                                                }
                                                 
                                             </div>
                                         </div>
