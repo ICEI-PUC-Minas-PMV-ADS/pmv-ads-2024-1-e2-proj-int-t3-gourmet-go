@@ -1,29 +1,27 @@
 using GourmetGo.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
-builder.Services.AddDbContext<AppDbContext>(options => 
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-/*builder.Services.Configure<CookiePolicyOptions>(options =>
+builder.Services.Configure<CookiePolicyOptions>(options =>
 {
-    options.CheckConsentNeeded = ContextBoundObject => true;
-    MinimumSameSitePolicy = SameSiteMode.None;
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
 });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(OptionsBuilderConfigurationExtensions =>
+    .AddCookie(options =>
     {
         options.AccessDeniedPath = "/Usuario/AccessDenied";
         options.LoginPath = "/Usuarios/Login";
     });
-*/
 
 var app = builder.Build();
 
@@ -65,3 +63,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
