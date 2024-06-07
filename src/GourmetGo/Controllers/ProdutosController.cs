@@ -1,11 +1,11 @@
 ﻿using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace GourmetGo.Controllers
 {
-    //[Authorize]
     public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;
@@ -15,6 +15,7 @@ namespace GourmetGo.Controllers
             _context = context;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var dados = await _context.Produtos.ToListAsync();
