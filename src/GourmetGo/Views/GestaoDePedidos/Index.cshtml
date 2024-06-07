@@ -8,63 +8,6 @@
 <h3 class="text-info">Alterar Status</h3>
 
 
-<table class="table table text-light">
-    <thead class="fs-6 text-center">
-        <tr class="fw-bolder">
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Produto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observações)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Endereço)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pagamento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observações)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereço)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pagamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
-                 <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+@* @foreach (var item in Model)
+{
+} *@
