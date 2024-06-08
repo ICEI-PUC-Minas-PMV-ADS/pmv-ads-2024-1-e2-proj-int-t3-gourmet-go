@@ -1,36 +1,185 @@
 @model List<GourmetGo.Models.Pedido>
 
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+
 @{
     ViewData["Title"] = "Cliente/Pedidos";
 }
 
 <div>
-  <h1>Pedidos de @ViewBag.ClienteNome</h1>
-  <table>
-    <thead>
-        <tr>
-            <th>Número do Pedido</th>
-            <th>Produto</th>
-            <th>Observações</th>
-            <th>Tipo de Entrega</th>
-            <th>Endereço</th>
-            <th>Forma de Pagamento</th>
-            <th>Status do Pedido</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var pedido in Model)
-        {
-            <tr>
-                <td>@pedido.Id</td>
-                <td>@pedido.Produto.Nome</td>
-                <td>@pedido.Observações</td>
-                <td>@pedido.Tipo</td>
-                <td>@pedido.Endereço</td>
-                <td>@pedido.Pagamento</td>
-                <td>@pedido.Status</td>
-            </tr>
-        }
-    </tbody>
-  </table>
-</div>
+    <div class="text-center">
+        <div class="container-fluid h-100">
+            <div class="row align-items-center justify-content-center h-100">
+                <div class="col-md-6 col-lg-7">
+                    <img class="logo" src="~/images/logo.png" alt="logo">
+
+                    @* Nav-bar *@
+                    <ul class="nav-pedidos nav nav-tabs justify-content-center">
+                        <li class="nav-item">
+                            <button id="btn-historico" class="nav-link cor-nav-link"
+                                onclick="showContent('historico')">Histórico</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btn-andamento" class="nav-link cor-nav-link"
+                                onclick="showContent('andamento')">Em Andamento</button>
+                        </li>
+                    </ul>
+
+                    @* Conteúdo *@
+                    <div class=" container-rounded container bg-light">
+                        @* Tela de Histórico *@
+                        <div id="historico" class="content active-content">
+                            <h3 class="fs-2">Histórico de Pedidos</h3>
+                            <div class="container">
+                                @foreach (var pedido in Model)
+                                {
+                                    <div class="">
+
+                                        <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p>
+                                        <p class="text-start mb-0 data-horas-tamanho">@pedido.Status</p>
+
+                                        <div class="pedido-card ">
+                                            <div class="d-flex flex-row fs-5">
+                                                <p class="quantidade-texto text-start me-2">1x</p>
+                                                <p class="text-start">@pedido.Produto.Nome</p>
+                                            </div>
+                                            <div>
+                                                <p class="total mb-0">R$@pedido.Produto.Preco</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <button href="http://localhost:5136/Cliente/1"
+                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button>
+                        </div>
+
+                        @* Tela de Pedidos em Andamento *@
+                        <div id="andamento" class="content">
+                            <h3>Pedidos em Andamento</h3>
+                            <div class="container">
+                                @foreach (var pedido in Model)
+                                {
+                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status ==
+                                   StatusDoPedido.EmPreparo)
+                                    {
+                                        <div class="container d-flex  flex-column mb-3">
+                                            <h3 class="text-start">@pedido.Produto.Nome</h3>
+                                            <div class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2"> 
+                                            @if (pedido.Status == StatusDoPedido.EmAndamento)
+                                                {
+                                                    <i class="fs-4 fi fi-rs-clock-two me-3"></i> @pedido.Status
+                                                } else if ( pedido.Status == StatusDoPedido.EmPreparo ) {
+                                                   <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
+                                                }
+                                                
+                                            </div>
+                                        </div>
+
+
+                                    }
+                                }
+                            </div>
+                            <a href="http://localhost:5136/Cliente/1"
+                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .pedido-card {
+                background-color: #2F665A;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+
+            .total {
+                text-align: end;
+                font-size: 20px;
+
+            }
+
+            .nav-pedidos {
+                font-size: 24px;
+            }
+
+            .cor-nav-link {
+                color: #84fa84;
+            }
+
+            .voltar-button {
+                display: block;
+                margin: 20px auto;
+                width: 100px;
+            }
+
+            .data-horas-tamanho {
+                font-size: 13px;
+            }
+
+            .voltar-button {
+                display: block;
+                margin: 20px auto;
+                width: 100px;
+            }
+
+            .container-rounded {
+                border-radius: 20px;
+            }
+
+            .content {
+                display: none;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .active-content {
+                display: block;
+            }
+
+            .active-btn {
+                background-color: white !important;
+                color: black !important;
+                border: 1px solid #ccc;
+            }
+
+            .nav-btn {
+                margin-right: 10px;
+            }
+        </style>
+
+        <script>
+
+            function showContent(id) {
+                // Esconder todas as seções de conteúdo
+                document.querySelectorAll('.content').forEach(section => {
+                    section.classList.remove('active-content');
+                });
+
+                // Remover a classe ativa de todos os botões
+                document.querySelectorAll('.nav-link').forEach(button => {
+                    button.classList.remove('active-btn');
+                });
+
+                // Mostrar a seção de conteúdo selecionada
+                document.getElementById(id).classList.add('active-content');
+
+                // Adicionar a classe ativa ao botão correspondente
+                document.getElementById('btn-' + id).classList.add('active-btn');
+            }
+
+            // Inicializar o estado inicial
+            showContent('andamento');
+
+
+        </script>
