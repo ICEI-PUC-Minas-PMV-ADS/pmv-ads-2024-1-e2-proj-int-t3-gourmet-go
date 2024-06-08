@@ -25,21 +25,20 @@
                                 <input asp-for="Email" class="form-control" />
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-5">
                                 @* <label for="senha">Senha</label>
                                 <input type="password" id="senha" class="form-control"> *@
                                 <label asp-for="Senha" class="control-label"></label>
                                 <input asp-for="Senha" class="form-control" />
                                 <span asp-validation-for="Senha" class="text-danger"></span>
                             </div>
-                            <nav class="login-buttons">
-                                <input type="submit" value="Acessar" class="btn btn-success btn-login" />
-                                <nav class="login-link">
-                                    <a href="@Url.Action("EsqueciSenha", "Home")" class="btn btn-link">Esqueci Minha Senha</a>
-                                    <a href="@Url.Action("Cadastro", "Usuarios")" class="btn btn-link">Fazer
-                                        Cadastro</a>
-                                </nav>
-                            </nav>
+
+                               <div class="buttons-login d-flex flex-column">
+                                   <input type="submit" value="Entrar" class="btn btn-login text-center text-light" />
+                                   <a href="@Url.Action("EsqueciSenha", "Home")" class="mt-4">Esqueci minha senha</a>
+                                    <a href="@Url.Action("Cadastro", "Usuarios")" class="">Fazer cadastro</a>
+                               </div>
+
                         </form>
                     </div>
 
@@ -52,6 +51,15 @@
     .btn-login {
         background-color: #0C847B;
     }
+
+
+
+    .buttons-login a {
+    margin-bottom: 15px;
+    color: #41605F;
+        width: 100%;
+    }
+
 
 
 
