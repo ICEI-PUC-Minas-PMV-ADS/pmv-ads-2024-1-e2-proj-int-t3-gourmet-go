@@ -78,7 +78,27 @@ namespace GourmetGo.Controllers
                 TempData["SuccessMessage"] = "Login efetuado com sucesso!";
 
                 // Redireciona para a página inicial
-                return RedirectToAction("Index", "Home");
+                if (dados.Tipo.ToString() == "Admin")
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (dados.Tipo.ToString() == "Cliente")
+                {
+                    return RedirectToAction("Index", "Cliente");
+                }
+                else if (dados.Tipo.ToString() == "Garcom")
+                {
+                    return RedirectToAction("Index", "GestaoDePedidos");
+                }
+                else if (dados.Tipo.ToString() == "Cozinheiro")
+                {
+                    return RedirectToAction("Index", "GestaoDePedidos");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
             }
             else
             {

@@ -7,9 +7,9 @@
     <div class="container mt-5">
         @if (TempData["Message"] != null)
         {
-            <div class="alert alert-success" role="alert">
+                <div class="alert alert-success" role="alert">
                 @TempData["Message"]
-            </div>
+                </div>
         }
         <div class="container-fluid h-100">
             <div class="row align-items-center justify-content-center h-100">
@@ -65,7 +65,7 @@
 
 </style>
 
-@* <div class="row">
+    @* <div class="row">
     <div class="col-md-4">
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -87,8 +87,8 @@
     </div>
 </div> *@
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
     }
-}
