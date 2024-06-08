@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GourmetGo.Controllers
 {
-    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly AppDbContext _context;
@@ -261,6 +260,6 @@ namespace GourmetGo.Controllers
             TempData["Message"] = "Link de redefinição de senha enviado para seu E-mail.";
             return RedirectToAction("Index", "Home");
         }
-    //fim esqueci senha
+        //fim esqueci senha
     }
 }
