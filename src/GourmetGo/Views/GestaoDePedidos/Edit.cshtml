@@ -7,6 +7,64 @@
 <div class="text-center">
     <img class="logo-gourmet" src="~/images/minor-logo.png" alt="logo">
 </div>
+
+<div class="container-sm d-flex flex-column container-principal">
+    <h1 class="text-center text-light mt-5 mb-5">Alterar status</h1>
+    <form class="text-light" asp-action="Edit">
+        <div class="" asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="ms-3 fs-4">
+            <div class="form-group d-flex mb-0">
+                <label asp-for="UsuarioId" class="control-label me-4">Usuário:</label>
+                <select asp-for="UsuarioId" class="d-none form-control readonly" asp-items="ViewBag.UsuarioId"></select>
+                <div>@Html.DisplayFor(model => model.Usuario.Nome)</div>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex mb-0 ">
+                <label asp-for="ProdutoId" class="control-label me-4">Produto:</label>
+                <select asp-for="ProdutoId" class="d-none form-control" asp-items="ViewBag.ProdutoId"></select>
+                <div>@Html.DisplayFor(model => model.Produto.Nome)</div>
+                <span asp-validation-for="ProdutoId" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex">
+                <label asp-for="Observações" class="control-label me-4">Observações:</label>
+                <input asp-for="Observações" class="form-control d-none" />
+                <div class="fs-5">@Html.DisplayFor(model => model.Observações)</div>
+                <span asp-validation-for="Observações" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex mb-0">
+                <label asp-for="Tipo" class="control-label me-4">Recebimento:</label>
+                <label asp-for="Tipo" asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"
+                    class="form-control d-none"></label>
+                <div>@Html.DisplayFor(model => model.Tipo)</div>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="d-none form-group mb-0">
+                <label asp-for="Endereço" class="control-label"></label>
+                <input asp-for="Endereço" class="form-control" />
+                <span asp-validation-for="Endereço" class="text-danger"></span>
+            </div>
+            <div class=" d-none form-group mb-0">
+                <label asp-for="Pagamento" class="control-label"></label>
+                <select asp-for="Pagamento" asp-items="Html.GetEnumSelectList<FormaDePagamento>()"
+                    class=" form-control"></select>
+                <span asp-validation-for="Pagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-4 mb-4">
+                <label class="mb-0 " asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<StatusDoPedido>()"
+                    class="form-control p-3"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group d-flex flex-column align-itens-center">
+                <input type="submit" value="Salvar" class="btn btn-primary me-4" />
+                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
 @* <hr />
 <div class="row text-light">
 <div class="col-md-4">
@@ -65,6 +123,17 @@
     .logo-gourmet {
         width: auto;
         height: 240px;
+    }
+
+    .container-principal {
+        background-color: #0C847B;
+        border-radius: 15px;
+        border: 3px solid rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+    }
+
+    Form {
+        font-family: arial;
     }
 </style>
 
