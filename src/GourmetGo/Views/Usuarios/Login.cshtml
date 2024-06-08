@@ -3,12 +3,45 @@
 @{
     ViewData["Title"] = "Login";
 }
+<div class="text-center">
+    <div class="container mt-5">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+        <div class="container-fluid h-100">
+            <div class="row align-items-center justify-content-center h-100">
+                <div class="col-md-6 col-lg-4">
+                    <img class="logo" src="~/images/logo.png" alt="logo">
+                    <div class="login">
+                        <form class="form-login">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" class="form-control">
+                            </div>
+                            <nav class="login-buttons">
+                                <button type="submit" class="btn btn-primary">Fazer Login</button>
+                                <nav class="login-link">
+                                    <a href="Home/EsqueciSenha" class="btn btn-link">Esqueci Minha Senha</a>
+                                    <a href="@Url.Action("Cadastro", "Usuarios")" class="btn btn-link">Fazer
+                                        Cadastro</a>
+                                </nav>
+                            </nav>
+                        </form>
+                    </div>
 
-<h1>Login</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<h4>Usuario</h4>
-<hr />
-<div class="row">
+@* <div class="row">
     <div class="col-md-4">
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,8 +61,10 @@
         </form>
         <h3>@ViewBag.Message</h3>
     </div>
-</div>
+</div> *@
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
