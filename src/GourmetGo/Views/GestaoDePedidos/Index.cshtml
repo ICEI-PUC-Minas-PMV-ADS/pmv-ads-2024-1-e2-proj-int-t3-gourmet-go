@@ -22,21 +22,21 @@
 
             @* Primeiro container *@
             <div class="container-sm d-flex flex-column container-item mb-4">
-                <h3 class="text-center text-light mb-0 mt-2">@item.Usuario.Nome</h3>
+                <h3 class="text-center text-light mb-0 mt-3">@item.Usuario.Nome</h3>
                 <p class="text-center text-light mt-0 text-decoration-underline">@item.Status</p>
                 <div class="text-light d-flex align-items-start justify-content-start mb-2 ">
                     <div class="container-fluid me- ">
                         <p class="text-center">Produtos:</p>
-                        <p class=" text-start mt-1"> @item.Produto.Nome</p>
+                        <p class=" text-center mt-1">&#x2022; @item.Produto.Nome</p>
                     </div>
                     <div class="container-fluid ">
                         <p class="text-center">Observações:</p>
                         <p class="text-start mt-1">@item.Observações</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-end flex-row justify-content-center mb-2 buttons">
-                    <button class="btn btn-detail py-1 me-3">Detalhes</button>
-                    <button class="btn btn-alterar py-1">Alterar</button>
+                <div class="d-flex align-items-end flex-row justify-content-center mb-3 buttons">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-detail py-1 me-3">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-alterar py-1">Alterar</a>
                 </div>
             </div>
         }
