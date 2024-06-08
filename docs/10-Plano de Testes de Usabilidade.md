@@ -6,7 +6,6 @@ Este plano de testes de usabilidade visa avaliar a facilidade de uso e a experi�
 
 1. Avaliar a usabilidade geral da plataforma, focando na simplicidade e eficácia das interações dos usuários.
 2. Identificar possíveis obstáculos ou dificuldades que os usuários possam enfrentar durante a navegação e interação com as funcionalidades do sistema.
-3. Coletar feedback direto dos usuários para entender suas necessidades e expectativas, contribuindo para o aprimoramento contínuo da interface e da experiência geral.
 
 ## Metodologia
 Os testes de usabilidade serão realizados com um grupo de participantes que representam os perfis dos usuários finais, incluindo tanto clientes quanto representantes de restaurantes. Os testes ocorrerão em um ambiente controlado, onde os participantes serão instruídos a realizar uma série de tarefas específicas, como realizar login, navegar pelo cardápio, fazer um pedido, e acompanhar seu status. Durante as sessões, um facilitador observará e registrará as interações, dificuldades e comentários dos participantes para posterior análise.

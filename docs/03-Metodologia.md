@@ -39,6 +39,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 - `To Do` Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando.
 - `In Progress` Quando uma tarefa tiver sido iniciada, ela é movida para cá.
 - `Team Review` Checagem de Qualidade. Quando as tarefas são concluídas, eles são movidos para o “CQ”. No final da semana, eu revejo essa lista para garantir que tudo saiu perfeito.
+- `Fix`Refere-se ao processo de identificar e resolver problemas ou bugs encontrados em no projeto.
 - `Done` Nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
 
 ![Quadro kanban](img/trello.png)

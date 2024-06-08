@@ -2,27 +2,41 @@
     ViewData["Title"] = "Esqueci Senha";
 }
 
+<style>
+    .text-green-light {
+        color: #0C847B;
+    }
+
+    .botao-enviar{
+        background-color: #0C847B;
+    }
+
+    .class-card {
+     border-radius: 20px;
+    }
+
+    .form-a{
+        color: #41605F;
+    }
+</style>
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-sm-5">
             <img class="logo" src="~/images/logo.png" alt="logo">
-            <div class="card bg-white">
-                <div class="card-header text-dark">
-                    <h3 class="text-center">Esqueci Minha Senha</h3>
-                </div>
+            <div class="card bg-white class-card">
                 <div class="card-body">
                     <form method="post" action="@Url.Action("SendPasswordResetLink", "Home")">
                         <div class="form-group">
-                            <label for="username" class="text-dark">Usuário</label>
-                            <input type="text" id="username" name="username" class="form-control" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="text-dark">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-control" required />
+                            <label class="text-green-light">Informe o Email cadastrado, iremos enviar um link para o reset de senha.</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Digite seu e-mail aqui" />
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="@Url.Action("Login", "Usuarios")" class="btn btn-secondary">Voltar</a>
+                            <button type="submit" class="btn btn-primary mb-4 botao-enviar">Enviar</button>
+                            <p>
+                                <a class="form-a" href="@Url.Action("Index", "Home")">Voltar para Login</a>
+                            </p>
+
                         </div>
                     </form>
                 </div>
