@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GourmetGo.Controllers
 {
+
     public class UsuariosController : Controller
     {
         private readonly AppDbContext _context;
