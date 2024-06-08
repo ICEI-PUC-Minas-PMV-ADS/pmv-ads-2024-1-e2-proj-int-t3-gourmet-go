@@ -49,7 +49,7 @@
                                     asp-action="Index">Pedidos</a>
                             </li>
                         }
-                        @if (User.IsInRole("Admin") || User.IsInRole("Cliente"))
+                        @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="Cliente/1">Cliente</a>
