@@ -3,12 +3,69 @@
 @{
     ViewData["Title"] = "Login";
 }
+<div class="text-center">
+    <div class="container mt-5">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+        <div class="container-fluid h-100">
+            <div class="row align-items-center justify-content-center h-100">
+                <div class="col-md-6 col-lg-4">
+                    <img class="logo" src="~/images/logo.png" alt="logo">
+                    <div class="login">
+                        <form asp-action="Login" class="form-login">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                @* <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-control"> *@
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-5">
+                                @* <label for="senha">Senha</label>
+                                <input type="password" id="senha" class="form-control"> *@
+                                <label asp-for="Senha" class="control-label"></label>
+                                <input asp-for="Senha" class="form-control" />
+                                <span asp-validation-for="Senha" class="text-danger"></span>
+                            </div>
 
-<h1>Login</h1>
+                               <div class="buttons-login d-flex flex-column">
+                                   <input type="submit" value="Entrar" class="btn btn-login text-center text-light" />
+                                   <a href="@Url.Action("EsqueciSenha", "Home")" class="mt-4">Esqueci minha senha</a>
+                                    <a href="@Url.Action("Cadastro", "Usuarios")" class="">Fazer cadastro</a>
+                               </div>
 
-<h4>Usuario</h4>
-<hr />
-<div class="row">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .btn-login {
+        background-color: #0C847B;
+    }
+
+
+
+    .buttons-login a {
+    margin-bottom: 15px;
+    color: #41605F;
+        width: 100%;
+    }
+
+
+
+
+</style>
+
+@* <div class="row">
     <div class="col-md-4">
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,8 +85,10 @@
         </form>
         <h3>@ViewBag.Message</h3>
     </div>
-</div>
+</div> *@
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

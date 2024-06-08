@@ -3,40 +3,72 @@
 
 }
 
-<div class="text-center">
-    <div class="container mt-5">
-        @if (TempData["Message"] != null)
-        {
-            <div class="alert alert-success" role="alert">
-                @TempData["Message"]
-            </div>
-        }
-        <div class="container-fluid h-100">
-            <div class="row align-items-center justify-content-center h-100">
-                <div class="col-md-6 col-lg-4">
-                    <img class="logo" src="~/images/logo.png" alt="logo">
-                    <div class="login">
-                        <form class="form-login">
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha</label>
-                                <input type="password" id="senha" class="form-control">
-                            </div>
-                            <nav class="login-buttons">
-                                <button type="submit" class="btn btn-primary">Fazer Login</button>
-                                <nav class="login-link">
-                                    <a href="Home/EsqueciSenha" class="btn btn-link">Esqueci Minha Senha</a>
-                                    <a href="@Url.Action("Cadastro", "Usuarios")" class="btn btn-link">Fazer
-                                        Cadastro</a>
-                                </nav>
-                            </nav>
-                        </form>
+    <div class="container-fluid text-center">
+        <img class="logo" src="~/images/logo.png" alt="logo">
+        <ul class=" navbar-nav mt-5">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="">
+                    <p class="fs-4 color-bemvindo">Seja Bem Vindo!!</p>
+                    <span class="fs-2 p-3 text-light naming">@User.Identity.Name</span>
+                    <div>
+                        <a class="btn btn-secondary text-light mt-5" asp-area="" asp-controller="Usuarios"
+                            asp-action="Logout">Sair</a>
                     </div>
-
-                </div>
-            </div>
-        </div>
+                </li>
+            }
+            else
+            {
+                <li >
+                    <a class="btn btn-login-inicial fs-3 p-4 px-5 " asp-area="" asp-controller="Usuarios"
+                        asp-action="Login">Login</a>
+                </li>
+            }
+        </ul>
     </div>
+
+
+                    
+                    @* <div class="login">
+                    <form class="form-login">
+                    <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" class="form-control">
+                    </div>
+                    <nav class="login-buttons">
+                    <button type="submit" class="btn btn-primary">Fazer Login</button>
+                    <nav class="login-link">
+                    <a href="Home/EsqueciSenha" class="btn btn-link">Esqueci Minha Senha</a>
+                    <a href="@Url.Action("Cadastro", "Usuarios")" class="btn btn-link">Fazer
+                    Cadastro</a>
+                    </nav>
+                    </nav>
+                    </form>
+                    </div> *@
+
+
+    <style>
+        .btn-login-inicial {
+            background-color: #0C847B;
+            color: #fff;
+            border-radius: 20px;
+
+        }
+
+        .color-bemvindo{
+            color: #0C948B;
+        }
+
+        .logo-homepage {
+            width: 400px;
+        }
+
+        .naming{
+            border-radius: 10px;
+            background-color: #0C847B;
+        }
+    </style>
