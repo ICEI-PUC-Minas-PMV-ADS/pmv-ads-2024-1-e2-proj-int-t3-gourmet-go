@@ -140,7 +140,7 @@ namespace GourmetGo.Controllers
         // Método POST para criar um novo usuário
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cpf,Telefone,Email,Senha,Tipo")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cpf,Telefone,Email,Senha,Endereco,Tipo")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -176,7 +176,7 @@ namespace GourmetGo.Controllers
         // Método POST para editar um usuário específico
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cpf,Telefone,Email,Senha,Tipo")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cpf,Telefone,Email,Senha,Endereco,Tipo")] Usuario usuario)
         {
             if (id != usuario.Id)
             {

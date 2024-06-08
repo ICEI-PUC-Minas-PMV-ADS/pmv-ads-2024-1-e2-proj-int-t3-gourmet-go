@@ -6,11 +6,11 @@
 
 <h1 class="text-light">Editar Estoque</h1>
 
-<h4>Estoque</h4>
+<h4 class="text-light">Estoque</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" class=" text-light">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
                 <select asp-for="Categoria" class="form-control"
-                        asp-items="Html.GetEnumSelectList<Categoria>()"></select>
+                    asp-items="Html.GetEnumSelectList<Categoria>()"></select>
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
