@@ -89,11 +89,11 @@ namespace GourmetGo.Controllers
                 }
                 else if (dados.Tipo.ToString() == "Garcom")
                 {
-                    return RedirectToAction("Index", "GestaoDePedidos");
+                    return RedirectToAction("GestaoGeral", "Home");
                 }
                 else if (dados.Tipo.ToString() == "Cozinheiro")
                 {
-                    return RedirectToAction("Index", "GestaoDePedidos");
+                    return RedirectToAction("GestaoGeral", "Home");
                 }
                 else
                 {
