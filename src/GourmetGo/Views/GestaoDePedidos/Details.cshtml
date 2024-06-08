@@ -43,8 +43,8 @@
                 @Html.DisplayFor(model => model.Status)
             </div>
             <div class="d-flex align-itens-center justify-content-center">
-                <input type="submit" value="Salvar"
-                    class=" fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center" />
+                <a asp-action="Edit" asp-route-id="@Model?.Id"
+                    class=" fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center">Editar</a>
             </div>
             <div class="d-flex align-itens-center justify-content-center mb-3">
                 <a class="buttons buttons-a btn btn-secondary" asp-action="Index">Voltar</a>
@@ -81,7 +81,7 @@
     }
 
     .buttons-input {
-        border: 3px solid #0057FF;
+        border: 3px solid #8c8f00;
         color: black;
         border-radius: 10px;
         padding: 4px 80px;
