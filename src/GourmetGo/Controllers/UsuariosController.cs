@@ -84,7 +84,7 @@ namespace GourmetGo.Controllers
                 }
                 else if (dados.Tipo.ToString() == "Cliente")
                 {
-                    return RedirectToAction("Index", "Cliente");
+                    return RedirectToAction("Index", "Cliente", new { id = dados.Id });
                 }
                 else if (dados.Tipo.ToString() == "Garcom")
                 {
