@@ -9,13 +9,12 @@ namespace GourmetGo.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o nome completo!")]
+        [Required(ErrorMessage = "Obrigatório informar seu nome!")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o CPF!")]
         public string Cpf { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o telefone!")]
+
         public string Telefone { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o e-mail!")]
@@ -25,6 +24,8 @@ namespace GourmetGo.Models
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 
+        [Required(ErrorMessage ="Obrigatório informar o endereço!")]
+        public string Endereco { get; set; }
         public Tipo Tipo { get; set; }
 
         public ICollection<Pedido> Pedidos { get; set; }
@@ -33,6 +34,8 @@ namespace GourmetGo.Models
     public enum Tipo
     {
         Admin,
-        User
+        Cliente,
+        Garcom,
+        Cozinheiro
     }
 }
