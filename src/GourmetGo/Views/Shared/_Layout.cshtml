@@ -23,52 +23,57 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @* @if (User.IsInRole("Admin")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
                         @* @if (User.IsInRole("Admin")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Produtos"
-                                    asp-action="Index">Produtos</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Produtos"
+                                asp-action="Index">Produtos</a>
+                        </li>
+
                         @* @if (User.IsInRole("Admin")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios"
-                                    asp-action="Index">Usuários</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios"
+                                asp-action="Index">Usuários</a>
+                        </li>
+
                         @* @if (User.IsInRole("Admin")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pedidos"
-                                    asp-action="Index">Pedidos</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pedidos"
+                                asp-action="Index">Pedidos</a>
+                        </li>
+
                         @* @if (User.IsInRole("Admin")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="Cliente/1">Cliente</a>
-                            </li>
-                        
-                       @*  @if (User.IsInRole("Admin") || User.IsInRole("Garcom") || User.IsInRole("Cozinheiro")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="GestaoDePedidos"
-                                    asp-action="Index">Gestao De Pedidos</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="Cliente/1">Cliente</a>
+                        </li>
+
                         @* @if (User.IsInRole("Admin") || User.IsInRole("Garcom") || User.IsInRole("Cozinheiro")) *@
-                        
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Estoque"
-                                    asp-action="Index">Estoque</a>
-                            </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="GestaoDePedidos"
+                                asp-action="Index">Gestao De Pedidos</a>
+                        </li>
+
+                        @* @if (User.IsInRole("Admin") || User.IsInRole("Garcom") || User.IsInRole("Cozinheiro")) *@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Estoque"
+                                asp-action="Index">Estoque</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="@Url.Action("GestaoGeral", "Home")">Gestao Geral</a>
+                        </li>
+
 
                     </ul>
                     <ul class=" navbar-nav">
