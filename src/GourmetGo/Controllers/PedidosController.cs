@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GourmetGo.Controllers
 {
-    
+
     public class PedidosController : Controller
     {
 
@@ -22,7 +22,7 @@ namespace GourmetGo.Controllers
         }
 
         // GET: Pedidos
-        [Authorize]
+        /* [Authorize] */
         public async Task<IActionResult> Index()
         {
             var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);

@@ -15,7 +15,7 @@ namespace GourmetGo.Controllers
             _context = context;
         }
 
-        [Authorize]
+        /* [Authorize] */
         public async Task<IActionResult> Index()
         {
             var dados = await _context.Estoque.ToListAsync();

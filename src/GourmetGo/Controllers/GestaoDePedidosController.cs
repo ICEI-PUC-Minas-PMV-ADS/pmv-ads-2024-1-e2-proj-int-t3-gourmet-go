@@ -20,13 +20,13 @@ namespace GourmetGo.Controllers
         }
 
         // GET: GestaoDePedidos
-        [Authorize]
+        /* [Authorize] */
         public async Task<IActionResult> Index()
         {
             var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);
             return View(await appDbContext.ToListAsync());
 
-            
+
         }
 
         // GET: GestaoDePedidos/Details/5
@@ -47,7 +47,7 @@ namespace GourmetGo.Controllers
             }
 
 
-            
+
 
             return View(pedido);
         }
@@ -68,7 +68,7 @@ namespace GourmetGo.Controllers
             }
             ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
             ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
-            
+
             return View(pedido);
         }
 
@@ -115,6 +115,6 @@ namespace GourmetGo.Controllers
             return _context.Pedidos.Any(e => e.Id == id);
         }
 
-       
+
     }
 }

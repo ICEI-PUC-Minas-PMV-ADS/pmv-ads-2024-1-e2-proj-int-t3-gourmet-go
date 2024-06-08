@@ -60,7 +60,7 @@ public class ClienteController : Controller
         return View(cliente);
     }
 
-    [Authorize]
+    /* [Authorize] */
     public async Task<IActionResult> Index(int? id)
     {
         if (id == null)

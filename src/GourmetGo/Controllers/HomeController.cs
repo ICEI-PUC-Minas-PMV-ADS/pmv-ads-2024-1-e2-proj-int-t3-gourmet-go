@@ -20,7 +20,7 @@ namespace GourmetGo.Controllers
         {
             return View();
         }
-        public IActionResult GestaoGeral() 
+        public IActionResult GestaoGeral()
         {
             return View();
         }
