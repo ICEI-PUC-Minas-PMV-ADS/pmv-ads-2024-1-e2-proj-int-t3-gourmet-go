@@ -7,39 +7,40 @@
 <div class="text-center">
     <div class="container-fluid h-100">
         <div class="row align-items-center justify-content-center h-100">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-5">
                 <img class="logo" src="~/images/logo.png" alt="logo">
                 <div class="login">
+                    <label class="fs-2 cadastro-text">Cadastrar</label>
                     <form asp-action="Create">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
                             <label asp-for="Nome" class="control-label"></label>
-                            <input asp-for="Nome" class="form-control" />
+                            <input placeholder="Informe seu nome..." asp-for="Nome" class="form-control" />
                             <span asp-validation-for="Nome" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Email" class="control-label"></label>
-                            <input asp-for="Email" class="form-control" />
+                            <input placeholder="Informe seu e-mail..." asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Senha" class="control-label"></label>
-                            <input asp-for="Senha" class="form-control" />
+                            <input placeholder="Informe sua senha..." asp-for="Senha" class="form-control " />
                             <span asp-validation-for="Senha" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <input asp-for="Tipo" type="hidden" class="form-control" value="Cliente">
                             <span asp-validation-for="Tipo" class="text-danger"></span>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="Endereco" class="control-label"></label>
-                            <input asp-for="Endereco" class="form-control" />
+                        <div class="form-group mb-5">
+                            <label asp-for="Endereco" class="control-label">Endereço</label>
+                            <input placeholder="Informe seu endereço..." asp-for="Endereco" class="form-control" />
                             <span asp-validation-for="Endereco" class="text-danger"></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group d-inline-flex flex-column">
                             <input type="submit" href="@Url.Action("Login", "Usuarios")" value="Cadastrar"
-                                class="btn btn-primary" />
-                            <a href="@Url.Action("Login", "Usuarios")" class="btn btn-secondary">Voltar</a>
+                                class="btn btn-primary cadastro-button fs-5 px-4 mb-4" />
+                            <a href="@Url.Action("Login", "Usuarios")" class="a-link">Voltar para login</a>
                         </div>
                     </form>
                 </div>
@@ -47,6 +48,22 @@
         </div>
     </div>
 </div>
+
+<style>
+    .cadastro-text {
+        color: #0C847B;
+    }
+
+    .cadastro-button {
+        background-color: #0C847B;
+    }
+
+    .a-link {
+        color: #002D2B;
+    }
+</style>
+
+
 
 @section Scripts {
     @{
