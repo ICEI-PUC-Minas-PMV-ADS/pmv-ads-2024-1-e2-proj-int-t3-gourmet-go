@@ -1,4 +1,4 @@
-@model List<GourmetGo.Models.Pedido>
+@model List<GourmetGo.Models.Pedido>;
 
 <link rel='stylesheet'
     href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
@@ -26,7 +26,6 @@
                                 onclick="showContent('andamento')">Em Andamento</button>
                         </li>
                     </ul>
-
                     @* Conteúdo *@
                     <div class=" container-rounded container bg-light">
                         @* Tela de Histórico *@
@@ -52,8 +51,9 @@
                                     </div>
                                 }
                             </div>
-                            <button href="http://localhost:5136/Cliente/1"
-                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button>
+                            @ViewBag.ClienteId
+                            <a href="@Url.Action("Index", "Cliente", new { id =  @ViewBag.ClienteId })"
+                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
 
                         @* Tela de Pedidos em Andamento *@
@@ -67,14 +67,17 @@
                                     {
                                         <div class="container d-flex  flex-column mb-3">
                                             <h3 class="text-start">@pedido.Produto.Nome</h3>
-                                            <div class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2"> 
-                                            @if (pedido.Status == StatusDoPedido.EmAndamento)
+                                            <div
+                                                class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2">
+                                                @if (pedido.Status == StatusDoPedido.EmAndamento)
                                                 {
                                                     <i class="fs-4 fi fi-rs-clock-two me-3"></i> @pedido.Status
-                                                } else if ( pedido.Status == StatusDoPedido.EmPreparo ) {
-                                                   <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
                                                 }
-                                                
+                                                else if (pedido.Status == StatusDoPedido.EmPreparo)
+                                                {
+                                                    <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
+                                                }
+
                                             </div>
                                         </div>
 
@@ -82,7 +85,7 @@
                                     }
                                 }
                             </div>
-                            <a href="http://localhost:5136/Cliente/1"
+                            <a href="@Url.Action("Index", "Cliente", new { id =  @ViewBag.ClienteId })"
                                 class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
 
@@ -179,7 +182,7 @@
             }
 
             // Inicializar o estado inicial
-            showContent('andamento');
+            showContent('historico');
 
 
         </script>

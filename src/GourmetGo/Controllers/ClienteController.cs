@@ -38,7 +38,8 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
-        
+        ViewBag.ClienteId = cliente.Id;
+
         // Obtendo os pedidos do cliente
         var pedidosDoCliente = await _context.Pedidos
     .Include(p => p.Produto) // Incluindo os produtos relacionados
