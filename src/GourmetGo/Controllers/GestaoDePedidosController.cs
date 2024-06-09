@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GourmetGo.Controllers
 {
@@ -19,9 +20,14 @@ namespace GourmetGo.Controllers
         }
 
         // GET: GestaoDePedidos
+        [Authorize]
         public async Task<IActionResult> Index()
         {
-            var pedidos = await _context.Pedidos.Include(p => p.Usuario).ToListAsync();
+            var pedidos = await _context.Pedidos
+                                        .Include(p => p.Usuario)
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .ToListAsync();
             return View(pedidos);
         }
 
@@ -34,8 +40,10 @@ namespace GourmetGo.Controllers
             }
 
             var pedido = await _context.Pedidos
-                .Include(p => p.Usuario)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                                        .Include(p => p.Usuario)
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
             if (pedido == null)
             {
                 return NotFound();
@@ -53,9 +61,9 @@ namespace GourmetGo.Controllers
             }
 
             var pedido = await _context.Pedidos
-                .Include(p => p.PedidoProdutos)
-                .ThenInclude(pp => pp.Produto)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
 
             if (pedido == null)
             {

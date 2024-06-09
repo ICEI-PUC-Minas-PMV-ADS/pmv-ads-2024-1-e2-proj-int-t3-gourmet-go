@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GourmetGo.Controllers
 {
+    
     public class PedidosController : Controller
     {
+
         private readonly AppDbContext _context;
 
         public PedidosController(AppDbContext context)
@@ -19,11 +22,17 @@ namespace GourmetGo.Controllers
         }
 
         // GET: Pedidos
+        [Authorize]
         public async Task<IActionResult> Index()
-        {
-            var appDbContext = _context.Pedidos.Include(p => p.Usuario).Include(p => p.PedidoProdutos).ThenInclude(pp => pp.Produto);
-            return View(await appDbContext.ToListAsync());
-        }
+{
+    var pedidos = await _context.Pedidos
+        .Include(p => p.Usuario)
+        .Include(p => p.PedidoProdutos)
+        .ThenInclude(pp => pp.Produto)
+        .ToListAsync();
+
+    return View(pedidos);
+}
 
         // GET: Pedidos/Details/5
         public async Task<IActionResult> Details(int? id)

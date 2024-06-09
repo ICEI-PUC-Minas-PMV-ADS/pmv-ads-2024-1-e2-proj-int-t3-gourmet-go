@@ -3,7 +3,7 @@ using GourmetGo.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 public class ClienteController : Controller
 {
@@ -14,6 +14,7 @@ public class ClienteController : Controller
         _context = context;
     }
 
+    [Authorize]
     public async Task<IActionResult> Cardapio(int id)
     {
         var cliente = await _context.Usuarios.FindAsync(id);
@@ -27,6 +28,7 @@ public class ClienteController : Controller
         return View(produtos);
     }
 
+    [Authorize]
     public async Task<IActionResult> Pedidos(int id)
     {
         var cliente = await _context.Usuarios.FindAsync(id);
@@ -59,6 +61,7 @@ public class ClienteController : Controller
         return View(cliente);
     }
 
+    [Authorize]
     public async Task<IActionResult> Index(int? id)
     {
         if (id == null)

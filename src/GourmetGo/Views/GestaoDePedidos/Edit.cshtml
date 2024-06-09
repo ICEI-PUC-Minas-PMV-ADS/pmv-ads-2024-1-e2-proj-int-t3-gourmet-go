@@ -4,55 +4,91 @@
     ViewData["Title"] = "Editar";
 }
 
-<h1 class="text-light">Alterar status</h1>
+<div class="text-center mb-5">
+    <img class="logo-gourmet" src="~/images/minor-logo.png" alt="logo">
+</div>
 
-<h4 class="text-light">Pedido</h4>
-<hr />
-<div class="row text-light">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group d-flex">
-                <label asp-for="UsuarioId" class="control-label me-4"></label>
-                <select asp-for="UsuarioId" class="d-none form-control readonly" asp-items="ViewBag.UsuarioId"></select>
-                <div>@Html.DisplayFor(model => model.Usuario.Nome)</div>
-                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+<div class="container-sm d-flex flex-column container-principal mt-5">
+    <h1 class="text-center text-light mt-5 mb-5">Alterar status</h1>
+    <form class="text-light" asp-action="Edit">
+        <div class="" asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="ms-3 fs-4">
+            <div class="form-group d-flex mb-0 form-parts">
+                <label asp-for="Usuario.Nome" class="control-label me-4">Usuário:</label>
+                <div>@(Model.Usuario != null ? Model.Usuario.Nome : "Usuário não encontrado")</div>
             </div>
-            <div class="form-group d-flex">
-                <label asp-for="PedidoProdutos" class="control-label me-4">Produtos:</label>
+            <div class="form-group d-flex mb-0 form-parts ">
+                <label asp-for="PedidoProdutos" class="control-label me-4">Produto(s):</label>
                 <div>
-                    @foreach (var produtoPedido in Model.PedidoProdutos)
+                    @foreach (var pedidoProduto in Model.PedidoProdutos)
                     {
-                        <div>@produtoPedido.Produto.Nome</div>
+                        <div>@pedidoProduto.Produto.Nome</div>
                     }
                 </div>
             </div>
-            <div class="form-group d-flex">
-                <label asp-for="Observações" class="control-label me-4"></label>
-                <input asp-for="Observações" class="form-control d-none" />
-                <div>@Html.DisplayFor(model => model.Observações)</div>
-                <span asp-validation-for="Observações" class="text-danger"></span>
+            <div class="form-group d-flex form-parts">
+                <label asp-for="Observações" class="control-label me-4">Observações:</label>
+                <div class="fs-5">@Model.Observações</div>
             </div>
-            <div class="form-group d-flex">
-                <label asp-for="Tipo" class="control-label me-4"></label>
-                <label asp-for="Tipo" asp-items="Html.GetEnumSelectList<TipoDeEntrega>()" class="form-control d-none"></label>
-                <div>@Html.DisplayFor(model => model.Tipo)</div>
-                <span asp-validation-for="Tipo" class="text-danger"></span>
+            <div class="form-group d-flex mb-0 form-parts">
+                <label asp-for="Tipo" class="control-label me-4">Recebimento:</label>
+                <div>@Model.Tipo</div>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" asp-items="Html.GetEnumSelectList<StatusDoPedido>()" class="form-control"></select>
+            <div class="form-group mt-4 mb-5 form-parts">
+                <label class="mb-0" asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<StatusDoPedido>()" class="form-control p-3"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary me-4" />
-                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+            <div class="d-flex align-itens-center justify-content-center">
+                <input type="submit" value="Salvar" class="fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center" />
             </div>
-        </form>
-    </div>
+            <div class="d-flex align-itens-center justify-content-center mb-3">
+                <a class="buttons buttons-a btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </div>
+    </form>
 </div>
 
+<style>
+    .logo-gourmet {
+        width: auto;
+        height: 240px;
+    }
+
+    .container-principal {
+        background-color: #0C847B;
+        border-radius: 15px;
+        border: 4px solid rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+    }
+
+    .form-parts {
+        font-family: arial;
+    }
+
+    .buttons {
+        background-color: #D9D9D9;
+        font-weight: 600;
+    }
+
+    .buttons-input {
+        border: 3px solid #0057FF;
+        color: black;
+        border-radius: 10px;
+        padding: 4px 80px;
+    }
+
+    .buttons-a {
+        font-size: 20px;
+        color: #000;
+        border: 3px solid rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+</style>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

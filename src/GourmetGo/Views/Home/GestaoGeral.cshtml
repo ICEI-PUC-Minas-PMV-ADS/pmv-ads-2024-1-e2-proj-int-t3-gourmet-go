@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "GestaoGeral";
+}
+<div class="container-fluid text-center d-flex flex-column justify-content-center">
+    <div class="text-center mb-5">
+        <img class="logo-gourmet" src="~/images/minor-logo.png" alt="logo">
+    </div>
+
+    <div class="container-sm d-flex flex-column">
+        <p class="text-center text-light mt-5 fs-2 ">Bem vindo!</p>
+        <p class="text-center text-light fs-1">@User.Identity.Name</p>
+    </div>
+
+    <div jscontainer1 class="container box-1 p-0 mb-5 containers-edit">
+        <div class="container d-flex justify-content-center align-itens-center text-center p-0">
+            <img class="img-icon m-0 p-0" src="~/images/icone-gestaopedidos.png" alt="">
+        </div>
+        <div class="container p-0">
+            <p class="fs-2 text-white m-0 text-start">Gestão de Pedidos</p>
+        </div>
+    </div>
+
+    <div jscontainer2 class="container box-1 p-0 mt-3 containers-edit">
+        <div class="container d-flex justify-content-center align-itens-center text-center p-0">
+            <img class="img-icon m-0 p-0" src="~/images/icone-estoque.png" alt="">
+        </div>
+        <div class="container p-0">
+            <p class="fs-2 text-white m-0 text-start">Estoque</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<style>
+    .logo-gourmet {
+        width: 200px;
+    }
+
+    .container-principal {
+        display: flex;
+        flex-direction: column
+    }
+
+    .container-buttons .itens {
+        font-size: 75px;
+        display: flex;
+        align-items: center;
+    }
+
+    .containers-edit {
+        border: 5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+
+    .containers-edit:hover {
+        background-color: #0a7069;
+        border: 5px solid rgba(0, 0, 0, 0.5);
+    }
+
+
+
+    .btn-login-inicial {
+        background-color: #0C847B;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 30px;
+
+    }
+
+    .box-1 {
+        background-color: #0C847B;
+        width: 400px;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .img-icon {
+        width: auto;
+        height: 100px;
+    }
+</style>
+
+
+
+<script>
+    container1 = document.querySelector('[jscontainer1]')
+    container1.addEventListener('click', function () {
+        event.preventDefault();  // Prevent default behavior (following link)
+        window.location.href = '@Url.Action("Index", "GestaoDePedidos")';
+    })
+
+    container2 = document.querySelector('[jscontainer2]')
+    container2.addEventListener('click', function () {
+        event.preventDefault();  // Prevent default behavior (following link)
+        window.location.href = '@Url.Action("Index", "Estoque")';
+    })
+
+
+</script>
+
+
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>

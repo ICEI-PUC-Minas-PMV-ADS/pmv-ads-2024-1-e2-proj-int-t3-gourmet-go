@@ -1,4 +1,5 @@
 ﻿using GourmetGo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -14,6 +15,7 @@ namespace GourmetGo.Controllers
             _context = context;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var dados = await _context.Estoque.ToListAsync();

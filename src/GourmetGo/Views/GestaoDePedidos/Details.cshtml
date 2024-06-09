@@ -1,75 +1,100 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Detalhes";
+    ViewData["Title"] = "Details";
 }
 
-<h1 class="text-light">Detalhes</h1>
 
-<div class="text-white">
-    <h4>Pedido de @Html.DisplayFor(model => model.Usuario.Nome)</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Observações)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Observações)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereço)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Endereço)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pagamento)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pagamento)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-    </dl>
-    
-    <h4>Produtos</h4>
-    <hr />
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Quantidade</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.PedidoProdutos)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Produto.Nome)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Quantidade)</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="text-center mb-5">
+    <img class="logo-gourmet" src="~/images/minor-logo.png" alt="logo">
 </div>
 
-<div>
-    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a class="btn btn-secondary" asp-action="Index">Voltar ao início</a>
+<div class="container-sm d-flex flex-column container-principal mt-5">
+    <h1 class="text-center text-light mt-5 mb-5">Detalhes</h1>
+    <form class="text-light">
+        <input type="hidden" asp-for="Id" />
+        <div class="ms-3 fs-4">
+            <div class="form-group d-flex form-parts">
+                <p class="me-2">Nome:</p>
+                @Html.DisplayFor(model => model.Usuario.Nome)
+            </div>
+            <div class="form-group d-flex form-parts">
+                <p class="me-2">Produto(s):</p>
+                @foreach (var pedidoProduto in Model.PedidoProdutos)
+                {
+                    <p>@pedidoProduto.Produto.Nome</p>
+                }
+            </div>
+            <div class="form-group d-flex form-parts">
+                <p class="me-2">Observações:</p>
+                @Html.DisplayFor(model => model.Observações)
+            </div>
+            <div class="form-group d-flex  form-parts">
+                <p class="me-2">Tipo de entrega:</p>
+                @Html.DisplayFor(model => model.Tipo)
+            </div>
+            <div class="form-group d-flex  form-parts">
+                <p class="me-2">Endereço:</p>
+                @Html.DisplayFor(model => model.Endereço)
+            </div>
+            <div class="form-group d-flex  form-parts">
+                <p class="me-2">Pagamento:</p>
+                @Html.DisplayFor(model => model.Pagamento)
+            </div>
+            <div class="form-group d-flex  form-parts">
+                <p class="me-2">Status:</p>
+                @Html.DisplayFor(model => model.Status)
+            </div>
+            <div class="d-flex align-itens-center justify-content-center">
+                <a asp-action="Edit" asp-route-id="@Model?.Id"
+                    class=" fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center">Editar</a>
+            </div>
+            <div class="d-flex align-itens-center justify-content-center mb-3">
+                <a class="buttons buttons-a btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+
+
+
+        </div>
+    </form>
 </div>
+
+
+<style>
+    .logo-gourmet {
+        width: auto;
+        height: 240px;
+    }
+
+    .container-principal {
+        background-color: #0C847B;
+        border-radius: 15px;
+        border: 4px solid rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+    }
+
+
+    .form-parts {
+        font-family: arial;
+    }
+
+    .buttons {
+        background-color: #D9D9D9;
+        font-weight: 600;
+    }
+
+    .buttons-input {
+        border: 3px solid #8c8f00;
+        color: black;
+        border-radius: 10px;
+        padding: 4px 80px;
+
+    }
+
+    .buttons-a {
+        font-size: 20px;
+        color: #000;
+        border: 3px solid rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+</style>

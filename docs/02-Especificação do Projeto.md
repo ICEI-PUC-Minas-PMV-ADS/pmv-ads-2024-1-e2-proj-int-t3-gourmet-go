@@ -33,7 +33,6 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Garçom              | Receber notificações de novos pedidos e atualizações sobre status dos pedidos      |Para atender rapidamente os pedidos                                                       |
 |Cliente             | Realizar pedido por delivery ou no restaurante                                     |Para ter mais comodidade e facilidade na escolha                                          |
 |Cliente             | Vizualizar e alterar itens do pedido                                               |Escolher facilmente o que pedir e planejar o meu orçamento                                | 
-|Cliente             | Reservar de mesas                                                                  |Para garantir que tenha um lugar no restaurante, especialmente em dias movimento          |
 
 
 ## Requisitos

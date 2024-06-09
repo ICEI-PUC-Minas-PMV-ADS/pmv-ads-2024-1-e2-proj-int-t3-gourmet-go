@@ -4,6 +4,7 @@ using GourmetGo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GourmetGo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240608160403_AddTiposdeUsuarioEEndereco")]
+    partial class AddTiposdeUsuarioEEndereco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,6 +71,9 @@ namespace GourmetGo.Migrations
                     b.Property<int>("Pagamento")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -79,30 +85,11 @@ namespace GourmetGo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProdutoId");
+
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Pedidos");
-                });
-
-            modelBuilder.Entity("GourmetGo.Models.PedidoProduto", b =>
-                {
-                    b.Property<int>("PedidoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.HasKey("PedidoId", "ProdutoId");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("PedidoProduto");
                 });
 
             modelBuilder.Entity("GourmetGo.Models.Produto", b =>
@@ -175,42 +162,26 @@ namespace GourmetGo.Migrations
 
             modelBuilder.Entity("GourmetGo.Models.Pedido", b =>
                 {
+                    b.HasOne("GourmetGo.Models.Produto", "Produto")
+                        .WithMany("Pedidos")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("GourmetGo.Models.Usuario", "Usuario")
                         .WithMany("Pedidos")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("GourmetGo.Models.PedidoProduto", b =>
-                {
-                    b.HasOne("GourmetGo.Models.Pedido", "Pedido")
-                        .WithMany("PedidoProdutos")
-                        .HasForeignKey("PedidoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GourmetGo.Models.Produto", "Produto")
-                        .WithMany("PedidoProdutos")
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pedido");
-
                     b.Navigation("Produto");
-                });
 
-            modelBuilder.Entity("GourmetGo.Models.Pedido", b =>
-                {
-                    b.Navigation("PedidoProdutos");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("GourmetGo.Models.Produto", b =>
                 {
-                    b.Navigation("PedidoProdutos");
+                    b.Navigation("Pedidos");
                 });
 
             modelBuilder.Entity("GourmetGo.Models.Usuario", b =>

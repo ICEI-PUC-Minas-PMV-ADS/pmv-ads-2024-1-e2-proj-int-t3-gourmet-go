@@ -20,6 +20,10 @@ namespace GourmetGo.Controllers
         {
             return View();
         }
+        public IActionResult GestaoGeral() 
+        {
+            return View();
+        }
         public IActionResult EsqueciSenha()
         {
             return View();
