@@ -73,38 +73,45 @@ namespace GourmetGo.Controllers
             return View(pedido);
         }
 
-        // POST: GestaoDePedidos/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Pedido pedido)
+ // POST: GestaoDePedidos/Edit/5
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
+{
+    if (id != pedido.Id)
+    {
+        return NotFound();
+    }
+
+    // Verifica se o UsuarioId fornecido no pedido existe na tabela Usuarios
+    var usuarioExists = await _context.Usuarios.AnyAsync(u => u.Id == pedido.UsuarioId);
+    if (!usuarioExists)
+    {
+        ModelState.AddModelError("UsuarioId", "O usuário associado ao pedido não foi encontrado.");
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            if (id != pedido.Id)
+            _context.Entry(pedido).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!PedidoExists(pedido.Id))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            else
             {
-                try
-                {
-                    _context.Update(pedido);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PedidoExists(pedido.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                throw;
             }
-            return View(pedido);
         }
+        return RedirectToAction(nameof(Index));
+    }
+    return View(pedido);
+}
 
         private bool PedidoExists(int id)
         {
