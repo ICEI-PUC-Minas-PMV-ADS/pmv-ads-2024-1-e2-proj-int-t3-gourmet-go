@@ -1,19 +1,19 @@
 @model List<GourmetGo.Models.Pedido>
 
-<link rel='stylesheet'
-    href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css'>
 
 @{
     ViewData["Title"] = "Cliente/Pedidos";
 }
 
-<div>
-    <div class="text-center">
-        <div class="container-fluid h-100">
-            <div class="row align-items-center justify-content-center h-100">
-                <div class="col-md-6 col-lg-7">
-                    <img class="logo" src="~/images/logo.png" alt="logo">
+<div class="text-center">
+    <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-md-6 col-lg-7">
+                <img class="logo" src="~/images/logo.png" alt="logo">
+                <div class="container-rounded container bg-light">
+                    <h3 class="fs-2">Pedidos do Cliente</h3>
 
                     @* Nav-bar *@
                     <ul class="nav-pedidos nav nav-tabs justify-content-center">
@@ -29,157 +29,129 @@
 
                     @* Conteúdo *@
                     <div class=" container-rounded container bg-light">
-                        @* Tela de Histórico *@
+                        @* Tela de Histórico e Em Andamento *@
                         <div id="historico" class="content active-content">
                             <h3 class="fs-2">Histórico de Pedidos</h3>
                             <div class="container">
                                 @foreach (var pedido in Model)
                                 {
-                                    <div class="">
-
-                                        <p class="text-start mb-0 data-horas-tamanho">22/01/2024 - 14h23</p>
-                                        <p class="text-start mb-0 data-horas-tamanho">@pedido.Status</p>
-
-                                        <div class="pedido-card ">
-                                            <div class="d-flex flex-row fs-5">
-                                                <p class="quantidade-texto text-start me-2">1x</p>
-                                                <p class="text-start">@pedido.Produto.Nome</p>
-                                            </div>
-                                            <div>
-                                                <p class="total mb-0">R$@pedido.Produto.Preco</p>
-                                            </div>
+                                    <div class="pedido-card">
+                                        <p class="text-start mb-0 data-horas-tamanho">Pedido @pedido.Id - @pedido.Status</p>
+                                        <div class="d-flex flex-row fs-5  align-items-center">
+                                            @foreach (var item in pedido.PedidoProdutos)
+                                            {
+                                                <p class="quantidade-texto text-start me-2">@item.Quantidade</p>
+                                                <p class="text-start">@item.Produto.Nome</p>
+                                            }
                                         </div>
+                                        <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco * pp.Quantidade).ToString("0.00")</p>
                                     </div>
                                 }
                             </div>
-                            <button href="http://localhost:5136/Cliente/1"
-                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</button>
+                            <a href="/cliente/2" class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
 
-                        @* Tela de Pedidos em Andamento *@
                         <div id="andamento" class="content">
                             <h3>Pedidos em Andamento</h3>
                             <div class="container">
                                 @foreach (var pedido in Model)
                                 {
-                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status ==
-                                   StatusDoPedido.EmPreparo)
+                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status == StatusDoPedido.EmPreparo)
                                     {
-                                        <div class="container d-flex  flex-column mb-3">
-                                            <h3 class="text-start">@pedido.Produto.Nome</h3>
-                                            <div class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2"> 
-                                            @if (pedido.Status == StatusDoPedido.EmAndamento)
+                                        <div class="pedido-card">
+                                            <p class="text-start mb-0 data-horas-tamanho">Pedido @pedido.Id - @pedido.Status</p>
+                                            <div class="d-flex flex-row fs-5  align-items-center">
+                                                @foreach (var item in pedido.PedidoProdutos)
                                                 {
-                                                    <i class="fs-4 fi fi-rs-clock-two me-3"></i> @pedido.Status
-                                                } else if ( pedido.Status == StatusDoPedido.EmPreparo ) {
-                                                   <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
+                                                    <p class="quantidade-texto text-start me-2">@item.Quantidade</p>
+                                                    <p class="text-start">@item.Produto.Nome</p>
                                                 }
-                                                
                                             </div>
+                                            <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco * pp.Quantidade).ToString("0.00")</p>
                                         </div>
-
-
                                     }
                                 }
                             </div>
-                            <a href="http://localhost:5136/Cliente/1"
-                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
+                            <a href="/cliente/2" class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <style>
-            .pedido-card {
-                background-color: #2F665A;
-                color: white;
-                padding: 15px;
-                border-radius: 10px;
-                margin-bottom: 15px;
-            }
+<style>
+    .pedido-card {
+        background-color: #2F665A;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
 
-            .total {
-                text-align: end;
-                font-size: 20px;
+    .total {
+        text-align: end;
+        font-size: 20px;
+    }
 
-            }
+    .voltar-button {
+        display: block;
+        margin: 20px auto;
+        width: 100px;
+    }
 
-            .nav-pedidos {
-                font-size: 24px;
-            }
+    .data-horas-tamanho {
+        font-size: 13px;
+    }
 
-            .cor-nav-link {
-                color: #84fa84;
-            }
+    .container-rounded {
+        border-radius: 20px;
+    }
 
-            .voltar-button {
-                display: block;
-                margin: 20px auto;
-                width: 100px;
-            }
+    .content {
+        display: none;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-            .data-horas-tamanho {
-                font-size: 13px;
-            }
+    .active-content {
+        display: block;
+    }
 
-            .voltar-button {
-                display: block;
-                margin: 20px auto;
-                width: 100px;
-            }
+    .active-btn {
+        background-color: white !important;
+        color: black !important;
+        border: 1px solid #ccc;
+    }
 
-            .container-rounded {
-                border-radius: 20px;
-            }
+    .nav-btn {
+        margin-right: 10px;
+    }
+</style>
 
-            .content {
-                display: none;
-                background-color: white;
-                padding: 20px;
-                border-radius: 10px;
-            }
+<script>
 
-            .active-content {
-                display: block;
-            }
+    function showContent(id) {
+        // Esconder todas as seções de conteúdo
+        document.querySelectorAll('.content').forEach(section => {
+            section.classList.remove('active-content');
+        });
 
-            .active-btn {
-                background-color: white !important;
-                color: black !important;
-                border: 1px solid #ccc;
-            }
+        // Remover a classe ativa de todos os botões
+        document.querySelectorAll('.nav-link').forEach(button => {
+            button.classList.remove('active-btn');
+        });
 
-            .nav-btn {
-                margin-right: 10px;
-            }
-        </style>
+        // Mostrar a seção de conteúdo selecionada
+        document.getElementById(id).classList.add('active-content');
 
-        <script>
+        // Adicionar a classe ativa ao botão correspondente
+        document.getElementById('btn-' + id).classList.add('active-btn');
+    }
 
-            function showContent(id) {
-                // Esconder todas as seções de conteúdo
-                document.querySelectorAll('.content').forEach(section => {
-                    section.classList.remove('active-content');
-                });
+    // Inicializar o estado inicial
+    showContent('historico');
 
-                // Remover a classe ativa de todos os botões
-                document.querySelectorAll('.nav-link').forEach(button => {
-                    button.classList.remove('active-btn');
-                });
-
-                // Mostrar a seção de conteúdo selecionada
-                document.getElementById(id).classList.add('active-content');
-
-                // Adicionar a classe ativa ao botão correspondente
-                document.getElementById('btn-' + id).classList.add('active-btn');
-            }
-
-            // Inicializar o estado inicial
-            showContent('andamento');
-
-
-        </script>
+</script>
