@@ -25,9 +25,10 @@
               </a>
             </div>
             <div class="menu-btn">
-              <a asp-controller="Cliente" asp-action="Configuracoes" asp-route-id="@Model.Id">
+              <a href="@Url.Action("Edit", "EditarPerfil", new { id = @Model.Id })">
                 <img class="icons" src="~/images/config.png" alt="configurações">
                 <span class="menu-option">Configurações</span>
+
               </a>
             </div>
           </nav>

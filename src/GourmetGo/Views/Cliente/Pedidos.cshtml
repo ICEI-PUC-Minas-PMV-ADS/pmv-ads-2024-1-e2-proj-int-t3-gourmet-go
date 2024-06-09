@@ -63,7 +63,10 @@
                                    StatusDoPedido.EmPreparo)
                                     {
                                         <div class="container d-flex  flex-column mb-3">
-                                            <h3 class="text-start">@pedido.Produto.Nome</h3>
+                                            @foreach (var item in pedido.PedidoProdutos)
+                                            {
+                                                <h3 class="text-start">@item.Produto.Nome</h3>
+                                            }
                                             <div
                                                 class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2">
                                                 @if (pedido.Status == StatusDoPedido.EmAndamento)
