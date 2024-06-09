@@ -24,6 +24,7 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
+        ViewBag.ClienteId = cliente.Id;
         List<Produto> produtos = await _context.Produtos.ToListAsync();
         return View(produtos);
     }
@@ -58,6 +59,7 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
+        ViewBag.ClienteId = cliente.Id;
         return View(cliente);
     }
 
