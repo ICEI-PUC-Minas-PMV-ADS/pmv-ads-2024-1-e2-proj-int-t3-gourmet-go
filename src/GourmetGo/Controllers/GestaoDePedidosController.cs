@@ -23,10 +23,12 @@ namespace GourmetGo.Controllers
         /* [Authorize] */
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Pedidos.Include(p => p.Produto).Include(p => p.Usuario);
-            return View(await appDbContext.ToListAsync());
-
-
+            var pedidos = await _context.Pedidos
+                                        .Include(p => p.Usuario)
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .ToListAsync();
+            return View(pedidos);
         }
 
         // GET: GestaoDePedidos/Details/5
@@ -38,20 +40,17 @@ namespace GourmetGo.Controllers
             }
 
             var pedido = await _context.Pedidos
-                .Include(p => p.Produto)
-                .Include(p => p.Usuario)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                                        .Include(p => p.Usuario)
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
             if (pedido == null)
             {
                 return NotFound();
             }
 
-
-
-
             return View(pedido);
         }
-
 
         // GET: GestaoDePedidos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -61,34 +60,41 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
-            var pedido = await _context.Pedidos.FindAsync(id);
+            var pedido = await _context.Pedidos
+                                        .Include(p => p.PedidoProdutos)
+                                            .ThenInclude(pp => pp.Produto)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+
             if (pedido == null)
             {
                 return NotFound();
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
 
             return View(pedido);
         }
 
         // POST: GestaoDePedidos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,ProdutoId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
         {
             if (id != pedido.Id)
             {
                 return NotFound();
             }
 
+            // Verifica se o UsuarioId fornecido no pedido existe na tabela Usuarios
+            var usuarioExists = await _context.Usuarios.AnyAsync(u => u.Id == pedido.UsuarioId);
+            if (!usuarioExists)
+            {
+                ModelState.AddModelError("UsuarioId", "O usuário associado ao pedido não foi encontrado.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(pedido);
+                    _context.Entry(pedido).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -104,9 +110,6 @@ namespace GourmetGo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome", pedido.ProdutoId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
-            ViewBag.pedido = pedido;
             return View(pedido);
         }
 
@@ -114,7 +117,5 @@ namespace GourmetGo.Controllers
         {
             return _context.Pedidos.Any(e => e.Id == id);
         }
-
-
     }
 }

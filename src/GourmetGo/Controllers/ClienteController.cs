@@ -43,9 +43,10 @@ public class ClienteController : Controller
 
         // Obtendo os pedidos do cliente
         var pedidosDoCliente = await _context.Pedidos
-    .Include(p => p.Produto) // Incluindo os produtos relacionados
-    .Where(p => p.UsuarioId == id)
-    .ToListAsync();
+            .Include(p => p.PedidoProdutos)
+            .ThenInclude(pp => pp.Produto)
+            .Where(p => p.UsuarioId == id)
+            .ToListAsync();
 
         return View(pedidosDoCliente);
     }

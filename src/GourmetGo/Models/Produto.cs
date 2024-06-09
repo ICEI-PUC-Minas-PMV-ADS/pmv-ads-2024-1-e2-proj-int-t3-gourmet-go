@@ -8,8 +8,8 @@ namespace GourmetGo.Models
     public class Produto
     {
         [Key]
-[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o nome!")]
         public string Nome { get; set; }
@@ -25,10 +25,9 @@ public int Id { get; set; }
         [Required(ErrorMessage = "Obrigatório informar a categoria!")]
         public Categoria Categoria { get; set; }
 
-        // Adicionando a propriedade Imagem
         public byte[] Imagem { get; set; }
 
-        public ICollection<Pedido> Pedidos { get; set; }
+        public ICollection<PedidoProduto> PedidoProdutos { get; set; }
     }
 
     public enum Categoria

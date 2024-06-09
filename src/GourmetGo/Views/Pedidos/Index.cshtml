@@ -16,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.Usuario.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Produto)
+                Produtos
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Produto.Preco)
+                Total
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Observações)
@@ -47,10 +47,17 @@
                     @Html.DisplayFor(modelItem => item.Usuario.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                    <ul>
+                        @foreach (var produto in item.PedidoProdutos)
+                        {
+                            <li>
+                                @produto.Produto.Nome (@produto.Quantidade x @produto.Produto.Preco.ToString("C"))
+                            </li>
+                        }
+                    </ul>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Produto.Preco)
+                    @item.PedidoProdutos.Sum(pp => pp.Quantidade * pp.Produto.Preco).ToString("C")
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Observações)

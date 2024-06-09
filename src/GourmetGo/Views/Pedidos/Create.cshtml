@@ -1,5 +1,4 @@
-﻿@model GourmetGo.Models.Pedido;
-
+﻿@model GourmetGo.Models.Pedido
 
 @{
     ViewData["Title"] = "Create";
@@ -10,16 +9,12 @@
 <h4 class="text-light">Preencher dados:</h4>
 <hr />
 <div class="row text-light">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UsuarioId" class="control-label"></label>
                 <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProdutoId" class="control-label"></label>
-                <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Observações" class="control-label"></label>
@@ -28,8 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Tipo" class="control-label">Como deseja receber seu pedido? </label>
-                <select asp-for="Tipo" class="form-control"
-                    asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"></select>
+                <select asp-for="Tipo" class="form-control" asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"></select>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,16 +33,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="Pagamento" class="control-label">Selecione a forma de pagamento:</label>
-                <select asp-for="Pagamento" class="form-control"
-                    asp-items="Html.GetEnumSelectList<FormaDePagamento>()"></select>
+                <select asp-for="Pagamento" class="form-control" asp-items="Html.GetEnumSelectList<FormaDePagamento>()"></select>
                 <span asp-validation-for="Pagamento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control"
-                    asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
+                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
+
+            <h4 class="text-light">Produtos</h4>
+            <div id="produtos-container">
+                <div class="produto-item">
+                    <div class="form-group">
+                        <label>Produto</label>
+                        <select name="ProdutoIds" class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade</label>
+                        <input name="Quantidades" class="form-control" type="number" value="1" />
+                    </div>
+                    <button type="button" class="btn btn-danger remove-produto">Remover</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn-info mt-2" id="add-produto">Adicionar Produto</button>
+
             <div class="form-group mt-3">
                 <input type="submit" value="Salvar" class="btn btn-success" />
                 <a asp-action="Index" class="btn btn-secondary">Voltar</a>
@@ -61,4 +70,21 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        $(document).ready(function () {
+            $("#add-produto").click(function () {
+                var newProduto = $(".produto-item:first").clone();
+                newProduto.find("input").val(1);
+                newProduto.find(".remove-produto").click(function () {
+                    $(this).parent().remove();
+                });
+                $("#produtos-container").append(newProduto);
+            });
+
+            $(".remove-produto").click(function () {
+                $(this).parent().remove();
+            });
+        });
+    </script>
 }

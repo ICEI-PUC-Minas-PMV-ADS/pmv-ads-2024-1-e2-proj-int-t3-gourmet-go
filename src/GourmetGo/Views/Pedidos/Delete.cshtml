@@ -1,7 +1,7 @@
 ﻿@model GourmetGo.Models.Pedido
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir";
 }
 
 <h1 class="text-light">Excluir</h1>
@@ -18,10 +18,15 @@
             @Html.DisplayFor(model => model.Usuario.Nome)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Produto)
+            Produtos
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Produto.Nome)
+            <ul>
+                @foreach (var item in Model.PedidoProdutos)
+                {
+                    <li>@item.Produto.Nome - Quantidade: @item.Quantidade</li>
+                }
+            </ul>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Observações)
