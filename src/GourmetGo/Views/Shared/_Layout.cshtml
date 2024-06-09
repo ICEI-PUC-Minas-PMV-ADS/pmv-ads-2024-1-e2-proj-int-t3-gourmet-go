@@ -14,8 +14,8 @@
 
 <body>
     <header>
-        @* @if (User.IsInRole("Admin"))
-        { *@
+         @* @if (User.IsInRole("Admin"))
+        {  *@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand">GourmetGo</a>
@@ -104,17 +104,17 @@
 
             </div>
         </nav>
-        @* } *@
+         @* }  *@
     </header>
 
 
 
-    <div class="position-config">
+@*     <div class="position-config">
         <ul class=" navbar-nav text-light">
             @if (User.Identity.IsAuthenticated)
             {
-                <li class="nav-item">
-                    Olá, @User.Identity.Name<a class="nav-link text-light text-decoration-underline text-center" asp-area=""
+                <li class="nav-item d-flex justify-content-evenly align-itens-center">
+                    Olá, @User.Identity.Name<a class="nav-link text-light text-decoration-underline text-center p-0 ms-3" asp-area=""
                         asp-controller="Usuarios" asp-action="Logout">Sair</a>
                 </li>
             }
@@ -126,7 +126,7 @@
                 </li>
             }
         </ul>
-    </div>
+    </div> *@
     <div class="container">
 
         <main role="main" class="pb-3">
@@ -144,7 +144,7 @@
         .position-config {
             position: absolute;
             left: 90%;
-            top: 5px;
+            top: 10px;
         }
     </style>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
