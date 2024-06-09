@@ -57,7 +57,8 @@
                         <br />
                         <div class="form-group">
                             <input type="submit" value="Salvar" class="btn btn-success btn-color me-3" />
-                            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                            <a href="@Url.Action("Index", "Cliente", new { id = @Model.Id })"
+                                class="btn btn-secondary">Voltar</a>
                         </div>
                     </form>
                 </div>
