@@ -70,6 +70,9 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
+
             return View(pedido);
         }
 
