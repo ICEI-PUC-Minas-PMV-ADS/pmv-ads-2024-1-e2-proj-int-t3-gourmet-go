@@ -20,7 +20,7 @@ namespace GourmetGo.Controllers
         }
 
         // GET: GestaoDePedidos
-        [Authorize]
+        /* [Authorize] */
         public async Task<IActionResult> Index()
         {
             var pedidos = await _context.Pedidos
@@ -73,45 +73,45 @@ namespace GourmetGo.Controllers
             return View(pedido);
         }
 
- // POST: GestaoDePedidos/Edit/5
-[HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
-{
-    if (id != pedido.Id)
-    {
-        return NotFound();
-    }
-
-    // Verifica se o UsuarioId fornecido no pedido existe na tabela Usuarios
-    var usuarioExists = await _context.Usuarios.AnyAsync(u => u.Id == pedido.UsuarioId);
-    if (!usuarioExists)
-    {
-        ModelState.AddModelError("UsuarioId", "O usuário associado ao pedido não foi encontrado.");
-    }
-
-    if (ModelState.IsValid)
-    {
-        try
+        // POST: GestaoDePedidos/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
         {
-            _context.Entry(pedido).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!PedidoExists(pedido.Id))
+            if (id != pedido.Id)
             {
                 return NotFound();
             }
-            else
+
+            // Verifica se o UsuarioId fornecido no pedido existe na tabela Usuarios
+            var usuarioExists = await _context.Usuarios.AnyAsync(u => u.Id == pedido.UsuarioId);
+            if (!usuarioExists)
             {
-                throw;
+                ModelState.AddModelError("UsuarioId", "O usuário associado ao pedido não foi encontrado.");
             }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Entry(pedido).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PedidoExists(pedido.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(pedido);
         }
-        return RedirectToAction(nameof(Index));
-    }
-    return View(pedido);
-}
 
         private bool PedidoExists(int id)
         {

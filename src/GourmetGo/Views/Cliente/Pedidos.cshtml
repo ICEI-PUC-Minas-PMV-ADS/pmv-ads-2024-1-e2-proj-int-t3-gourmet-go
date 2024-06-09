@@ -1,6 +1,7 @@
-@model List<GourmetGo.Models.Pedido>
+@model List<GourmetGo.Models.Pedido>;
 
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css'>
 
 @{
@@ -26,7 +27,6 @@
                                 onclick="showContent('andamento')">Em Andamento</button>
                         </li>
                     </ul>
-
                     @* Conteúdo *@
                     <div class=" container-rounded container bg-light">
                         @* Tela de Histórico e Em Andamento *@
@@ -44,11 +44,14 @@
                                                 <p class="text-start">@item.Produto.Nome</p>
                                             }
                                         </div>
-                                        <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco * pp.Quantidade).ToString("0.00")</p>
+                                        <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco *
+                                        pp.Quantidade).ToString("0.00")</p>
                                     </div>
                                 }
                             </div>
-                            <a href="/cliente/2" class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
+                            @ViewBag.ClienteId
+                            <a href="@Url.Action("Index", "Cliente", new { id =  @ViewBag.ClienteId })"
+                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
 
                         <div id="andamento" class="content">
@@ -56,23 +59,31 @@
                             <div class="container">
                                 @foreach (var pedido in Model)
                                 {
-                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status == StatusDoPedido.EmPreparo)
+                                    @if (pedido.Status == StatusDoPedido.EmAndamento || pedido.Status ==
+                                   StatusDoPedido.EmPreparo)
                                     {
-                                        <div class="pedido-card">
-                                            <p class="text-start mb-0 data-horas-tamanho">Pedido @pedido.Id - @pedido.Status</p>
-                                            <div class="d-flex flex-row fs-5  align-items-center">
-                                                @foreach (var item in pedido.PedidoProdutos)
+                                        <div class="container d-flex  flex-column mb-3">
+                                            <h3 class="text-start">@pedido.Produto.Nome</h3>
+                                            <div
+                                                class="d-flex flex-row justify-content-start align-items-center bg-success text-light text-start p-2">
+                                                @if (pedido.Status == StatusDoPedido.EmAndamento)
                                                 {
-                                                    <p class="quantidade-texto text-start me-2">@item.Quantidade</p>
-                                                    <p class="text-start">@item.Produto.Nome</p>
+                                                    <i class="fs-4 fi fi-rs-clock-two me-3"></i> @pedido.Status
                                                 }
+                                                else if (pedido.Status == StatusDoPedido.EmPreparo)
+                                                {
+                                                    <i class="fs-4 fi fi-rs-user-chef me-3"></i> @pedido.Status
+                                                }
+
                                             </div>
-                                            <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco * pp.Quantidade).ToString("0.00")</p>
+                                            <p class="total mb-0">Total: R$@pedido.PedidoProdutos.Sum(pp => pp.Produto.Preco *
+                                        pp.Quantidade).ToString("0.00")</p>
                                         </div>
                                     }
                                 }
                             </div>
-                            <a href="/cliente/2" class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
+                            <a href="@Url.Action("Index", "Cliente", new { id =  @ViewBag.ClienteId })"
+                                class=" mb-0 fs-3 btn btn-light voltar-button">Voltar</a>
                         </div>
                     </div>
                 </div>
@@ -153,5 +164,6 @@
 
     // Inicializar o estado inicial
     showContent('historico');
+
 
 </script>

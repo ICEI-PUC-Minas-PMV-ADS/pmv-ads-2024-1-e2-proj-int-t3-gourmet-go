@@ -44,13 +44,13 @@
     </div>
   </div>
   <div class="text-center mt-4">
-    <a href="/cliente/2" class="btn btn-primary">Voltar</a>
+    <a href="@Url.Action("Index", "Cliente", new { id =  @ViewBag.ClienteId })" class="btn btn-primary">Voltar</a>
   </div>
 </div>
 
 <script>
   let pratoBtn = document.getElementById('pratosBtn');
-    pratoBtn.addEventListener('click', function () {
+  pratoBtn.addEventListener('click', function () {
     document.getElementById('pratosBtn').classList.add('active');
     document.getElementById('bebidasBtn').classList.remove('active');
     mostrarItens('.comida', '.bebida');

