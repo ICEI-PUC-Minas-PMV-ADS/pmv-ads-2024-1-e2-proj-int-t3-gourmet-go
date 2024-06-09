@@ -203,6 +203,7 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
+
             if (ModelState.IsValid)
             {
                 try
@@ -222,7 +223,7 @@ namespace GourmetGo.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Login", "Usuarios"); ;
             }
             return View(usuario);
         }
@@ -279,7 +280,7 @@ namespace GourmetGo.Controllers
         {
             // Exibe uma mensagem informando que o link de redefinição foi enviado
             TempData["Message"] = "Link de redefinição de senha enviado para seu E-mail.";
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Usuarios");
         }
         //fim esqueci senha
     }
