@@ -20,7 +20,8 @@ namespace GourmetGo.Models
 
         [Required(ErrorMessage = "Obrigatório informar o preço!")]
         [Display(Name = "Preço")]
-        public double Preco { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Preco { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a categoria!")]
         public Categoria Categoria { get; set; }
