@@ -32,6 +32,8 @@
               </a>
             </div>
           </nav>
+          <label class=" text-1 mt-5" for="">Restaurante <span class="text-modify">ABERTO</span> até <span
+              class="text-decoration-underline fw-bold">22h</span></label>
         </div>
         <a class="text-light btn btn-modify text-center p-2 px-3 mt-4" asp-area="" asp-controller="Usuarios"
           asp-action="Logout">Logout</a>
@@ -45,5 +47,16 @@
   .btn-modify {
     background-color: #0a7069;
     border: 3px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .text-modify {
+    color: #0a7069;
+    font-weight: 800;
+    font-size: 19px;
+  }
+
+  .text-1 {
+    font-family: sans-serif, Helvetica, sans-serif;
+    font-size: 17px;
   }
 </style>
