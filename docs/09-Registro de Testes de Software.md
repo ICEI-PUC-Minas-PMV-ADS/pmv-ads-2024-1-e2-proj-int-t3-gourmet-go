@@ -47,7 +47,10 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+Data da Avaliação: [09/06/2024]
+  Até o momento todas funcionalidades estão ativas e funcionando corretamente, como ponto forte temos uma aplicação bem fácil de usar pelo lado dos Usuários, com uma visualização de fácil entendimento e agradável de utilizar, como ponto fraco, é uma aplicação de pouca manutenibilidade, pois nao teve um padrào bem definido para criação de variáveis e etc.
+  Pretendemos nos reunir e definir varios padrões de desenvolvimento, e aplica-lós no codigo atual, e para facilitar o entendimento vamos envolver mais comentários no mesmo.
+  Através dos teste, melhoramos várias funcionalidades e fizemos um padrào mais agradavél ao usuário final, as falhas, que são poucas, serão corridas para a entrega final.
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
