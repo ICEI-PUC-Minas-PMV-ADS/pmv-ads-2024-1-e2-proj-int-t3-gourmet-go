@@ -57,7 +57,7 @@
                             @* @if (User.IsInRole("Admin")) *@
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="Cliente/1">Cliente</a>
+                                <a class="nav-link text-dark" href="@Url.Action("Index", "Cliente")">Cliente</a>
                             </li>
 
                             @* @if (User.IsInRole("Admin") || User.IsInRole("Garcom") || User.IsInRole("Cozinheiro")) *@
