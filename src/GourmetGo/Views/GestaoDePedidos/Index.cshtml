@@ -17,7 +17,23 @@
         {
             <div class="container-sm d-flex flex-column container-item mb-4">
                 <h3 class="text-center text-light mb-0 mt-3">@item.Usuario.Nome</h3>
-                <p class="text-center text-light mt-0 text-decoration-underline">@item.Status</p>
+                @if (item.Status == StatusDoPedido.EmAndamento)
+                {
+                    <p class="text-center text-light mt-0 text-decoration-underline">Aguardando confirmação do estabelecimento</p>
+                }
+                else if (item.Status == StatusDoPedido.EmPreparo )
+                {
+                    <p class="text-center text-light mt-0 text-decoration-underline">Em preparo...</p>
+                }
+                else if (@item.Status == StatusDoPedido.ProntoParaEntrega)
+                {
+                    <p class="text-center text-light mt-0 text-decoration-underline">Pronto para entrega</p>
+                }
+                else if (@item.Status == StatusDoPedido.Finalizado)
+                {
+                    <p class="text-center text-light mt-0 text-decoration-underline">Finalizado</p>
+                }
+
                 <div class="text-light d-flex align-items-start justify-content-start mb-2 ">
                     <div class="container-fluid me- ">
                         <p class="text-center">Produtos:</p>
