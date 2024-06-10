@@ -60,7 +60,9 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
+
             var pedido = await _context.Pedidos
+                                        .Include(p => p.Usuario)
                                         .Include(p => p.PedidoProdutos)
                                             .ThenInclude(pp => pp.Produto)
                                         .FirstOrDefaultAsync(m => m.Id == id);
@@ -70,13 +72,18 @@ namespace GourmetGo.Controllers
                 return NotFound();
             }
 
+
+
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
+
             return View(pedido);
         }
 
         // POST: GestaoDePedidos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioId,Observações,Tipo,Endereço,Pagamento,Status")] Pedido pedido, int[] ProdutoIds, int[] Quantidades)
         {
             if (id != pedido.Id)
             {
@@ -94,7 +101,23 @@ namespace GourmetGo.Controllers
             {
                 try
                 {
-                    _context.Entry(pedido).State = EntityState.Modified;
+                    _context.Update(pedido);
+                    await _context.SaveChangesAsync();
+
+                    var existingPedidoProdutos = _context.PedidoProdutos.Where(pp => pp.PedidoId == id);
+                    _context.PedidoProdutos.RemoveRange(existingPedidoProdutos);
+
+                    for (int i = 0; i < ProdutoIds.Length; i++)
+                    {
+                        var pedidoProduto = new PedidoProduto
+                        {
+                            PedidoId = pedido.Id,
+                            ProdutoId = ProdutoIds[i],
+                            Quantidade = Quantidades[i]
+                        };
+                        _context.PedidoProdutos.Add(pedidoProduto);
+                    }
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -108,8 +131,11 @@ namespace GourmetGo.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "GestaoDePedidos");
             }
+
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", pedido.UsuarioId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "Id", "Nome");
             return View(pedido);
         }
 

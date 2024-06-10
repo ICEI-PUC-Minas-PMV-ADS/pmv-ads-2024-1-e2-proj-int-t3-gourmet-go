@@ -62,12 +62,14 @@
                         {
                             <tr>
                                 <td>
-                                    <select asp-for="@Model.PedidoProdutos.ToList()[i].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
-                                    <span asp-validation-for="@Model.PedidoProdutos.ToList()[i].ProdutoId" class="text-danger"></span>
+                                    <select name="ProdutoIds" asp-for="@Model.PedidoProdutos.ToList()[i].ProdutoId"
+                                        class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                                    <span asp-validation-for="PedidoProdutos" class="text-danger"></span>
                                 </td>
                                 <td>
-                                    <input asp-for="@Model.PedidoProdutos.ToList()[i].Quantidade" class="form-control" />
-                                    <span asp-validation-for="@Model.PedidoProdutos.ToList()[i].Quantidade" class="text-danger"></span>
+                                    <input name="Quantidades" asp-for="@Model.PedidoProdutos.ToList()[i].Quantidade"
+                                        class="form-control" />
+                                    <span asp-validation-for="PedidoProdutos" class="text-danger"></span>
                                 </td>
                                 <td>
                                     <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
@@ -94,16 +96,16 @@
     <script type="text/javascript">
         function addProduct() {
             var row = `<tr>
-                <td>
-                    <select name="PedidoProdutos[${index}].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
-                </td>
-                <td>
-                    <input name="PedidoProdutos[${index}].Quantidade" class="form-control" />
-                </td>
-                <td>
-                    <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
-                </td>
-            </tr>`;
+                                                            <td>
+                                                                <select name="PedidoProdutos[${index}].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                                                            </td>
+                                                            <td>
+                                                                <input name="PedidoProdutos[${index}].Quantidade" class="form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
+                                                            </td>
+                                                        </tr>`;
             $('table tbody').append(row);
             index++;
         }

@@ -8,49 +8,130 @@
     <img class="logo-gourmet" src="~/images/minor-logo.png" alt="logo">
 </div>
 
-<div class="container-sm d-flex flex-column container-principal mt-5">
-    <h1 class="text-center text-light mt-5 mb-5">Alterar status</h1>
-    <form class="text-light" asp-action="Edit">
-        <div class="" asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container-sm d-flex flex-column container-principal mt-4">
+    <h1 class="text-center text-light mt-4 mb-5">Alterar status</h1>
+    <form asp-action="Edit" class="text-light">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Id" />
-        <div class="ms-3 fs-4">
-            <div class="form-group d-flex mb-0 form-parts">
-                <label asp-for="Usuario.Nome" class="control-label me-4">Usuário:</label>
-                <div>@(Model.Usuario != null ? Model.Usuario.Nome : "Usuário não encontrado")</div>
-            </div>
-            <div class="form-group d-flex mb-0 form-parts ">
-                <label asp-for="PedidoProdutos" class="control-label me-4">Produto(s):</label>
-                <div>
-                    @foreach (var pedidoProduto in Model.PedidoProdutos)
+        <div class="form-group d-flex flex-row fs-5">
+            <label asp-for="UsuarioId" class="control-label">Usuário:</label>
+            <select class="d-none" asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+            <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            <div class="ms-2">@Model.Usuario.Nome</div>
+        </div>
+        <div class="form-group d-flex flex-row fs-5">
+            <label>Produtos:</label>
+            <table class="table d-none ">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.PedidoProdutos.Count; i++)
                     {
-                        <div>@pedidoProduto.Produto.Nome</div>
+                        <tr>
+                            <td>
+                                <select name="ProdutoIds" asp-for="@Model.PedidoProdutos.ToList()[i].ProdutoId"
+                                    class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                                <span asp-validation-for="PedidoProdutos" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input name="Quantidades" asp-for="@Model.PedidoProdutos.ToList()[i].Quantidade"
+                                    class="form-control" />
+                                <span asp-validation-for="PedidoProdutos" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
+                            </td>
+                        </tr>
                     }
-                </div>
-            </div>
-            <div class="form-group d-flex form-parts">
-                <label asp-for="Observações" class="control-label me-4">Observações:</label>
-                <div class="fs-5">@Model.Observações</div>
-            </div>
-            <div class="form-group d-flex mb-0 form-parts">
-                <label asp-for="Tipo" class="control-label me-4">Recebimento:</label>
-                <div>@Model.Tipo</div>
-            </div>
-            <div class="form-group mt-4 mb-5 form-parts">
-                <label class="mb-0" asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" asp-items="Html.GetEnumSelectList<StatusDoPedido>()" class="form-control p-3"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="d-flex align-itens-center justify-content-center">
-                <input type="submit" value="Salvar" class="fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center" />
-            </div>
-            <div class="d-flex align-itens-center justify-content-center mb-3">
-                <a class="buttons buttons-a btn btn-secondary" asp-action="Index">Voltar</a>
-            </div>
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-primary d-none" onclick="addProduct()">Adicionar Produto</a>
+            @foreach (var item in @Model.PedidoProdutos)
+            {
+
+                <div class="ms-2">@item.Produto.Nome, </div>
+            }
+        </div>
+        <div class="form-group d-flex flex-row fs-5">
+            <label asp-for="Observações" class="control-label">Observações:</label>
+            <input class="d-none" asp-for="Observações" class="form-control" />
+            <span asp-validation-for="Observações" class="text-danger"></span>
+            <div class="ms-2">@Model.Observações</div>
+        </div>
+        <div class="form-group d-flex flex-row fs-5">
+            <label asp-for="Tipo" class="control-label">Recebimento:</label>
+            <select class="d-none" asp-for="Tipo" class="form-control"
+                asp-items="Html.GetEnumSelectList<TipoDeEntrega>()"></select>
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+            <div class="ms-2">@Model.Tipo</div>
+        </div>
+        <div class="form-group d-flex flex-row fs-5 d-none">
+            <label asp-for="Endereço" class="control-label"></label>
+            <input asp-for="Endereço" class="form-control" />
+            <span asp-validation-for="Endereço" class="text-danger"></span>
+        </div>
+        <div class="form-group d-flex flex-row fs-5 d-none">
+            <label asp-for="Pagamento" class="control-label"></label>
+            <select asp-for="Pagamento" class="form-control"
+                asp-items="Html.GetEnumSelectList<FormaDePagamento>()"></select>
+            <span asp-validation-for="Pagamento" class="text-danger"></span>
+        </div>
+        <div class="form-group d-flex flex-column fs-5">
+            <label asp-for="Status" class="control-label"></label>
+            <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<StatusDoPedido>()"></select>
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group mt-3 text-center">
+            <input type="submit" value="Alterar" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
         </div>
     </form>
+
 </div>
 
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        function addProduct() {
+            var row = `<tr>
+                                                                                                                                                                                                                                                                                                                                                                                                        <td>
+                                                                                                                                                                                                                                                                                                                                                                                                            <select name="PedidoProdutos[${index}].ProdutoId" class="form-control" asp-items="ViewBag.ProdutoId"></select>
+                                                                                                                                                                                                                                                                                                                                                                                                        </td>
+                                                                                                                                                                                                                                                                                                                                                                                                        <td>
+                                                                                                                                                                                                                                                                                                                                                                                                            <input name="PedidoProdutos[${index}].Quantidade" class="form-control" />
+                                                                                                                                                                                                                                                                                                                                                                                                        </td>
+                                                                                                                                                                                                                                                                                                                                                                                                        <td>
+                                                                                                                                                                                                                                                                                                                                                                                                            <a href="#" class="btn btn-danger" onclick="removeProduct(this)">Remover</a>
+                                                                                                                                                                                                                                                                                                                                                                                                        </td>
+                                                                                                                                                                                                                                                                                                                                                                                                    </tr>`;
+            $('table tbody').append(row);
+            index++;
+        }
+
+        function removeProduct(element) {
+            $(element).closest('tr').remove();
+        }
+
+        var index = @Model.PedidoProdutos.Count;
+    </script>
+}
+
+
+
 <style>
+
+    
     .logo-gourmet {
         width: auto;
         height: 240px;
@@ -87,8 +168,9 @@
     }
 </style>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+@* @section Scripts {
+@{
+await Html.RenderPartialAsync("_ValidationScriptsPartial");
 }
+}
+*@

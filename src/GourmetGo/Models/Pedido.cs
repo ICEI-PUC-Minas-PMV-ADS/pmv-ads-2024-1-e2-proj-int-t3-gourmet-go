@@ -45,7 +45,7 @@ namespace GourmetGo.Models
         [Display(Name = "Aguardando confirmação do estabelecimento")] EmAndamento,
         [Display(Name = "Em preparo...")] EmPreparo,
         [Display(Name = "Pronto para entrega")] ProntoParaEntrega,
-        [Display(Name = "Pronto para entrega")] Finalizado
+        [Display(Name = "Finalizado")] Finalizado
     }
 
     public enum FormaDePagamento

@@ -10,10 +10,10 @@
 </div>
 
 <div class="container-sm d-flex flex-column container-principal mt-5">
-    <h1 class="text-center text-light mt-5 mb-5">Detalhes</h1>
+    <label class="text-center text-light mt-4 mb-4 fs-2">Detalhes</label>
     <form class="text-light">
         <input type="hidden" asp-for="Id" />
-        <div class="ms-3 fs-4">
+        <div class="ms-3 fs-5">
             <div class="form-group d-flex form-parts">
                 <p class="me-2">Nome:</p>
                 @Html.DisplayFor(model => model.Usuario.Nome)
@@ -41,13 +41,13 @@
                 <p class="me-2">Pagamento:</p>
                 @Html.DisplayFor(model => model.Pagamento)
             </div>
-            <div class="form-group d-flex  form-parts">
+            <div class="form-group d-flex  form-parts mb-4">
                 <p class="me-2">Status:</p>
                 @Html.DisplayFor(model => model.Status)
             </div>
             <div class="d-flex align-itens-center justify-content-center">
                 <a asp-action="Edit" asp-route-id="@Model?.Id"
-                    class=" fs-4 mb-4 buttons buttons-input btn btn-primary d-flex align-itens-center justify-content-center">Editar</a>
+                    class="fs-5 mb-4 buttons buttons-input btn btn-success d-flex align-itens-center justify-content-center">Editar</a>
             </div>
             <div class="d-flex align-itens-center justify-content-center mb-3">
                 <a class="buttons buttons-a btn btn-secondary" asp-action="Index">Voltar</a>
@@ -63,7 +63,7 @@
 <style>
     .logo-gourmet {
         width: auto;
-        height: 240px;
+        height: 160px;
     }
 
     .container-principal {
@@ -76,6 +76,7 @@
 
     .form-parts {
         font-family: arial;
+        margin-bottom: 0;
     }
 
     .buttons {
