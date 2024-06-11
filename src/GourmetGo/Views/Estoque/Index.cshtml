@@ -5,17 +5,17 @@
 }
 
 @* Superior *@
-<div class="d-flex flex-row align-items-center justify-content-around mb-3 ">
+<div class=" container-sm d-flex flex-row align-items-center justify-content-evenly mb-1 mt-0 ">
     <img class="logo1 text-center" src="~/images/minor-logo.png" alt="logo">
     <a href="@Url.Action("GestaoGeral", "Home")" class=" text-center btn btn-voltar btn-voltar px-5">Voltar</a>
 </div>
 
 <p class=" fs-1 d-flex flex-row align-items-center justify-content-around text-light mb-4">Estoque</p>
-<p class="text-center mb-4">
-    <a asp-action="Create" class="btn btn-success fs-5">Adicionar novo item</a>
+<p class="text-center mb-5">
+    <a asp-action="Create" class="btn btn-change text-white py-2 px-4 fs-4">Adicionar novo item</a>
 </p>
 
-<div class="container-máximo">
+<div class="">
 
     <div class="container-fluid d-flex flex-wrap flex-row">
         @foreach (var item in Model)
@@ -33,7 +33,7 @@
                     </div>
                     <div class="d-flex flex-row">
                         <p class="me-2">&#x2022; Preço:</p>
-                        <p>@Html.DisplayFor(modelItem => item.Preco)</p>
+                        <p>R$ @Html.DisplayFor(modelItem => item.Preco)</p>
                     </div>
                     <div class="d-flex flex-row">
                         <p class="me-2">&#x2022; Data de Entrega:</p>
@@ -82,7 +82,6 @@
         max-width: 400px;
     }
 
-
     .btn-alterar,
     .btn-detail {
         background-color: #D9D9D9;
@@ -91,6 +90,17 @@
 
     .btn-alterar {
         font-size: 1.05em;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 15px;
+    }
+
+    .btn-change {
+        background-color: #0C847B;
     }
 </style>
 
