@@ -4,7 +4,82 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1 class="text-light">Excluir produto</h1>
+<div class="text-center">
+    <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-md-6 col-lg-5">
+                <img class="logo" src="~/images/logo.png" alt="logo">
+                <div class="login detalhes-cor container-item mb-4">
+                    <label class="fs-1 cadastro-text text-light">Deletar Item</label>
+                    <form class="text-white fs-5">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group  d-flex d-flex">
+                            <label asp-for="Nome" class="control-label me-2">Nome:</label>
+                            @Html.DisplayFor(model => model.Nome)
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="Quantidade" class="control-label me-2">Quantidade:</label>
+                            @Html.DisplayFor(model => model.Quantidade)
+
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="Preco" class="control-label me-2">Preço:</label>
+                            <div>R$@Html.DisplayFor(model => model.Preco)</div>
+
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="DataEntrada" class="control-label me-2">Data de Entrada:</label>
+                            @Html.DisplayFor(model => model.DataEntrada)
+                        </div>
+                        <div class="form-group  d-flex mb-4">
+                            <label asp-for="Categoria" class="control-label me-2">Categoria:</label>
+                            @Html.DisplayFor(model => model.Categoria)
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Excluir" class="btn btn-danger" />
+                            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .detalhes-cor {
+        background-color: #0C847B;
+    }
+
+    .cadastro-text {
+        color: #0C847B;
+    }
+
+    .btn-color {
+        background-color: #0C847B;
+    }
+
+    .cadastro-button {
+        background-color: #0C847B;
+    }
+
+    .a-link {
+        color: #002D2B;
+    }
+
+    .container-item {
+        background-color: #0C847B;
+        border-radius: 10px;
+        border: 5px solid rgba(0, 0, 0, 0.2);
+        min-width: 150px;
+        max-width: 400px;
+    }
+
+</style>
+
+
+@*
+    <h1 class="text-light">Excluir produto</h1>
 
 <h3 class="text-light">Realmente quer deletar o produto?</h3>
 <div>
@@ -49,3 +124,5 @@
         <a asp-action="Index" class="btn btn-secondary">Voltar</a>
     </form>
 </div>
+
+*@
