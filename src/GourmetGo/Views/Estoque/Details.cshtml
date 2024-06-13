@@ -4,46 +4,113 @@
     ViewData["Title"] = "Details";
 }
 
+<div class="text-center">
+    <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-md-6 col-lg-5">
+                <img class="logo" src="~/images/logo.png" alt="logo">
+                <div class="login detalhes-cor">
+                    <label class="fs-1 cadastro-text text-light">Detalhes</label>
+                    <form class="text-white fs-5">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group  d-flex d-flex">
+                            <label asp-for="Nome" class="control-label me-2">Nome:</label>
+                            @Html.DisplayFor(model => model.Nome)
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="Quantidade" class="control-label me-2">Quantidade:</label>
+                            @Html.DisplayFor(model => model.Quantidade)
 
-<h1 class="text-light">Detalhes do estoque</h1>
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="Preco" class="control-label me-2">Preço:</label>
+                            <div>R$@Html.DisplayFor(model => model.Preco)</div>
 
-<div>
-    <h4 class="text-light">Estoque</h4>
-    <hr />
-    <dl class="row text-light">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quantidade)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Preco)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Preco)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataEntrada)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataEntrada)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-    </dl>
+                        </div>
+                        <div class="form-group  d-flex">
+                            <label asp-for="DataEntrada" class="control-label me-2">Data de Entrada:</label>
+                            @Html.DisplayFor(model => model.DataEntrada)
+                        </div>
+                        <div class="form-group  d-flex mb-4">
+                            <label asp-for="Categoria" class="control-label me-2">Categoria:</label>
+                            @Html.DisplayFor(model => model.Categoria)
+                        </div>
+                        <div class="form-group">
+                            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a>
+                            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .detalhes-cor {
+        background-color: #0C847B;
+    }
+
+    .cadastro-text {
+        color: #0C847B;
+    }
+
+    .btn-color {
+        background-color: #0C847B;
+    }
+
+    .cadastro-button {
+        background-color: #0C847B;
+    }
+
+    .a-link {
+        color: #002D2B;
+    }
+</style>
+
+
+
+
+
+
+
+@* <div>
+<h4 class="text-light">Estoque</h4>
+<hr />
+<dl class="row text-light">
+<dt class="col-sm-2">
+@Html.DisplayNameFor(model => model.Nome)
+</dt>
+<dd class="col-sm-10">
+@Html.DisplayFor(model => model.Nome)
+</dd>
+<dt class="col-sm-2">
+@Html.DisplayNameFor(model => model.Quantidade)
+</dt>
+<dd class="col-sm-10">
+@Html.DisplayFor(model => model.Quantidade)
+</dd>
+<dt class="col-sm-2">
+@Html.DisplayNameFor(model => model.Preco)
+</dt>
+<dd class="col-sm-10">
+@Html.DisplayFor(model => model.Preco)
+</dd>
+<dt class="col-sm-2">
+@Html.DisplayNameFor(model => model.DataEntrada)
+</dt>
+<dd class="col-sm-10">
+@Html.DisplayFor(model => model.DataEntrada)
+</dd>
+<dt class="col-sm-2">
+@Html.DisplayNameFor(model => model.Categoria)
+</dt>
+<dd class="col-sm-10">
+@Html.DisplayFor(model => model.Categoria)
+</dd>
+</dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
-    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
-</div>
+<a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div> *@
