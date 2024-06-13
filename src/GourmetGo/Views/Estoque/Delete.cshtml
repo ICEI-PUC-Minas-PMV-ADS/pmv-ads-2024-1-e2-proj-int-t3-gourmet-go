@@ -4,7 +4,85 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1 class="text-light">Excluir produto</h1>
+<div class="text-center">
+    <div class="container-fluid h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-md-6 col-lg-5">
+            <img class="logo1" src="~/images/minor-logo.png" alt="logo">
+                </div>
+                <p class="fs-1 d-flex flex-row align-items-center justify-content-around text-light mb-4">Excluir produto</p>
+                    <div class="row text-light align-items-center text-center">
+                <div class="row text-light align-items-center text-center ">
+                    <div class="form-group d-flex flex-row">
+                    <p class="me-2">&#x2022; Nome:</p>
+                    <p>@Html.DisplayFor(model => model.Nome)</p>
+                </div>
+                    <div class="form-group d-flex flex-row">
+                    <p class="me-2">&#x2022; Quantidade:</p>
+                        <p>@Html.DisplayFor(model => model.Quantidade)</p>
+                </div>
+                    <div class="form-group d-flex flex-row">
+                    <p class="me-2">&#x2022; Preço:</p>
+                    <p>R$ @Html.DisplayFor(model => model.Preco)</p>
+                </div>
+                    <div class="form-group d-flex flex-row">
+                    <p class="me-2">&#x2022; Data de Entrega:</p>
+                    <p>@Html.DisplayFor(model => model.DataEntrada)</p>
+                </div>
+                    <div class="form-group d-flex flex-row">
+                    <p class="me-2">&#x2022; Categoria:</p>
+                    <p>@Html.DisplayFor(model => model.Categoria)</p>
+                    </div>
+                    <div class="form-group"
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Excluir" class="btn btn-danger" />
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .logo1 {
+        height: auto;
+        width: 100px;
+    }
+
+    .btn-voltar {
+        background-color: #0C847B;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .container-item {
+        background-color: #0C847B;
+        border-radius: 10px;
+        border: 5px solid rgba(0, 0, 0, 0.2);
+        min-width: 150px;
+        max-width: 400px;
+    }
+
+    .btn-alterar,
+    .btn-detail {
+        background-color: #D9D9D9;
+        border-radius: 8px;
+    }
+
+    .btn-alterar {
+        font-size: 1.05em;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+</style>
+
+
+@*
+    <h1 class="text-light">Excluir produto</h1>
 
 <h3 class="text-light">Realmente quer deletar o produto?</h3>
 <div>
@@ -49,3 +127,5 @@
         <a asp-action="Index" class="btn btn-secondary">Voltar</a>
     </form>
 </div>
+
+*@
