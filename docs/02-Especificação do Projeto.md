@@ -27,7 +27,6 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |--------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 |Proprietário        | Criar, alterar e editar cadstro de fucioários                                      |Manter os registros atualizados                                                           |
 |Proprietário        | Criar, editar e vizualizar cardápio do restaurante                                 |Manter os pratos disponíveis atualizados                                                  |
-|Proprietário        | Editar reservas e vizualizar mesas                                                 |Manter controle de reserva e lotação                                                      |
 |Cozinheiro          | Vizualizar pedidos em tempo real                                                   |Para uma coordenação de equipe eficaz entre a cozinha e atendimento ao cliente            |
 |Cozinheiro          | Vizualizar e alterar estoque                                                       |Para garantir disponibilidade de ingredientes                                             |
 |Garçom              | Receber notificações de novos pedidos e atualizações sobre status dos pedidos      |Para atender rapidamente os pedidos                                                       |
@@ -54,7 +53,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-09 | A aplicação deve ser capaz de intermediar compras entre cliente e restaurante. | ALTA |
 | RF-10 | A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery. | ALTA |
 | RF-11 | A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo. | ALTA |
-| RF-12 | A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix. | MÉDIA |
+| RF-12 | A aplicação deve oferecer ao usuário (cliente) as formas de pagamento no app, no restaurante ou na entrega. | MÉDIA |
 | RF-13 | A aplicação deve ser capaz de informar ao usuário (restaurante) sobre novos pedidos. | ALTA |
 | RF-14 | A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega). | ALTA |
 | RF-15 | A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente. | BAIXA |
