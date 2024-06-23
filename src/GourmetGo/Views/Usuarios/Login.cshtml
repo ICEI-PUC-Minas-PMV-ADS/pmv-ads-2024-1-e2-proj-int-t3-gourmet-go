@@ -32,7 +32,9 @@
                                 <label asp-for="Senha" class="control-label"></label>
                                 <input placeholder="Informe sua senha..." asp-for="Senha" class="form-control" />
                                 <span asp-validation-for="Senha" class="text-danger"></span>
+                                <h3 class="fs-5 mt-4 mb-0">@ViewBag.Message</h3>
                             </div>
+
 
                             <div class="buttons-login d-flex flex-column">
                                 <input type="submit" value="Entrar" class="btn btn-login text-center text-light" />

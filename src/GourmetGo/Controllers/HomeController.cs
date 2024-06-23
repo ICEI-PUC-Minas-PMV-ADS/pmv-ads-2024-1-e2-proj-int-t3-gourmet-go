@@ -32,13 +32,13 @@ namespace GourmetGo.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        } 
+        }
 
         [HttpPost]
         public IActionResult SendPasswordResetLink(string username, string email)
         {
-            TempData["Message"] = "Link de redefini��o de senha enviado por email.";
-            return RedirectToAction("Index", "Home");
+            TempData["Message"] = "Link de redefinição de senha enviado por email.";
+            return RedirectToAction("Login", "Usuarios");
         }
 
         //fim esqueci senha
