@@ -31,7 +31,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                         |RF-02 - A aplicação deve ser capaz de intermediar compras entre cliente e restaurante.|
 |                         |RF-03 - A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.|
 |                         |RF-04 - A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.|
-|                         |RF-05 - A aplicação deve oferecer ao usuário (cliente) as formas de pagamento por cartão de crédito ou pix.|
+|                         |RF-05 - A aplicação deve oferecer ao usuário (cliente) as formas de pagamento presencial, no app ou na entrega.|
 |Registro de evidência | [Pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
 
 ![pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/pedido.png)
@@ -47,7 +47,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 ## Avaliação
 
-Data da Avaliação: [09/06/2024]
+Data da Avaliação: [23/06/2024]
   Até o momento todas funcionalidades estão ativas e funcionando corretamente, como ponto forte temos uma aplicação bem fácil de usar pelo lado dos Usuários, com uma visualização de fácil entendimento e agradável de utilizar, como ponto fraco, é uma aplicação de pouca manutenibilidade, pois nao teve um padrào bem definido para criação de variáveis e etc.
   Pretendemos nos reunir e definir varios padrões de desenvolvimento, e aplica-lós no codigo atual, e para facilitar o entendimento vamos envolver mais comentários no mesmo.
   Através dos teste, melhoramos várias funcionalidades e fizemos um padrào mais agradavél ao usuário final, as falhas, que são poucas, serão corridas para a entrega final.
