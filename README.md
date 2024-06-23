@@ -56,5 +56,4 @@ O Gourmet Go visa oferecer ferramentas que permitam o gerenciamento dos pedidos 
 
 # Apresentação
 
-> [!NOTE]
-> <li><a href="presentation/README.md"> Apresentação da solução</a></li>
+<li><a href="src"> Vídeo de Apresentação [Youtube]</a></li>
