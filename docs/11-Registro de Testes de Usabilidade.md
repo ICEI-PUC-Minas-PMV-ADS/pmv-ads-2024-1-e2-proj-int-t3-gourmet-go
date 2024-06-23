@@ -7,3 +7,12 @@
 |Recuperação de senha|		Verificar a eficácia do processo de recuperação de senha.	| **`Disign/Layout`**: Ótimo. **`Funcionalidade`**: É encaminhado um link de redefinição para o email do cliente.  |
 |Realização e acompanhamento de pedido|		Avaliar a experiência completa de realizar um pedido e acompanhar seu status.	|  **`Disign/Layout`**: Visualmente agradável. **`Funcionalidade`**: É possivel concluir o processo todo. |
 |Cadastro e edição de conta de acesso|		Testar a facilidade de criar e editar conta de acesso.	| **`Disign/Layout`**: Agradável visualmente, fácil de entender.  **`Funcionalidade`**: Funciona corretamente até o momento, consigo alterar dados, e adicionar mais de um endereço. |
+
+
+# Testes Gravados
+
+![Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/Login.mp4)
+
+![Esqueci senha](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/esqueci%20senha.mp4)
+
+![Status pedido](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/status%20pedido.mp4)
