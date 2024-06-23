@@ -9,11 +9,10 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	**Requisito Associado**| RF-01 - A aplicação deve permitir aos usuários (cliente e restaurante) cadastrar, visualizar, editar e excluir uma conta de acesso ao sistema.|
 |	                       | RF-02 - A aplicação deve permitir aos usuários (cliente e restaurante) realizar login/logout no sistema.                                      | 
 |                        | RF-03 - A aplicação deve permitir aos usuários (cliente e restaurante) recuperar sua senha de acesso ao sistema.|
-|                        | RF-04 - A aplicação deve permitir ao usuário (restaurante) cadastrar, visualizar, editar e excluir produtos do cardápio.|
-|                        | RF-05 - A aplicação deve permitir ao usuário (cliente) cadastrar, visualizar, editar e excluir endereços alternativos para entrega.|
-|Registro de evidência | [Usuario](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
+|Registro de evidência | [Cadastrar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Usuarios/Cadastro.cshtml) / [Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Usuarios/Login.cshtml) / [Recuperar-Senha](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Home/EsqueciSenha.cshtml) |
 
-![usuario](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/login.png)
+![Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/login.png)
+
 
 
 | **Caso de Teste** 	|**CT-02– Visualização das informações do restaurante** 	|
