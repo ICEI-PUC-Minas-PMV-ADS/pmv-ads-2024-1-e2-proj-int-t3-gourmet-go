@@ -37,7 +37,7 @@ namespace GourmetGo.Controllers
         [HttpPost]
         public IActionResult SendPasswordResetLink(string username, string email)
         {
-            TempData["Message"] = "Link de redefinio de senha enviado por email.";
+            TempData["Message"] = "Link de redefinição de senha enviado por email.";
             return RedirectToAction("Login", "Usuarios");
         }
 
