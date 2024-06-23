@@ -20,7 +20,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                       |RF-01 - A aplicação deve exibir ao usuário (cliente) o cardápio do restaurante.|
 |**Requisito Associado**|RF-02 - A aplicação deve informar ao usuário (cliente) se o restaurante se encontra aberto ou fechado.| 
 |                       | 
-|Registro de evidência |[Usuario](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Usuarios) |
+|Registro de evidência |[Cliente](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Cliente/Index.cshtml) / [Cardápio](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Cliente/Cardapio.cshtml) |
 
 ![Restaurante](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/Restaurante.png)
 
@@ -31,7 +31,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |                         |RF-03 - A aplicação deve permitir ao usuário (cliente) escolher entre retirar o pedido no restaurante ou receber via delivery.|
 |                         |RF-04 - A aplicação deve permitir ao usuário (cliente) realizar pagamentos sem sair do aplicativo.|
 |                         |RF-05 - A aplicação deve oferecer ao usuário (cliente) as formas de pagamento presencial, no app ou na entrega.|
-|Registro de evidência | [Pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|Registro de evidência | [Realizar Pedido](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Cliente/Cardapio.cshtml) |
 
 ![pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/pedido.png)
 
@@ -39,7 +39,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |:---:	|:---:	|
 |**Requisitos Associados**|RF-01 - A aplicação deve ser capaz de informar ao usuário (cliente) o status do pedido (pedido recebido, pedido em preparação, pedido finalizado, pedido saiu para entrega).
 |                         |RF-02 - A aplicação deve disponibilizar aos usuários (cliente e restaurante) o histórico completo de pedidos do cliente.
-|Registro de evidência | [Pedidos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/tree/main/src/GourmetGo/Views/Pedidos) |
+|Registro de evidência | [Pedidos em Andamento / Histórico ](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/src/GourmetGo/Views/Cliente/Pedidos.cshtml) |
 
 ![status](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/status.png)
 
