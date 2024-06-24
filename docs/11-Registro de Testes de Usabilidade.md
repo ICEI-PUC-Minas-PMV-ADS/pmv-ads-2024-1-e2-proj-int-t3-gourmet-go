@@ -11,8 +11,18 @@
 
 # Testes Gravados
 
-![Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/Login.mp4)
 
-![Esqueci senha](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/esqueci%20senha.mp4)
 
-![Status pedido](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/blob/main/docs/img/status%20pedido.mp4)
+
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/145203125/9f03d802-68f2-4b70-a695-5746e3f8f033
+
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/145203125/3550f9ab-5efe-4a69-8f79-9e6c27e5caba
+
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/145203125/50aa03e9-63e8-4a84-8354-d6785cb6e9c8
+
