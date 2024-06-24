@@ -56,4 +56,8 @@ O Gourmet Go visa oferecer ferramentas que permitam o gerenciamento dos pedidos 
 
 # Apresentação
 
-<li><a href="src"> Vídeo de Apresentação [Youtube]</a></li>
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-gourmet-go/assets/145203125/7440f5f4-86b1-40d1-9bdb-71fdd61e1d7a
+
+
